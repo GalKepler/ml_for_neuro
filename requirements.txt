@@ -1,0 +1,15 @@
+jupyter-book
+matplotlib
+numpy
+ghp-import
+jupyter-nbextensions-configurator~=0.4
+nibabel
+nilearn
+openpyxl
+pandas
+seaborn
+scikit-learn
+sphinxcontrib-bibtex
+statsmodels
+xlrd
+Jinja2

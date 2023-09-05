@@ -1,0 +1,18 @@
+# IDE configurations
+.vscode
+
+# Python cache files
+**/__pycache__/**
+**/*.pyc
+
+# Jupyter files
+**/.ipynb_checkpoints/**
+
+# Build
+ml_for_neuro/_build
+
+# Virtual environment
+venv
+
+# Homework solutions
+homework
