@@ -1,26 +1,26 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-format: jb-book
-root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+# format: jb-book
+# root: intro
+# chapters:
+# - file: markdown
+# - file: notebooks
+# - file: markdown-notebooks
 
 format: jb-book
 root: intro
 sections:
-- file: content
-  sections:
-  - file: chapters/chapter_01/exercise_01
-  - file: chapters/chapter_02/exercise_02
-  - file: chapters/chapter_03/exercise_03
-  - file: chapters/chapter_04/exercise_04
-  - file: chapters/chapter_05/exercise_05
-  - file: chapters/chapter_06/exercise_06
-  - file: chapters/chapter_07/exercise_07
-  - file: chapters/chapter_08/exercise_08
-  - file: chapters/chapter_09/exercise_09
-  - file: chapters/resources/resources
-- file: references
+  - file: content
+    sections:
+      - file: chapters/chapter_01/exercise_01
+      - file: chapters/chapter_02/exercise_02
+      - file: chapters/chapter_03/exercise_03
+      - file: chapters/chapter_04/exercise_04
+      - file: chapters/chapter_05/exercise_05
+      - file: chapters/chapter_06/exercise_06
+      - file: chapters/chapter_07/exercise_07
+      - file: chapters/chapter_08/exercise_08
+      - file: chapters/chapter_09/exercise_09
+      - file: chapters/resources/resources
+  - file: references
