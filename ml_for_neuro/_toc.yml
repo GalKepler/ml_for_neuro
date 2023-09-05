@@ -12,7 +12,7 @@ format: jb-book
 root: intro
 sections:
   - file: content
-    sections:
+    chapters:
       - file: chapters/chapter_01/exercise_01
       - file: chapters/chapter_02/exercise_02
       - file: chapters/chapter_03/exercise_03
