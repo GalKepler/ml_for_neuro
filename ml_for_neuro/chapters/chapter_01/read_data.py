@@ -54,7 +54,7 @@ def read_data() -> pd.DataFrame:
 
     # Read CSVs from remote location as a single dataframe.
     urls = [CSV_URL_PATTERN.format(week_id=week_id) for week_id in WEEK_IDS]
-    dataframes = [pd.read_csv(url, error_bad_lines=False) for url in urls]
+    dataframes = [pd.read_csv(url) for url in urls]
     data = pd.concat(dataframes, ignore_index=True)
 
     # Convert COVID-19 test results to boolean values.
