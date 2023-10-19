@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -76,6 +77,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -326,10 +336,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -337,7 +347,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -464,203 +474,206 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_956f8_row0_col0, #T_956f8_row1_col0, #T_956f8_row2_col0, #T_956f8_row2_col1, #T_956f8_row3_col0, #T_956f8_row3_col1, #T_956f8_row4_col0, #T_956f8_row5_col0, #T_956f8_row6_col0, #T_956f8_row6_col1, #T_956f8_row7_col0, #T_956f8_row7_col1, #T_956f8_row8_col0, #T_956f8_row8_col1, #T_956f8_row9_col0, #T_956f8_row9_col1, #T_956f8_row10_col0, #T_956f8_row10_col1, #T_956f8_row11_col0, #T_956f8_row12_col0, #T_956f8_row13_col0, #T_956f8_row14_col0, #T_956f8_row14_col1 {
+#T_3171a_row0_col0, #T_3171a_row1_col0, #T_3171a_row2_col0, #T_3171a_row2_col1, #T_3171a_row3_col0, #T_3171a_row4_col0, #T_3171a_row4_col1, #T_3171a_row5_col0, #T_3171a_row5_col1, #T_3171a_row6_col0, #T_3171a_row6_col1, #T_3171a_row7_col0, #T_3171a_row8_col0, #T_3171a_row8_col1, #T_3171a_row9_col0, #T_3171a_row10_col0, #T_3171a_row10_col1, #T_3171a_row11_col1, #T_3171a_row12_col0, #T_3171a_row12_col1, #T_3171a_row13_col0, #T_3171a_row13_col1, #T_3171a_row14_col0 {
   color: red;
 }
-#T_956f8_row0_col1, #T_956f8_row1_col1, #T_956f8_row4_col1, #T_956f8_row5_col1, #T_956f8_row11_col1, #T_956f8_row12_col1, #T_956f8_row13_col1 {
+#T_3171a_row0_col1, #T_3171a_row1_col1, #T_3171a_row3_col1, #T_3171a_row7_col1, #T_3171a_row9_col1, #T_3171a_row11_col0, #T_3171a_row14_col1 {
   color: green;
 }
-#T_956f8_row0_col2 {
-  color: #9ac8e0;
+#T_3171a_row0_col2 {
+  color: #c4daee;
 }
-#T_956f8_row0_col3 {
-  color: #e3eef8;
+#T_3171a_row0_col3 {
+  color: #d3e3f3;
 }
-#T_956f8_row1_col2 {
-  color: #4191c6;
-}
-#T_956f8_row1_col3, #T_956f8_row10_col2 {
-  color: #f1f7fd;
-}
-#T_956f8_row2_col2 {
-  color: #68acd5;
-}
-#T_956f8_row2_col3 {
-  color: #3484bf;
-}
-#T_956f8_row3_col2 {
-  color: #eff6fc;
-}
-#T_956f8_row3_col3 {
-  color: #b2d2e8;
-}
-#T_956f8_row4_col2, #T_956f8_row8_col2, #T_956f8_row11_col3 {
-  color: #f7fbff;
-}
-#T_956f8_row4_col3 {
-  color: #d3e4f3;
-}
-#T_956f8_row5_col2, #T_956f8_row14_col3 {
+#T_3171a_row1_col2, #T_3171a_row8_col3 {
   color: #08306b;
 }
-#T_956f8_row5_col3 {
-  color: #e2edf8;
+#T_3171a_row1_col3 {
+  color: #b2d2e8;
 }
-#T_956f8_row6_col2 {
-  color: #529dcc;
-}
-#T_956f8_row6_col3 {
-  color: #2373b6;
-}
-#T_956f8_row7_col2 {
-  color: #56a0ce;
-}
-#T_956f8_row7_col3 {
-  color: #08468b;
-}
-#T_956f8_row8_col3 {
-  color: #b8d5ea;
-}
-#T_956f8_row9_col2 {
-  color: #7cb7da;
-}
-#T_956f8_row9_col3, #T_956f8_row13_col2 {
+#T_3171a_row2_col2 {
   color: #63a8d3;
 }
-#T_956f8_row10_col3 {
-  color: #87bddc;
+#T_3171a_row2_col3, #T_3171a_row4_col2 {
+  color: #083e81;
 }
-#T_956f8_row11_col2 {
-  color: #1c6ab0;
+#T_3171a_row3_col2 {
+  color: #bed8ec;
 }
-#T_956f8_row12_col2 {
-  color: #a4cce3;
+#T_3171a_row3_col3 {
+  color: #d9e8f5;
 }
-#T_956f8_row12_col3 {
-  color: #ebf3fb;
+#T_3171a_row4_col3 {
+  color: #89bedc;
 }
-#T_956f8_row13_col3 {
-  color: #d4e4f4;
+#T_3171a_row5_col2 {
+  color: #eaf2fb;
 }
-#T_956f8_row14_col2 {
-  color: #1d6cb1;
+#T_3171a_row5_col3, #T_3171a_row11_col3 {
+  color: #2979b9;
+}
+#T_3171a_row6_col2 {
+  color: #4b98ca;
+}
+#T_3171a_row6_col3 {
+  color: #2474b7;
+}
+#T_3171a_row7_col2 {
+  color: #c8dcf0;
+}
+#T_3171a_row7_col3 {
+  color: #bdd7ec;
+}
+#T_3171a_row8_col2 {
+  color: #5ca4d0;
+}
+#T_3171a_row9_col2 {
+  color: #85bcdc;
+}
+#T_3171a_row9_col3, #T_3171a_row10_col2 {
+  color: #f7fbff;
+}
+#T_3171a_row10_col3 {
+  color: #1460a8;
+}
+#T_3171a_row11_col2 {
+  color: #3e8ec4;
+}
+#T_3171a_row12_col2 {
+  color: #7fb9da;
+}
+#T_3171a_row12_col3 {
+  color: #3f8fc5;
+}
+#T_3171a_row13_col2 {
+  color: #82bbdb;
+}
+#T_3171a_row13_col3 {
+  color: #97c6df;
+}
+#T_3171a_row14_col2 {
+  color: #e0ecf8;
+}
+#T_3171a_row14_col3 {
+  color: #dce9f6;
 }
 </style>
-<table id="T_956f8">
+<table id="T_3171a">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_956f8_level0_col0" class="col_heading level0 col0" >default</th>
-      <th id="T_956f8_level0_col1" class="col_heading level0 col1" >student</th>
-      <th id="T_956f8_level0_col2" class="col_heading level0 col2" >balance</th>
-      <th id="T_956f8_level0_col3" class="col_heading level0 col3" >income</th>
+      <th id="T_3171a_level0_col0" class="col_heading level0 col0" >default</th>
+      <th id="T_3171a_level0_col1" class="col_heading level0 col1" >student</th>
+      <th id="T_3171a_level0_col2" class="col_heading level0 col2" >balance</th>
+      <th id="T_3171a_level0_col3" class="col_heading level0 col3" >income</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_956f8_level0_row0" class="row_heading level0 row0" >5094</th>
-      <td id="T_956f8_row0_col0" class="data row0 col0" >False</td>
-      <td id="T_956f8_row0_col1" class="data row0 col1" >True</td>
-      <td id="T_956f8_row0_col2" class="data row0 col2" >711.582823</td>
-      <td id="T_956f8_row0_col3" class="data row0 col3" >17780.759828</td>
+      <th id="T_3171a_level0_row0" class="row_heading level0 row0" >5427</th>
+      <td id="T_3171a_row0_col0" class="data row0 col0" >False</td>
+      <td id="T_3171a_row0_col1" class="data row0 col1" >True</td>
+      <td id="T_3171a_row0_col2" class="data row0 col2" >639.999626</td>
+      <td id="T_3171a_row0_col3" class="data row0 col3" >19900.006404</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row1" class="row_heading level0 row1" >5145</th>
-      <td id="T_956f8_row1_col0" class="data row1 col0" >False</td>
-      <td id="T_956f8_row1_col1" class="data row1 col1" >True</td>
-      <td id="T_956f8_row1_col2" class="data row1 col2" >1151.298716</td>
-      <td id="T_956f8_row1_col3" class="data row1 col3" >14384.767081</td>
+      <th id="T_3171a_level0_row1" class="row_heading level0 row1" >8786</th>
+      <td id="T_3171a_row1_col0" class="data row1 col0" >False</td>
+      <td id="T_3171a_row1_col1" class="data row1 col1" >True</td>
+      <td id="T_3171a_row1_col2" class="data row1 col2" >1883.065456</td>
+      <td id="T_3171a_row1_col3" class="data row1 col3" >23989.892456</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row2" class="row_heading level0 row2" >9295</th>
-      <td id="T_956f8_row2_col0" class="data row2 col0" >False</td>
-      <td id="T_956f8_row2_col1" class="data row2 col1" >False</td>
-      <td id="T_956f8_row2_col2" class="data row2 col2" >938.090134</td>
-      <td id="T_956f8_row2_col3" class="data row2 col3" >46370.821257</td>
+      <th id="T_3171a_level0_row2" class="row_heading level0 row2" >9917</th>
+      <td id="T_3171a_row2_col0" class="data row2 col0" >False</td>
+      <td id="T_3171a_row2_col1" class="data row2 col1" >False</td>
+      <td id="T_3171a_row2_col2" class="data row2 col2" >1092.425957</td>
+      <td id="T_3171a_row2_col3" class="data row2 col3" >43578.646977</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row3" class="row_heading level0 row3" >79</th>
-      <td id="T_956f8_row3_col0" class="data row3 col0" >False</td>
-      <td id="T_956f8_row3_col1" class="data row3 col1" >False</td>
-      <td id="T_956f8_row3_col2" class="data row3 col2" >76.991291</td>
-      <td id="T_956f8_row3_col3" class="data row3 col3" >28392.093412</td>
+      <th id="T_3171a_level0_row3" class="row_heading level0 row3" >7246</th>
+      <td id="T_3171a_row3_col0" class="data row3 col0" >False</td>
+      <td id="T_3171a_row3_col1" class="data row3 col1" >True</td>
+      <td id="T_3171a_row3_col2" class="data row3 col2" >675.240692</td>
+      <td id="T_3171a_row3_col3" class="data row3 col3" >18827.781887</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row4" class="row_heading level0 row4" >5991</th>
-      <td id="T_956f8_row4_col0" class="data row4 col0" >False</td>
-      <td id="T_956f8_row4_col1" class="data row4 col1" >True</td>
-      <td id="T_956f8_row4_col2" class="data row4 col2" >6.727870</td>
-      <td id="T_956f8_row4_col3" class="data row4 col3" >21695.702756</td>
+      <th id="T_3171a_level0_row4" class="row_heading level0 row4" >1757</th>
+      <td id="T_3171a_row4_col0" class="data row4 col0" >False</td>
+      <td id="T_3171a_row4_col1" class="data row4 col1" >False</td>
+      <td id="T_3171a_row4_col2" class="data row4 col2" >1789.464512</td>
+      <td id="T_3171a_row4_col3" class="data row4 col3" >27427.004566</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row5" class="row_heading level0 row5" >8674</th>
-      <td id="T_956f8_row5_col0" class="data row5 col0" >False</td>
-      <td id="T_956f8_row5_col1" class="data row5 col1" >True</td>
-      <td id="T_956f8_row5_col2" class="data row5 col2" >1841.408534</td>
-      <td id="T_956f8_row5_col3" class="data row5 col3" >18000.704680</td>
+      <th id="T_3171a_level0_row5" class="row_heading level0 row5" >8095</th>
+      <td id="T_3171a_row5_col0" class="data row5 col0" >False</td>
+      <td id="T_3171a_row5_col1" class="data row5 col1" >False</td>
+      <td id="T_3171a_row5_col2" class="data row5 col2" >325.859608</td>
+      <td id="T_3171a_row5_col3" class="data row5 col3" >36682.282569</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row6" class="row_heading level0 row6" >9745</th>
-      <td id="T_956f8_row6_col0" class="data row6 col0" >False</td>
-      <td id="T_956f8_row6_col1" class="data row6 col1" >False</td>
-      <td id="T_956f8_row6_col2" class="data row6 col2" >1060.728841</td>
-      <td id="T_956f8_row6_col3" class="data row6 col3" >49396.771941</td>
+      <th id="T_3171a_level0_row6" class="row_heading level0 row6" >677</th>
+      <td id="T_3171a_row6_col0" class="data row6 col0" >False</td>
+      <td id="T_3171a_row6_col1" class="data row6 col1" >False</td>
+      <td id="T_3171a_row6_col2" class="data row6 col2" >1206.661362</td>
+      <td id="T_3171a_row6_col3" class="data row6 col3" >37125.591351</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row7" class="row_heading level0 row7" >2142</th>
-      <td id="T_956f8_row7_col0" class="data row7 col0" >False</td>
-      <td id="T_956f8_row7_col1" class="data row7 col1" >False</td>
-      <td id="T_956f8_row7_col2" class="data row7 col2" >1042.420390</td>
-      <td id="T_956f8_row7_col3" class="data row7 col3" >58234.766471</td>
+      <th id="T_3171a_level0_row7" class="row_heading level0 row7" >6648</th>
+      <td id="T_3171a_row7_col0" class="data row7 col0" >False</td>
+      <td id="T_3171a_row7_col1" class="data row7 col1" >True</td>
+      <td id="T_3171a_row7_col2" class="data row7 col2" >617.089796</td>
+      <td id="T_3171a_row7_col3" class="data row7 col3" >22801.663967</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row8" class="row_heading level0 row8" >5908</th>
-      <td id="T_956f8_row8_col0" class="data row8 col0" >False</td>
-      <td id="T_956f8_row8_col1" class="data row8 col1" >False</td>
-      <td id="T_956f8_row8_col2" class="data row8 col2" >0.000000</td>
-      <td id="T_956f8_row8_col3" class="data row8 col3" >27367.782659</td>
+      <th id="T_3171a_level0_row8" class="row_heading level0 row8" >9387</th>
+      <td id="T_3171a_row8_col0" class="data row8 col0" >False</td>
+      <td id="T_3171a_row8_col1" class="data row8 col1" >False</td>
+      <td id="T_3171a_row8_col2" class="data row8 col2" >1123.434723</td>
+      <td id="T_3171a_row8_col3" class="data row8 col3" >45366.811409</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row9" class="row_heading level0 row9" >4588</th>
-      <td id="T_956f8_row9_col0" class="data row9 col0" >False</td>
-      <td id="T_956f8_row9_col1" class="data row9 col1" >False</td>
-      <td id="T_956f8_row9_col2" class="data row9 col2" >848.676391</td>
-      <td id="T_956f8_row9_col3" class="data row9 col3" >38742.059794</td>
+      <th id="T_3171a_level0_row9" class="row_heading level0 row9" >2600</th>
+      <td id="T_3171a_row9_col0" class="data row9 col0" >False</td>
+      <td id="T_3171a_row9_col1" class="data row9 col1" >True</td>
+      <td id="T_3171a_row9_col2" class="data row9 col2" >943.501721</td>
+      <td id="T_3171a_row9_col3" class="data row9 col3" >14123.703566</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row10" class="row_heading level0 row10" >2493</th>
-      <td id="T_956f8_row10_col0" class="data row10 col0" >False</td>
-      <td id="T_956f8_row10_col1" class="data row10 col1" >False</td>
-      <td id="T_956f8_row10_col2" class="data row10 col2" >59.132499</td>
-      <td id="T_956f8_row10_col3" class="data row10 col3" >34162.235256</td>
+      <th id="T_3171a_level0_row10" class="row_heading level0 row10" >8211</th>
+      <td id="T_3171a_row10_col0" class="data row10 col0" >False</td>
+      <td id="T_3171a_row10_col1" class="data row10 col1" >False</td>
+      <td id="T_3171a_row10_col2" class="data row10 col2" >214.846235</td>
+      <td id="T_3171a_row10_col3" class="data row10 col3" >39629.200180</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row11" class="row_heading level0 row11" >8518</th>
-      <td id="T_956f8_row11_col0" class="data row11 col0" >False</td>
-      <td id="T_956f8_row11_col1" class="data row11 col1" >True</td>
-      <td id="T_956f8_row11_col2" class="data row11 col2" >1427.940531</td>
-      <td id="T_956f8_row11_col3" class="data row11 col3" >12666.260769</td>
+      <th id="T_3171a_level0_row11" class="row_heading level0 row11" >1216</th>
+      <td id="T_3171a_row11_col0" class="data row11 col0" >True</td>
+      <td id="T_3171a_row11_col1" class="data row11 col1" >False</td>
+      <td id="T_3171a_row11_col2" class="data row11 col2" >1278.407300</td>
+      <td id="T_3171a_row11_col3" class="data row11 col3" >36675.606883</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row12" class="row_heading level0 row12" >8802</th>
-      <td id="T_956f8_row12_col0" class="data row12 col0" >False</td>
-      <td id="T_956f8_row12_col1" class="data row12 col1" >True</td>
-      <td id="T_956f8_row12_col2" class="data row12 col2" >655.510126</td>
-      <td id="T_956f8_row12_col3" class="data row12 col3" >15771.492430</td>
+      <th id="T_3171a_level0_row12" class="row_heading level0 row12" >3479</th>
+      <td id="T_3171a_row12_col0" class="data row12 col0" >False</td>
+      <td id="T_3171a_row12_col1" class="data row12 col1" >False</td>
+      <td id="T_3171a_row12_col2" class="data row12 col2" >964.541306</td>
+      <td id="T_3171a_row12_col3" class="data row12 col3" >33908.051382</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row13" class="row_heading level0 row13" >3291</th>
-      <td id="T_956f8_row13_col0" class="data row13 col0" >False</td>
-      <td id="T_956f8_row13_col1" class="data row13 col1" >True</td>
-      <td id="T_956f8_row13_col2" class="data row13 col2" >964.624890</td>
-      <td id="T_956f8_row13_col3" class="data row13 col3" >21436.555592</td>
+      <th id="T_3171a_level0_row13" class="row_heading level0 row13" >620</th>
+      <td id="T_3171a_row13_col0" class="data row13 col0" >False</td>
+      <td id="T_3171a_row13_col1" class="data row13 col1" >False</td>
+      <td id="T_3171a_row13_col2" class="data row13 col2" >955.135342</td>
+      <td id="T_3171a_row13_col3" class="data row13 col3" >26372.985815</td>
     </tr>
     <tr>
-      <th id="T_956f8_level0_row14" class="row_heading level0 row14" >5332</th>
-      <td id="T_956f8_row14_col0" class="data row14 col0" >False</td>
-      <td id="T_956f8_row14_col1" class="data row14 col1" >False</td>
-      <td id="T_956f8_row14_col2" class="data row14 col2" >1410.369240</td>
-      <td id="T_956f8_row14_col3" class="data row14 col3" >62395.038145</td>
+      <th id="T_3171a_level0_row14" class="row_heading level0 row14" >4041</th>
+      <td id="T_3171a_row14_col0" class="data row14 col0" >False</td>
+      <td id="T_3171a_row14_col1" class="data row14 col1" >True</td>
+      <td id="T_3171a_row14_col2" class="data row14 col2" >408.562974</td>
+      <td id="T_3171a_row14_col3" class="data row14 col3" >18471.774327</td>
     </tr>
   </tbody>
 </table>
@@ -689,19 +702,14 @@ Cell In[4], line 4
       5 scaler = StandardScaler()
       6 df.loc[:, numeric_features.columns] = scaler.fit_transform(df.loc[:, numeric_features.columns])
 
-File /opt/hostedtoolcache/Python/3.8.17/x64/lib/python3.8/site-packages/numpy/__init__.py:305, in __getattr__(attr)
-    300     warnings.warn(
-    301         f&quot;In the future `np.{attr}` will be defined as the &quot;
-    302         &quot;corresponding NumPy scalar.&quot;, FutureWarning, stacklevel=2)
-    304 if attr in __former_attrs__:
---&gt; 305     raise AttributeError(__former_attrs__[attr])
-    307 # Importing Tester requires importing all of UnitTest which is not a
-    308 # cheap import Since it is mainly used in test suits, we lazy import it
-    309 # here to save on the order of 10 ms of import time for most users
-    310 #
-    311 # The previous way Tester was imported also had a side effect of adding
-    312 # the full `numpy.testing` namespace
-    313 if attr == &#39;testing&#39;:
+File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/numpy/__init__.py:324, in __getattr__(attr)
+    319     warnings.warn(
+    320         f&quot;In the future `np.{attr}` will be defined as the &quot;
+    321         &quot;corresponding NumPy scalar.&quot;, FutureWarning, stacklevel=2)
+    323 if attr in __former_attrs__:
+--&gt; 324     raise AttributeError(__former_attrs__[attr])
+    326 if attr == &#39;testing&#39;:
+    327     import numpy.testing as testing
 
 AttributeError: module &#39;numpy&#39; has no attribute &#39;float&#39;.
 `np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
@@ -1258,11 +1266,10 @@ weighted avg       0.97      0.97      0.97      2000
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../chapter_03/exercise_03.html"
@@ -1282,10 +1289,7 @@ weighted avg       0.97      0.97      0.97      2000
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1390,8 +1394,8 @@ By Dr. Shlomi Lifshits, Gal Kepler, Zvi Baratz
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

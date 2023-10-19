@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -78,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -328,10 +338,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -339,7 +349,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -1529,8 +1539,14 @@ Solution<div class="sd-summary-down docutils">
 <h3>Pairwise Scatter-matrix<a class="headerlink" href="#pairwise-scatter-matrix" title="Permalink to this heading">#</a></h3>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2004/1802441490.py:3: MatplotlibDeprecationWarning: MatplotlibDeprecationWarning was deprecated in Matplotlib 3.6 and will be removed two minor releases later. Use matplotlib.MatplotlibDeprecationWarning instead.
-  warnings.filterwarnings(&quot;ignore&quot;, category=matplotlib.cbook.MatplotlibDeprecationWarning)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">warnings</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.cbook</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">cbook</span><span class="o">.</span><span class="n">MatplotlibDeprecationWarning</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: module &#39;matplotlib.cbook&#39; has no attribute &#39;MatplotlibDeprecationWarning&#39;
 </pre></div>
 </div>
 </div>
@@ -1540,9 +1556,6 @@ Solution<div class="sd-summary-down docutils">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">scatter_matrix</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/41d7f8fe3633fd48c2ba9cdd12cc953d60abac69f959f414e724bcea03433eb0.png" src="../../_images/41d7f8fe3633fd48c2ba9cdd12cc953d60abac69f959f414e724bcea03433eb0.png" />
 </div>
 </div>
 </section>
@@ -1580,70 +1593,144 @@ NewLeague  [&#39;N&#39; &#39;A&#39;]
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
+#T_9b850_row0_col0, #T_9b850_row0_col1, #T_9b850_row0_col2, #T_9b850_row1_col0, #T_9b850_row1_col2, #T_9b850_row2_col0, #T_9b850_row2_col2, #T_9b850_row4_col1, #T_9b850_row6_col0, #T_9b850_row6_col1, #T_9b850_row7_col0, #T_9b850_row7_col2, #T_9b850_row9_col1, #T_9b850_row10_col0, #T_9b850_row10_col2, #T_9b850_row12_col1, #T_9b850_row13_col0, #T_9b850_row13_col1, #T_9b850_row13_col2, #T_9b850_row14_col1, #T_9b850_row15_col0, #T_9b850_row15_col2, #T_9b850_row16_col0, #T_9b850_row16_col1, #T_9b850_row17_col0, #T_9b850_row17_col1, #T_9b850_row17_col2, #T_9b850_row18_col0, #T_9b850_row18_col1, #T_9b850_row18_col2, #T_9b850_row19_col1 {
+  background-color: #fff7fb;
+  color: #000000;
+}
+#T_9b850_row1_col1, #T_9b850_row2_col1, #T_9b850_row3_col0, #T_9b850_row3_col1, #T_9b850_row3_col2, #T_9b850_row4_col0, #T_9b850_row4_col2, #T_9b850_row5_col0, #T_9b850_row5_col1, #T_9b850_row5_col2, #T_9b850_row6_col2, #T_9b850_row7_col1, #T_9b850_row8_col0, #T_9b850_row8_col1, #T_9b850_row8_col2, #T_9b850_row9_col0, #T_9b850_row9_col2, #T_9b850_row10_col1, #T_9b850_row11_col0, #T_9b850_row11_col1, #T_9b850_row11_col2, #T_9b850_row12_col0, #T_9b850_row12_col2, #T_9b850_row14_col0, #T_9b850_row14_col2, #T_9b850_row15_col1, #T_9b850_row16_col2, #T_9b850_row19_col0, #T_9b850_row19_col2 {
+  background-color: #023858;
+  color: #f1f1f1;
+}
 </style>
-<table id="T_9e385">
+<table id="T_9b850_">
   <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th class="col_heading level0 col0" >League_N</th>
+      <th class="col_heading level0 col1" >Division_W</th>
+      <th class="col_heading level0 col2" >NewLeague_N</th>
+    </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_9e385_level0_row0" class="row_heading level0 row0" >-Dave Winfield</th>
+      <th id="T_9b850_level0_row0" class="row_heading level0 row0" >-Pat Tabler</th>
+      <td id="T_9b850_row0_col0" class="data row0 col0" >0</td>
+      <td id="T_9b850_row0_col1" class="data row0 col1" >0</td>
+      <td id="T_9b850_row0_col2" class="data row0 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row1" class="row_heading level0 row1" >-Willie Randolph</th>
+      <th id="T_9b850_level0_row1" class="row_heading level0 row1" >-Tony Phillips</th>
+      <td id="T_9b850_row1_col0" class="data row1 col0" >0</td>
+      <td id="T_9b850_row1_col1" class="data row1 col1" >1</td>
+      <td id="T_9b850_row1_col2" class="data row1 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row2" class="row_heading level0 row2" >-John Moses</th>
+      <th id="T_9b850_level0_row2" class="row_heading level0 row2" >-Mike Kingery</th>
+      <td id="T_9b850_row2_col0" class="data row2 col0" >0</td>
+      <td id="T_9b850_row2_col1" class="data row2 col1" >1</td>
+      <td id="T_9b850_row2_col2" class="data row2 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row3" class="row_heading level0 row3" >-John Russell</th>
+      <th id="T_9b850_level0_row3" class="row_heading level0 row3" >-Craig Reynolds</th>
+      <td id="T_9b850_row3_col0" class="data row3 col0" >1</td>
+      <td id="T_9b850_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_9b850_row3_col2" class="data row3 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row4" class="row_heading level0 row4" >-Phil Garner</th>
+      <th id="T_9b850_level0_row4" class="row_heading level0 row4" >-Vance Law</th>
+      <td id="T_9b850_row4_col0" class="data row4 col0" >1</td>
+      <td id="T_9b850_row4_col1" class="data row4 col1" >0</td>
+      <td id="T_9b850_row4_col2" class="data row4 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row5" class="row_heading level0 row5" >-Darrell Porter</th>
+      <th id="T_9b850_level0_row5" class="row_heading level0 row5" >-Kal Daniels</th>
+      <td id="T_9b850_row5_col0" class="data row5 col0" >1</td>
+      <td id="T_9b850_row5_col1" class="data row5 col1" >1</td>
+      <td id="T_9b850_row5_col2" class="data row5 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row6" class="row_heading level0 row6" >-Sid Bream</th>
+      <th id="T_9b850_level0_row6" class="row_heading level0 row6" >-Mike Easler</th>
+      <td id="T_9b850_row6_col0" class="data row6 col0" >0</td>
+      <td id="T_9b850_row6_col1" class="data row6 col1" >0</td>
+      <td id="T_9b850_row6_col2" class="data row6 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row7" class="row_heading level0 row7" >-Bruce Bochy</th>
+      <th id="T_9b850_level0_row7" class="row_heading level0 row7" >-Darrell Porter</th>
+      <td id="T_9b850_row7_col0" class="data row7 col0" >0</td>
+      <td id="T_9b850_row7_col1" class="data row7 col1" >1</td>
+      <td id="T_9b850_row7_col2" class="data row7 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row8" class="row_heading level0 row8" >-Don Slaught</th>
+      <th id="T_9b850_level0_row8" class="row_heading level0 row8" >-Carmelo Martinez</th>
+      <td id="T_9b850_row8_col0" class="data row8 col0" >1</td>
+      <td id="T_9b850_row8_col1" class="data row8 col1" >1</td>
+      <td id="T_9b850_row8_col2" class="data row8 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row9" class="row_heading level0 row9" >-George Bell</th>
+      <th id="T_9b850_level0_row9" class="row_heading level0 row9" >-Herm Winningham</th>
+      <td id="T_9b850_row9_col0" class="data row9 col0" >1</td>
+      <td id="T_9b850_row9_col1" class="data row9 col1" >0</td>
+      <td id="T_9b850_row9_col2" class="data row9 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row10" class="row_heading level0 row10" >-Mike Kingery</th>
+      <th id="T_9b850_level0_row10" class="row_heading level0 row10" >-Kirby Puckett</th>
+      <td id="T_9b850_row10_col0" class="data row10 col0" >0</td>
+      <td id="T_9b850_row10_col1" class="data row10 col1" >1</td>
+      <td id="T_9b850_row10_col2" class="data row10 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row11" class="row_heading level0 row11" >-John Cangelosi</th>
+      <th id="T_9b850_level0_row11" class="row_heading level0 row11" >-Tony Gwynn</th>
+      <td id="T_9b850_row11_col0" class="data row11 col0" >1</td>
+      <td id="T_9b850_row11_col1" class="data row11 col1" >1</td>
+      <td id="T_9b850_row11_col2" class="data row11 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row12" class="row_heading level0 row12" >-Dan Pasqua</th>
+      <th id="T_9b850_level0_row12" class="row_heading level0 row12" >-Tim Teufel</th>
+      <td id="T_9b850_row12_col0" class="data row12 col0" >1</td>
+      <td id="T_9b850_row12_col1" class="data row12 col1" >0</td>
+      <td id="T_9b850_row12_col2" class="data row12 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row13" class="row_heading level0 row13" >-Frank White</th>
+      <th id="T_9b850_level0_row13" class="row_heading level0 row13" >-Tony Bernazard</th>
+      <td id="T_9b850_row13_col0" class="data row13 col0" >0</td>
+      <td id="T_9b850_row13_col1" class="data row13 col1" >0</td>
+      <td id="T_9b850_row13_col2" class="data row13 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row14" class="row_heading level0 row14" >-Larry Parrish</th>
+      <th id="T_9b850_level0_row14" class="row_heading level0 row14" >-Wally Backman</th>
+      <td id="T_9b850_row14_col0" class="data row14 col0" >1</td>
+      <td id="T_9b850_row14_col1" class="data row14 col1" >0</td>
+      <td id="T_9b850_row14_col2" class="data row14 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row15" class="row_heading level0 row15" >-Willie McGee</th>
+      <th id="T_9b850_level0_row15" class="row_heading level0 row15" >-Gary Gaetti</th>
+      <td id="T_9b850_row15_col0" class="data row15 col0" >0</td>
+      <td id="T_9b850_row15_col1" class="data row15 col1" >1</td>
+      <td id="T_9b850_row15_col2" class="data row15 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row16" class="row_heading level0 row16" >-BillyJo Robidoux</th>
+      <th id="T_9b850_level0_row16" class="row_heading level0 row16" >-Lance Parrish</th>
+      <td id="T_9b850_row16_col0" class="data row16 col0" >0</td>
+      <td id="T_9b850_row16_col1" class="data row16 col1" >0</td>
+      <td id="T_9b850_row16_col2" class="data row16 col2" >1</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row17" class="row_heading level0 row17" >-Jose Uribe</th>
+      <th id="T_9b850_level0_row17" class="row_heading level0 row17" >-Rey Quinones</th>
+      <td id="T_9b850_row17_col0" class="data row17 col0" >0</td>
+      <td id="T_9b850_row17_col1" class="data row17 col1" >0</td>
+      <td id="T_9b850_row17_col2" class="data row17 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row18" class="row_heading level0 row18" >-Greg Gagne</th>
+      <th id="T_9b850_level0_row18" class="row_heading level0 row18" >-Robin Yount</th>
+      <td id="T_9b850_row18_col0" class="data row18 col0" >0</td>
+      <td id="T_9b850_row18_col1" class="data row18 col1" >0</td>
+      <td id="T_9b850_row18_col2" class="data row18 col2" >0</td>
     </tr>
     <tr>
-      <th id="T_9e385_level0_row19" class="row_heading level0 row19" >-Jim Morrison</th>
+      <th id="T_9b850_level0_row19" class="row_heading level0 row19" >-Terry Pendleton</th>
+      <td id="T_9b850_row19_col0" class="data row19 col0" >1</td>
+      <td id="T_9b850_row19_col1" class="data row19 col1" >0</td>
+      <td id="T_9b850_row19_col2" class="data row19 col2" >1</td>
     </tr>
   </tbody>
 </table>
@@ -1708,9 +1795,6 @@ NewLeague  [&#39;N&#39; &#39;A&#39;]
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<img alt="../../_images/19d52b0b4850e73dc111ddfb48dd423697a9bcf57ae3228ca4480448c2a18dce.png" src="../../_images/19d52b0b4850e73dc111ddfb48dd423697a9bcf57ae3228ca4480448c2a18dce.png" />
-</div>
 </div>
 </section>
 <section id="alpha">
@@ -1894,9 +1978,6 @@ NewLeague  [&#39;N&#39; &#39;A&#39;]
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<img alt="../../_images/1d167701761379d530d5442f7981f72294eefb2cbf307a4e92dbc05faee7e79a.png" src="../../_images/1d167701761379d530d5442f7981f72294eefb2cbf307a4e92dbc05faee7e79a.png" />
-</div>
 </div>
 </section>
 <section id="mean-squared-error-mse">
@@ -1975,7 +2056,7 @@ NewLeague  [&#39;N&#39; &#39;A&#39;]
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/6a9845bcde83310b9a253f45a28f4b788fe55ee09eec2933464005162f2a8aa3.png" src="../../_images/6a9845bcde83310b9a253f45a28f4b788fe55ee09eec2933464005162f2a8aa3.png" />
+<img alt="../../_images/a1d51fdf14c4799af09deba825ad8747a61d8c13f91eec9621b233e7e23fc04a.png" src="../../_images/a1d51fdf14c4799af09deba825ad8747a61d8c13f91eec9621b233e7e23fc04a.png" />
 </div>
 </div>
 </section>
@@ -2020,11 +2101,10 @@ NewLeague  [&#39;N&#39; &#39;A&#39;]
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../chapter_04/exercise_04.html"
@@ -2044,10 +2124,7 @@ NewLeague  [&#39;N&#39; &#39;A&#39;]
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2125,8 +2202,8 @@ By Dr. Shlomi Lifshits, Gal Kepler, Zvi Baratz
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
