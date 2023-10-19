@@ -120,7 +120,7 @@ def print_table(
     )
     return (
         data.style.set_table_styles(table_styles)
-        .applymap(highlight_nan)
-        .applymap(highlight_positives, subset=[TARGET_COLUMN_NAME])
+        .map(highlight_nan)
+        .map(highlight_positives, subset=[TARGET_COLUMN_NAME])
         .set_properties(**{"text-align": text_align})
     )
