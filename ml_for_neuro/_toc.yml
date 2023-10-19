@@ -24,4 +24,5 @@ chapters:
       - file: chapters/chapter_08/exercise_08
       - file: chapters/chapter_09/exercise_09
       - file: chapters/resources/resources
+  - file: resources
   - file: references
