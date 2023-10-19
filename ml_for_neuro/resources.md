@@ -7,12 +7,21 @@ Please feel free to suggest useful websites and PDFs that you find during the se
 ## Statistical / Machine Learning
 
 - [Introduction to Statistical Learning Book](https://sagol-python-for-neuroscientists.github.io/textbook-public/intro.html)
+- [Kaggle's Learning Platform](https://www.kaggle.com/learn/overview)
+- [Nilearn's examples](https://nilearn.github.io/auto_examples/index.html)
+- Play around with neural networks in the [TensorFlow playground](https://playground.tensorflow.org/)
+
+## Neuroscience
+
+- [NiPy](https://nipy.org/) community
+- [Neurostars](https://neurostars.org/) discussion board
+- [NeuroMatch](https://neuromatch.io/) conference materials
+- [NeuroHackademy](https://neurohackademy.org/) summer school materials
+- [MAIN conference](https://sites.google.com/view/main2020/) for 
+
 
 ## Python
 
-- [Python for Neuroscientists Book](https://sagol-python-for-neuroscientists.github.io/textbook-public/intro.html), by Gal Kepler and Zvi Baratz
-- [Another Python Book](http://www.davekuhlman.org/python_book_01.html), by Dave Kuhlman
-- [Python Essential Reference](<http://www.bogotobogo.com/python/files/pytut/Python%20Essential%20Reference,%20Fourth%20Edition%20(2009).pdf>), by David Beazley
-- [Code Academy](https://www.codecademy.com/learn/learn-python)
+- For more information regarding Python programming and the scientific Python stack, visit the [Python for Neuroscientists course's Resource page](https://sagol-python-for-neuroscientists.github.io/textbook-public/resources.html).
 
 
