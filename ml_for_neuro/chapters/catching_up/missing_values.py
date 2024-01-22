@@ -36,8 +36,8 @@ def calculate_nan_fractions(
     # Calculate fractions of null values.
     nan_counts = nan_data.isnull().sum()
     fraction_missing = nan_counts / len(nan_data)
-    positives_nan_counts = nan_data[data[target_column]].isnull().sum()
-    negatives_nan_counts = nan_data[~data[target_column]].isnull().sum()
+    positives_nan_counts = nan_data[data[target_column].astype(bool)].isnull().sum()
+    negatives_nan_counts = nan_data[~data[target_column].astype(bool)].isnull().sum()
     fraction_missing_positives = positives_nan_counts / nan_counts
     fraction_missing_negatives = negatives_nan_counts / nan_counts
 

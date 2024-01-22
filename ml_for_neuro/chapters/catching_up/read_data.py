@@ -6,7 +6,6 @@ dataset from it's remote location, as defined in *configuration.py*.
 """
 
 import pandas as pd
-
 from configuration import (
     CSV_URL_PATTERN,
     REPLACE_DICT,
@@ -15,6 +14,7 @@ from configuration import (
     X_RAY_COLUMN_PREFIX,
 )
 
+pd.set_option("future.no_silent_downcasting", True)
 
 def remove_x_ray_columns(
     data: pd.DataFrame, prefix: str = X_RAY_COLUMN_PREFIX
