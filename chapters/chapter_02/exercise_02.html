@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -79,7 +79,6 @@ const thebe_selector_output = ".output, .cell_output"
   <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -119,13 +118,10 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <header>
   
-    <div class="bd-header navbar navbar-expand-lg bd-navbar">
-    </div>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
-  </header>
 
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
@@ -445,6 +441,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1972/167575040.py:1: DeprecationWarning: 
+Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+but was not found to be installed on your system.
+If this would cause problems for you,
+please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+        
+  import pandas as pd
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="basic-exploration">
@@ -463,34 +471,34 @@ Iris plants dataset
 
 **Data Set Characteristics:**
 
-    :Number of Instances: 150 (50 in each of three classes)
-    :Number of Attributes: 4 numeric, predictive attributes and the class
-    :Attribute Information:
-        - sepal length in cm
-        - sepal width in cm
-        - petal length in cm
-        - petal width in cm
-        - class:
-                - Iris-Setosa
-                - Iris-Versicolour
-                - Iris-Virginica
-                
-    :Summary Statistics:
+:Number of Instances: 150 (50 in each of three classes)
+:Number of Attributes: 4 numeric, predictive attributes and the class
+:Attribute Information:
+    - sepal length in cm
+    - sepal width in cm
+    - petal length in cm
+    - petal width in cm
+    - class:
+            - Iris-Setosa
+            - Iris-Versicolour
+            - Iris-Virginica
 
-    ============== ==== ==== ======= ===== ====================
-                    Min  Max   Mean    SD   Class Correlation
-    ============== ==== ==== ======= ===== ====================
-    sepal length:   4.3  7.9   5.84   0.83    0.7826
-    sepal width:    2.0  4.4   3.05   0.43   -0.4194
-    petal length:   1.0  6.9   3.76   1.76    0.9490  (high!)
-    petal width:    0.1  2.5   1.20   0.76    0.9565  (high!)
-    ============== ==== ==== ======= ===== ====================
+:Summary Statistics:
 
-    :Missing Attribute Values: None
-    :Class Distribution: 33.3% for each of 3 classes.
-    :Creator: R.A. Fisher
-    :Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)
-    :Date: July, 1988
+============== ==== ==== ======= ===== ====================
+                Min  Max   Mean    SD   Class Correlation
+============== ==== ==== ======= ===== ====================
+sepal length:   4.3  7.9   5.84   0.83    0.7826
+sepal width:    2.0  4.4   3.05   0.43   -0.4194
+petal length:   1.0  6.9   3.76   1.76    0.9490  (high!)
+petal width:    0.1  2.5   1.20   0.76    0.9565  (high!)
+============== ==== ==== ======= ===== ====================
+
+:Missing Attribute Values: None
+:Class Distribution: 33.3% for each of 3 classes.
+:Creator: R.A. Fisher
+:Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)
+:Date: July, 1988
 
 The famous Iris database, first used by Sir R.A. Fisher. The dataset is taken
 from Fisher&#39;s paper. Note that it&#39;s the same as in R, but not as in the UCI
@@ -574,340 +582,340 @@ latter are NOT linearly separable from each other.
 </details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_6819d th {
+#T_3822f th {
   font-size: 14px;
 }
-#T_6819d td {
+#T_3822f td {
   font-size: 12px;
 }
-#T_6819d_row0_col0 {
+#T_3822f_row0_col0 {
   background-color: #d5d5e8;
   color: #000000;
   text-align: center;
 }
-#T_6819d_row0_col1, #T_6819d_row8_col0 {
+#T_3822f_row0_col1, #T_3822f_row8_col0 {
   background-color: #03517e;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row0_col2, #T_6819d_row1_col2, #T_6819d_row4_col2 {
+#T_3822f_row0_col2, #T_3822f_row1_col2, #T_3822f_row4_col2 {
   background-color: #fbf4f9;
   color: #000000;
   text-align: center;
 }
-#T_6819d_row0_col3, #T_6819d_row1_col3, #T_6819d_row2_col2, #T_6819d_row2_col3, #T_6819d_row3_col0, #T_6819d_row3_col3, #T_6819d_row4_col3, #T_6819d_row5_col1, #T_6819d_row11_col1 {
+#T_3822f_row0_col3, #T_3822f_row1_col3, #T_3822f_row2_col2, #T_3822f_row2_col3, #T_3822f_row3_col0, #T_3822f_row3_col3, #T_3822f_row4_col3, #T_3822f_row5_col1, #T_3822f_row11_col1 {
   background-color: #fff7fb;
   color: #000000;
   text-align: center;
 }
-#T_6819d_row0_col4, #T_6819d_row1_col4, #T_6819d_row2_col4, #T_6819d_row3_col4, #T_6819d_row4_col4 {
+#T_3822f_row0_col4, #T_3822f_row1_col4, #T_3822f_row2_col4, #T_3822f_row3_col4, #T_3822f_row4_col4 {
   background-color: #fff7fb;
   color: #000000;
   background-color: rgba(255, 0, 0, 0.3);
   border: 1px solid black;
   text-align: center;
 }
-#T_6819d_row1_col0 {
+#T_3822f_row1_col0 {
   background-color: #eae6f1;
   color: #000000;
   text-align: center;
 }
-#T_6819d_row1_col1, #T_6819d_row8_col1, #T_6819d_row10_col1, #T_6819d_row12_col1, #T_6819d_row14_col1 {
+#T_3822f_row1_col1, #T_3822f_row8_col1, #T_3822f_row10_col1, #T_3822f_row12_col1, #T_3822f_row14_col1 {
   background-color: #86b0d3;
   color: #000000;
   text-align: center;
 }
-#T_6819d_row2_col0, #T_6819d_row3_col2 {
+#T_3822f_row2_col0, #T_3822f_row3_col2 {
   background-color: #f8f1f8;
   color: #000000;
   text-align: center;
 }
-#T_6819d_row2_col1 {
+#T_3822f_row2_col1 {
   background-color: #328dbf;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row3_col1 {
+#T_3822f_row3_col1 {
   background-color: #5ea0ca;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row4_col0 {
+#T_3822f_row4_col0 {
   background-color: #e0dded;
   color: #000000;
   text-align: center;
 }
-#T_6819d_row4_col1, #T_6819d_row9_col0, #T_6819d_row10_col3, #T_6819d_row13_col2, #T_6819d_row13_col3 {
+#T_3822f_row4_col1, #T_3822f_row9_col0, #T_3822f_row10_col3, #T_3822f_row13_col2, #T_3822f_row13_col3 {
   background-color: #023858;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row5_col0, #T_6819d_row11_col0 {
+#T_3822f_row5_col0, #T_3822f_row11_col0 {
   background-color: #056caa;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row5_col2 {
+#T_3822f_row5_col2 {
   background-color: #04598c;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row5_col3 {
+#T_3822f_row5_col3 {
   background-color: #3991c1;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row5_col4, #T_6819d_row6_col4, #T_6819d_row7_col4, #T_6819d_row8_col4, #T_6819d_row9_col4 {
+#T_3822f_row5_col4, #T_3822f_row6_col4, #T_3822f_row7_col4, #T_3822f_row8_col4, #T_3822f_row9_col4 {
   background-color: #73a9cf;
   color: #f1f1f1;
   background-color: rgba(0, 255, 0, 0.3);
   border: 1px solid black;
   text-align: center;
 }
-#T_6819d_row6_col0 {
+#T_3822f_row6_col0 {
   background-color: #2081b9;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row6_col1, #T_6819d_row9_col1 {
+#T_3822f_row6_col1, #T_3822f_row9_col1 {
   background-color: #c9cee4;
   color: #000000;
   text-align: center;
 }
-#T_6819d_row6_col2 {
+#T_3822f_row6_col2 {
   background-color: #046299;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row6_col3 {
+#T_3822f_row6_col3 {
   background-color: #7eadd1;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row7_col0, #T_6819d_row13_col1 {
+#T_3822f_row7_col0, #T_3822f_row13_col1 {
   background-color: #04649d;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row7_col1 {
+#T_3822f_row7_col1 {
   background-color: #a9bfdc;
   color: #000000;
   text-align: center;
 }
-#T_6819d_row7_col2 {
+#T_3822f_row7_col2 {
   background-color: #0c74b2;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row7_col3 {
+#T_3822f_row7_col3 {
   background-color: #67a4cc;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row8_col2 {
+#T_3822f_row8_col2 {
   background-color: #056fae;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row8_col3, #T_6819d_row9_col3 {
+#T_3822f_row8_col3, #T_3822f_row9_col3 {
   background-color: #509ac6;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row9_col2 {
+#T_3822f_row9_col2 {
   background-color: #045e93;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row10_col0 {
+#T_3822f_row10_col0 {
   background-color: #03446a;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row10_col2, #T_6819d_row12_col2 {
+#T_3822f_row10_col2, #T_3822f_row12_col2 {
   background-color: #03456c;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row10_col4, #T_6819d_row11_col4, #T_6819d_row12_col4, #T_6819d_row13_col4, #T_6819d_row14_col4 {
+#T_3822f_row10_col4, #T_3822f_row11_col4, #T_3822f_row12_col4, #T_3822f_row13_col4, #T_3822f_row14_col4 {
   background-color: #023858;
   color: #f1f1f1;
   background-color: rgba(0, 0, 255, 0.3);
   border: 1px solid black;
   text-align: center;
 }
-#T_6819d_row11_col2 {
+#T_3822f_row11_col2 {
   background-color: #045280;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row11_col3 {
+#T_3822f_row11_col3 {
   background-color: #05659f;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row12_col0 {
+#T_3822f_row12_col0 {
   background-color: #045b8f;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row12_col3 {
+#T_3822f_row12_col3 {
   background-color: #045d92;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row13_col0 {
+#T_3822f_row13_col0 {
   background-color: #0d75b3;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row14_col0 {
+#T_3822f_row14_col0 {
   background-color: #4697c4;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row14_col2 {
+#T_3822f_row14_col2 {
   background-color: #034b76;
   color: #f1f1f1;
   text-align: center;
 }
-#T_6819d_row14_col3 {
+#T_3822f_row14_col3 {
   background-color: #056dac;
   color: #f1f1f1;
   text-align: center;
 }
 </style>
-<table id="T_6819d">
+<table id="T_3822f">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_6819d_level0_col0" class="col_heading level0 col0" >sepal length (cm)</th>
-      <th id="T_6819d_level0_col1" class="col_heading level0 col1" >sepal width (cm)</th>
-      <th id="T_6819d_level0_col2" class="col_heading level0 col2" >petal length (cm)</th>
-      <th id="T_6819d_level0_col3" class="col_heading level0 col3" >petal width (cm)</th>
-      <th id="T_6819d_level0_col4" class="col_heading level0 col4" >class</th>
+      <th id="T_3822f_level0_col0" class="col_heading level0 col0" >sepal length (cm)</th>
+      <th id="T_3822f_level0_col1" class="col_heading level0 col1" >sepal width (cm)</th>
+      <th id="T_3822f_level0_col2" class="col_heading level0 col2" >petal length (cm)</th>
+      <th id="T_3822f_level0_col3" class="col_heading level0 col3" >petal width (cm)</th>
+      <th id="T_3822f_level0_col4" class="col_heading level0 col4" >class</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_6819d_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_6819d_row0_col0" class="data row0 col0" >5.10</td>
-      <td id="T_6819d_row0_col1" class="data row0 col1" >3.50</td>
-      <td id="T_6819d_row0_col2" class="data row0 col2" >1.40</td>
-      <td id="T_6819d_row0_col3" class="data row0 col3" >0.20</td>
-      <td id="T_6819d_row0_col4" class="data row0 col4" >setosa</td>
+      <th id="T_3822f_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_3822f_row0_col0" class="data row0 col0" >5.10</td>
+      <td id="T_3822f_row0_col1" class="data row0 col1" >3.50</td>
+      <td id="T_3822f_row0_col2" class="data row0 col2" >1.40</td>
+      <td id="T_3822f_row0_col3" class="data row0 col3" >0.20</td>
+      <td id="T_3822f_row0_col4" class="data row0 col4" >setosa</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_6819d_row1_col0" class="data row1 col0" >4.90</td>
-      <td id="T_6819d_row1_col1" class="data row1 col1" >3.00</td>
-      <td id="T_6819d_row1_col2" class="data row1 col2" >1.40</td>
-      <td id="T_6819d_row1_col3" class="data row1 col3" >0.20</td>
-      <td id="T_6819d_row1_col4" class="data row1 col4" >setosa</td>
+      <th id="T_3822f_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_3822f_row1_col0" class="data row1 col0" >4.90</td>
+      <td id="T_3822f_row1_col1" class="data row1 col1" >3.00</td>
+      <td id="T_3822f_row1_col2" class="data row1 col2" >1.40</td>
+      <td id="T_3822f_row1_col3" class="data row1 col3" >0.20</td>
+      <td id="T_3822f_row1_col4" class="data row1 col4" >setosa</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_6819d_row2_col0" class="data row2 col0" >4.70</td>
-      <td id="T_6819d_row2_col1" class="data row2 col1" >3.20</td>
-      <td id="T_6819d_row2_col2" class="data row2 col2" >1.30</td>
-      <td id="T_6819d_row2_col3" class="data row2 col3" >0.20</td>
-      <td id="T_6819d_row2_col4" class="data row2 col4" >setosa</td>
+      <th id="T_3822f_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_3822f_row2_col0" class="data row2 col0" >4.70</td>
+      <td id="T_3822f_row2_col1" class="data row2 col1" >3.20</td>
+      <td id="T_3822f_row2_col2" class="data row2 col2" >1.30</td>
+      <td id="T_3822f_row2_col3" class="data row2 col3" >0.20</td>
+      <td id="T_3822f_row2_col4" class="data row2 col4" >setosa</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_6819d_row3_col0" class="data row3 col0" >4.60</td>
-      <td id="T_6819d_row3_col1" class="data row3 col1" >3.10</td>
-      <td id="T_6819d_row3_col2" class="data row3 col2" >1.50</td>
-      <td id="T_6819d_row3_col3" class="data row3 col3" >0.20</td>
-      <td id="T_6819d_row3_col4" class="data row3 col4" >setosa</td>
+      <th id="T_3822f_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_3822f_row3_col0" class="data row3 col0" >4.60</td>
+      <td id="T_3822f_row3_col1" class="data row3 col1" >3.10</td>
+      <td id="T_3822f_row3_col2" class="data row3 col2" >1.50</td>
+      <td id="T_3822f_row3_col3" class="data row3 col3" >0.20</td>
+      <td id="T_3822f_row3_col4" class="data row3 col4" >setosa</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_6819d_row4_col0" class="data row4 col0" >5.00</td>
-      <td id="T_6819d_row4_col1" class="data row4 col1" >3.60</td>
-      <td id="T_6819d_row4_col2" class="data row4 col2" >1.40</td>
-      <td id="T_6819d_row4_col3" class="data row4 col3" >0.20</td>
-      <td id="T_6819d_row4_col4" class="data row4 col4" >setosa</td>
+      <th id="T_3822f_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_3822f_row4_col0" class="data row4 col0" >5.00</td>
+      <td id="T_3822f_row4_col1" class="data row4 col1" >3.60</td>
+      <td id="T_3822f_row4_col2" class="data row4 col2" >1.40</td>
+      <td id="T_3822f_row4_col3" class="data row4 col3" >0.20</td>
+      <td id="T_3822f_row4_col4" class="data row4 col4" >setosa</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row5" class="row_heading level0 row5" >72</th>
-      <td id="T_6819d_row5_col0" class="data row5 col0" >6.30</td>
-      <td id="T_6819d_row5_col1" class="data row5 col1" >2.50</td>
-      <td id="T_6819d_row5_col2" class="data row5 col2" >4.90</td>
-      <td id="T_6819d_row5_col3" class="data row5 col3" >1.50</td>
-      <td id="T_6819d_row5_col4" class="data row5 col4" >versicolor</td>
+      <th id="T_3822f_level0_row5" class="row_heading level0 row5" >72</th>
+      <td id="T_3822f_row5_col0" class="data row5 col0" >6.30</td>
+      <td id="T_3822f_row5_col1" class="data row5 col1" >2.50</td>
+      <td id="T_3822f_row5_col2" class="data row5 col2" >4.90</td>
+      <td id="T_3822f_row5_col3" class="data row5 col3" >1.50</td>
+      <td id="T_3822f_row5_col4" class="data row5 col4" >versicolor</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row6" class="row_heading level0 row6" >73</th>
-      <td id="T_6819d_row6_col0" class="data row6 col0" >6.10</td>
-      <td id="T_6819d_row6_col1" class="data row6 col1" >2.80</td>
-      <td id="T_6819d_row6_col2" class="data row6 col2" >4.70</td>
-      <td id="T_6819d_row6_col3" class="data row6 col3" >1.20</td>
-      <td id="T_6819d_row6_col4" class="data row6 col4" >versicolor</td>
+      <th id="T_3822f_level0_row6" class="row_heading level0 row6" >73</th>
+      <td id="T_3822f_row6_col0" class="data row6 col0" >6.10</td>
+      <td id="T_3822f_row6_col1" class="data row6 col1" >2.80</td>
+      <td id="T_3822f_row6_col2" class="data row6 col2" >4.70</td>
+      <td id="T_3822f_row6_col3" class="data row6 col3" >1.20</td>
+      <td id="T_3822f_row6_col4" class="data row6 col4" >versicolor</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row7" class="row_heading level0 row7" >74</th>
-      <td id="T_6819d_row7_col0" class="data row7 col0" >6.40</td>
-      <td id="T_6819d_row7_col1" class="data row7 col1" >2.90</td>
-      <td id="T_6819d_row7_col2" class="data row7 col2" >4.30</td>
-      <td id="T_6819d_row7_col3" class="data row7 col3" >1.30</td>
-      <td id="T_6819d_row7_col4" class="data row7 col4" >versicolor</td>
+      <th id="T_3822f_level0_row7" class="row_heading level0 row7" >74</th>
+      <td id="T_3822f_row7_col0" class="data row7 col0" >6.40</td>
+      <td id="T_3822f_row7_col1" class="data row7 col1" >2.90</td>
+      <td id="T_3822f_row7_col2" class="data row7 col2" >4.30</td>
+      <td id="T_3822f_row7_col3" class="data row7 col3" >1.30</td>
+      <td id="T_3822f_row7_col4" class="data row7 col4" >versicolor</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row8" class="row_heading level0 row8" >75</th>
-      <td id="T_6819d_row8_col0" class="data row8 col0" >6.60</td>
-      <td id="T_6819d_row8_col1" class="data row8 col1" >3.00</td>
-      <td id="T_6819d_row8_col2" class="data row8 col2" >4.40</td>
-      <td id="T_6819d_row8_col3" class="data row8 col3" >1.40</td>
-      <td id="T_6819d_row8_col4" class="data row8 col4" >versicolor</td>
+      <th id="T_3822f_level0_row8" class="row_heading level0 row8" >75</th>
+      <td id="T_3822f_row8_col0" class="data row8 col0" >6.60</td>
+      <td id="T_3822f_row8_col1" class="data row8 col1" >3.00</td>
+      <td id="T_3822f_row8_col2" class="data row8 col2" >4.40</td>
+      <td id="T_3822f_row8_col3" class="data row8 col3" >1.40</td>
+      <td id="T_3822f_row8_col4" class="data row8 col4" >versicolor</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row9" class="row_heading level0 row9" >76</th>
-      <td id="T_6819d_row9_col0" class="data row9 col0" >6.80</td>
-      <td id="T_6819d_row9_col1" class="data row9 col1" >2.80</td>
-      <td id="T_6819d_row9_col2" class="data row9 col2" >4.80</td>
-      <td id="T_6819d_row9_col3" class="data row9 col3" >1.40</td>
-      <td id="T_6819d_row9_col4" class="data row9 col4" >versicolor</td>
+      <th id="T_3822f_level0_row9" class="row_heading level0 row9" >76</th>
+      <td id="T_3822f_row9_col0" class="data row9 col0" >6.80</td>
+      <td id="T_3822f_row9_col1" class="data row9 col1" >2.80</td>
+      <td id="T_3822f_row9_col2" class="data row9 col2" >4.80</td>
+      <td id="T_3822f_row9_col3" class="data row9 col3" >1.40</td>
+      <td id="T_3822f_row9_col4" class="data row9 col4" >versicolor</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row10" class="row_heading level0 row10" >145</th>
-      <td id="T_6819d_row10_col0" class="data row10 col0" >6.70</td>
-      <td id="T_6819d_row10_col1" class="data row10 col1" >3.00</td>
-      <td id="T_6819d_row10_col2" class="data row10 col2" >5.20</td>
-      <td id="T_6819d_row10_col3" class="data row10 col3" >2.30</td>
-      <td id="T_6819d_row10_col4" class="data row10 col4" >virginica</td>
+      <th id="T_3822f_level0_row10" class="row_heading level0 row10" >145</th>
+      <td id="T_3822f_row10_col0" class="data row10 col0" >6.70</td>
+      <td id="T_3822f_row10_col1" class="data row10 col1" >3.00</td>
+      <td id="T_3822f_row10_col2" class="data row10 col2" >5.20</td>
+      <td id="T_3822f_row10_col3" class="data row10 col3" >2.30</td>
+      <td id="T_3822f_row10_col4" class="data row10 col4" >virginica</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row11" class="row_heading level0 row11" >146</th>
-      <td id="T_6819d_row11_col0" class="data row11 col0" >6.30</td>
-      <td id="T_6819d_row11_col1" class="data row11 col1" >2.50</td>
-      <td id="T_6819d_row11_col2" class="data row11 col2" >5.00</td>
-      <td id="T_6819d_row11_col3" class="data row11 col3" >1.90</td>
-      <td id="T_6819d_row11_col4" class="data row11 col4" >virginica</td>
+      <th id="T_3822f_level0_row11" class="row_heading level0 row11" >146</th>
+      <td id="T_3822f_row11_col0" class="data row11 col0" >6.30</td>
+      <td id="T_3822f_row11_col1" class="data row11 col1" >2.50</td>
+      <td id="T_3822f_row11_col2" class="data row11 col2" >5.00</td>
+      <td id="T_3822f_row11_col3" class="data row11 col3" >1.90</td>
+      <td id="T_3822f_row11_col4" class="data row11 col4" >virginica</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row12" class="row_heading level0 row12" >147</th>
-      <td id="T_6819d_row12_col0" class="data row12 col0" >6.50</td>
-      <td id="T_6819d_row12_col1" class="data row12 col1" >3.00</td>
-      <td id="T_6819d_row12_col2" class="data row12 col2" >5.20</td>
-      <td id="T_6819d_row12_col3" class="data row12 col3" >2.00</td>
-      <td id="T_6819d_row12_col4" class="data row12 col4" >virginica</td>
+      <th id="T_3822f_level0_row12" class="row_heading level0 row12" >147</th>
+      <td id="T_3822f_row12_col0" class="data row12 col0" >6.50</td>
+      <td id="T_3822f_row12_col1" class="data row12 col1" >3.00</td>
+      <td id="T_3822f_row12_col2" class="data row12 col2" >5.20</td>
+      <td id="T_3822f_row12_col3" class="data row12 col3" >2.00</td>
+      <td id="T_3822f_row12_col4" class="data row12 col4" >virginica</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row13" class="row_heading level0 row13" >148</th>
-      <td id="T_6819d_row13_col0" class="data row13 col0" >6.20</td>
-      <td id="T_6819d_row13_col1" class="data row13 col1" >3.40</td>
-      <td id="T_6819d_row13_col2" class="data row13 col2" >5.40</td>
-      <td id="T_6819d_row13_col3" class="data row13 col3" >2.30</td>
-      <td id="T_6819d_row13_col4" class="data row13 col4" >virginica</td>
+      <th id="T_3822f_level0_row13" class="row_heading level0 row13" >148</th>
+      <td id="T_3822f_row13_col0" class="data row13 col0" >6.20</td>
+      <td id="T_3822f_row13_col1" class="data row13 col1" >3.40</td>
+      <td id="T_3822f_row13_col2" class="data row13 col2" >5.40</td>
+      <td id="T_3822f_row13_col3" class="data row13 col3" >2.30</td>
+      <td id="T_3822f_row13_col4" class="data row13 col4" >virginica</td>
     </tr>
     <tr>
-      <th id="T_6819d_level0_row14" class="row_heading level0 row14" >149</th>
-      <td id="T_6819d_row14_col0" class="data row14 col0" >5.90</td>
-      <td id="T_6819d_row14_col1" class="data row14 col1" >3.00</td>
-      <td id="T_6819d_row14_col2" class="data row14 col2" >5.10</td>
-      <td id="T_6819d_row14_col3" class="data row14 col3" >1.80</td>
-      <td id="T_6819d_row14_col4" class="data row14 col4" >virginica</td>
+      <th id="T_3822f_level0_row14" class="row_heading level0 row14" >149</th>
+      <td id="T_3822f_row14_col0" class="data row14 col0" >5.90</td>
+      <td id="T_3822f_row14_col1" class="data row14 col1" >3.00</td>
+      <td id="T_3822f_row14_col2" class="data row14 col2" >5.10</td>
+      <td id="T_3822f_row14_col3" class="data row14 col3" >1.80</td>
+      <td id="T_3822f_row14_col4" class="data row14 col4" >virginica</td>
     </tr>
   </tbody>
 </table>
@@ -1327,8 +1335,8 @@ By Dr. Shlomi Lifshits, Gal Kepler, Zvi Baratz
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
