@@ -145,3 +145,4 @@ class ManualLinearRegression:
             X = self.append_intercept(X)
             return X @ self.beta_hat
         raise RuntimeError("Please fit the model before calling predict().")
+
