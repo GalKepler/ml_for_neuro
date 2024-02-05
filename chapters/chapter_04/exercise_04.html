@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Exercise IV: Logistic Regression &#8212; Machine Learning for Neuroscience</title>
   
@@ -29,39 +28,45 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter_04/exercise_04';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -160,7 +165,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -439,13 +455,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-iv-logistic-regression">
-<h1>Exercise IV: Logistic Regression<a class="headerlink" href="#exercise-iv-logistic-regression" title="Permalink to this heading">#</a></h1>
+<h1>Exercise IV: Logistic Regression<a class="headerlink" href="#exercise-iv-logistic-regression" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>In statistics, the logistic model (or logit model) is used to model the probability of a certain class or event existing such as pass/fail, win/lose, alive/dead or healthy/sick. This can be extended to model several classes of events such as determining whether an image contains a cat, dog, lion, etc. Each object being detected in the image would be assigned a probability between 0 and 1, with a sum of one. <a class="reference external" href="https://en.wikipedia.org/wiki/Logistic_regression"><em>Wikipedia</em></a></p>
 </div></blockquote>
 <p>In this exercise we will reproduce the bank defaults example used in chapter IV of the ISLR, as adapted from the <a class="reference external" href="https://github.com/JWarmenhoven/ISLR-python">ISLR-python</a> repository.</p>
+<p>We will use this example to illustrate the concept of classification, where we aim to predict whether an individual will <strong>default</strong> on his or her credit card payment (i.e, fail to pay at least the minimal amount in a given number of days).</p>
 <section id="setup">
-<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -484,250 +501,254 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_9e8a4_row0_col0, #T_9e8a4_row1_col0, #T_9e8a4_row1_col1, #T_9e8a4_row2_col0, #T_9e8a4_row2_col1, #T_9e8a4_row3_col0, #T_9e8a4_row3_col1, #T_9e8a4_row4_col0, #T_9e8a4_row5_col0, #T_9e8a4_row5_col1, #T_9e8a4_row6_col0, #T_9e8a4_row6_col1, #T_9e8a4_row7_col0, #T_9e8a4_row7_col1, #T_9e8a4_row8_col0, #T_9e8a4_row8_col1, #T_9e8a4_row9_col0, #T_9e8a4_row9_col1, #T_9e8a4_row10_col0, #T_9e8a4_row10_col1, #T_9e8a4_row11_col0, #T_9e8a4_row11_col1, #T_9e8a4_row12_col0, #T_9e8a4_row13_col0, #T_9e8a4_row13_col1, #T_9e8a4_row14_col0, #T_9e8a4_row14_col1 {
+#T_f1910_row0_col0, #T_f1910_row0_col1, #T_f1910_row1_col0, #T_f1910_row1_col1, #T_f1910_row2_col0, #T_f1910_row2_col1, #T_f1910_row3_col0, #T_f1910_row3_col1, #T_f1910_row4_col0, #T_f1910_row5_col0, #T_f1910_row6_col0, #T_f1910_row6_col1, #T_f1910_row7_col0, #T_f1910_row7_col1, #T_f1910_row8_col0, #T_f1910_row8_col1, #T_f1910_row9_col0, #T_f1910_row9_col1, #T_f1910_row10_col0, #T_f1910_row10_col1, #T_f1910_row12_col0, #T_f1910_row12_col1, #T_f1910_row13_col0, #T_f1910_row13_col1, #T_f1910_row14_col0, #T_f1910_row14_col1 {
   color: red;
 }
-#T_9e8a4_row0_col1, #T_9e8a4_row4_col1, #T_9e8a4_row12_col1 {
+#T_f1910_row0_col2 {
+  color: #5ba3d0;
+}
+#T_f1910_row0_col3, #T_f1910_row9_col2 {
+  color: #97c6df;
+}
+#T_f1910_row1_col2 {
+  color: #f5fafe;
+}
+#T_f1910_row1_col3 {
+  color: #4997c9;
+}
+#T_f1910_row2_col2 {
+  color: #69add5;
+}
+#T_f1910_row2_col3, #T_f1910_row11_col3 {
+  color: #e3eef9;
+}
+#T_f1910_row3_col2 {
+  color: #afd1e7;
+}
+#T_f1910_row3_col3, #T_f1910_row12_col3 {
+  color: #56a0ce;
+}
+#T_f1910_row4_col1, #T_f1910_row5_col1, #T_f1910_row11_col0, #T_f1910_row11_col1 {
   color: green;
 }
-#T_9e8a4_row0_col2 {
-  color: #7cb7da;
+#T_f1910_row4_col2 {
+  color: #5fa6d1;
 }
-#T_9e8a4_row0_col3, #T_9e8a4_row9_col2 {
+#T_f1910_row4_col3, #T_f1910_row14_col2 {
   color: #f7fbff;
 }
-#T_9e8a4_row1_col2 {
-  color: #5da5d1;
-}
-#T_9e8a4_row1_col3 {
-  color: #2171b5;
-}
-#T_9e8a4_row2_col2 {
-  color: #1b69af;
-}
-#T_9e8a4_row2_col3 {
-  color: #083e81;
-}
-#T_9e8a4_row3_col2 {
-  color: #08458a;
-}
-#T_9e8a4_row3_col3 {
+#T_f1910_row5_col2 {
   color: #4b98ca;
 }
-#T_9e8a4_row4_col2 {
-  color: #3d8dc4;
+#T_f1910_row5_col3 {
+  color: #e2edf8;
 }
-#T_9e8a4_row4_col3 {
-  color: #f0f6fd;
+#T_f1910_row6_col2 {
+  color: #3989c1;
 }
-#T_9e8a4_row5_col2 {
-  color: #60a7d2;
+#T_f1910_row6_col3 {
+  color: #3888c1;
 }
-#T_9e8a4_row5_col3, #T_9e8a4_row6_col2 {
-  color: #105ba4;
+#T_f1910_row7_col2 {
+  color: #d6e6f4;
 }
-#T_9e8a4_row6_col3 {
-  color: #1c6bb0;
-}
-#T_9e8a4_row7_col2 {
-  color: #c4daee;
-}
-#T_9e8a4_row7_col3 {
-  color: #9fcae1;
-}
-#T_9e8a4_row8_col2, #T_9e8a4_row14_col3 {
+#T_f1910_row7_col3, #T_f1910_row11_col2 {
   color: #08306b;
 }
-#T_9e8a4_row8_col3 {
-  color: #c3daee;
+#T_f1910_row8_col2 {
+  color: #7cb7da;
 }
-#T_9e8a4_row9_col3 {
-  color: #72b2d8;
+#T_f1910_row8_col3 {
+  color: #aacfe5;
 }
-#T_9e8a4_row10_col2 {
-  color: #1561a9;
+#T_f1910_row9_col3 {
+  color: #cadef0;
 }
-#T_9e8a4_row10_col3 {
-  color: #dae8f6;
+#T_f1910_row10_col2 {
+  color: #eff6fc;
 }
-#T_9e8a4_row11_col2 {
-  color: #3282be;
-}
-#T_9e8a4_row11_col3 {
-  color: #2f7fbc;
-}
-#T_9e8a4_row12_col2 {
-  color: #add0e6;
-}
-#T_9e8a4_row12_col3 {
-  color: #eaf3fb;
-}
-#T_9e8a4_row13_col2 {
+#T_f1910_row10_col3 {
   color: #08509b;
 }
-#T_9e8a4_row13_col3 {
-  color: #4090c5;
+#T_f1910_row12_col2 {
+  color: #e6f0f9;
 }
-#T_9e8a4_row14_col2 {
-  color: #9cc9e1;
+#T_f1910_row13_col2 {
+  color: #ccdff1;
+}
+#T_f1910_row13_col3 {
+  color: #aed1e7;
+}
+#T_f1910_row14_col3 {
+  color: #c6dbef;
 }
 </style>
-<table id="T_9e8a4">
+<table id="T_f1910">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_9e8a4_level0_col0" class="col_heading level0 col0" >default</th>
-      <th id="T_9e8a4_level0_col1" class="col_heading level0 col1" >student</th>
-      <th id="T_9e8a4_level0_col2" class="col_heading level0 col2" >balance</th>
-      <th id="T_9e8a4_level0_col3" class="col_heading level0 col3" >income</th>
+      <th id="T_f1910_level0_col0" class="col_heading level0 col0" >default</th>
+      <th id="T_f1910_level0_col1" class="col_heading level0 col1" >student</th>
+      <th id="T_f1910_level0_col2" class="col_heading level0 col2" >balance</th>
+      <th id="T_f1910_level0_col3" class="col_heading level0 col3" >income</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_9e8a4_level0_row0" class="row_heading level0 row0" >6179</th>
-      <td id="T_9e8a4_row0_col0" class="data row0 col0" >False</td>
-      <td id="T_9e8a4_row0_col1" class="data row0 col1" >True</td>
-      <td id="T_9e8a4_row0_col2" class="data row0 col2" >606.125135</td>
-      <td id="T_9e8a4_row0_col3" class="data row0 col3" >16957.648764</td>
+      <th id="T_f1910_level0_row0" class="row_heading level0 row0" >2939</th>
+      <td id="T_f1910_row0_col0" class="data row0 col0" >False</td>
+      <td id="T_f1910_row0_col1" class="data row0 col1" >False</td>
+      <td id="T_f1910_row0_col2" class="data row0 col2" >1276.489300</td>
+      <td id="T_f1910_row0_col3" class="data row0 col3" >35122.853615</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row1" class="row_heading level0 row1" >2967</th>
-      <td id="T_9e8a4_row1_col0" class="data row1 col0" >False</td>
-      <td id="T_9e8a4_row1_col1" class="data row1 col1" >False</td>
-      <td id="T_9e8a4_row1_col2" class="data row1 col2" >718.351102</td>
-      <td id="T_9e8a4_row1_col3" class="data row1 col3" >50765.892633</td>
+      <th id="T_f1910_level0_row1" class="row_heading level0 row1" >1786</th>
+      <td id="T_f1910_row1_col0" class="data row1 col0" >False</td>
+      <td id="T_f1910_row1_col1" class="data row1 col1" >False</td>
+      <td id="T_f1910_row1_col2" class="data row1 col2" >396.513587</td>
+      <td id="T_f1910_row1_col3" class="data row1 col3" >41969.746774</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row2" class="row_heading level0 row2" >1463</th>
-      <td id="T_9e8a4_row2_col0" class="data row2 col0" >False</td>
-      <td id="T_9e8a4_row2_col1" class="data row2 col1" >False</td>
-      <td id="T_9e8a4_row2_col2" class="data row2 col2" >1031.974601</td>
-      <td id="T_9e8a4_row2_col3" class="data row2 col3" >59555.865810</td>
+      <th id="T_f1910_level0_row2" class="row_heading level0 row2" >4624</th>
+      <td id="T_f1910_row2_col0" class="data row2 col0" >False</td>
+      <td id="T_f1910_row2_col1" class="data row2 col1" >False</td>
+      <td id="T_f1910_row2_col2" class="data row2 col2" >1206.592155</td>
+      <td id="T_f1910_row2_col3" class="data row2 col3" >25646.082204</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row3" class="row_heading level0 row3" >1823</th>
-      <td id="T_9e8a4_row3_col0" class="data row3 col0" >False</td>
-      <td id="T_9e8a4_row3_col1" class="data row3 col1" >False</td>
-      <td id="T_9e8a4_row3_col2" class="data row3 col2" >1218.346515</td>
-      <td id="T_9e8a4_row3_col3" class="data row3 col3" >43930.989891</td>
+      <th id="T_f1910_level0_row3" class="row_heading level0 row3" >941</th>
+      <td id="T_f1910_row3_col0" class="data row3 col0" >False</td>
+      <td id="T_f1910_row3_col1" class="data row3 col1" >False</td>
+      <td id="T_f1910_row3_col2" class="data row3 col2" >904.241522</td>
+      <td id="T_f1910_row3_col3" class="data row3 col3" >40683.460346</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row4" class="row_heading level0 row4" >228</th>
-      <td id="T_9e8a4_row4_col0" class="data row4 col0" >False</td>
-      <td id="T_9e8a4_row4_col1" class="data row4 col1" >True</td>
-      <td id="T_9e8a4_row4_col2" class="data row4 col2" >850.096117</td>
-      <td id="T_9e8a4_row4_col3" class="data row4 col3" >18618.987908</td>
+      <th id="T_f1910_level0_row4" class="row_heading level0 row4" >920</th>
+      <td id="T_f1910_row4_col0" class="data row4 col0" >False</td>
+      <td id="T_f1910_row4_col1" class="data row4 col1" >True</td>
+      <td id="T_f1910_row4_col2" class="data row4 col2" >1256.614870</td>
+      <td id="T_f1910_row4_col3" class="data row4 col3" >22493.501261</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row5" class="row_heading level0 row5" >479</th>
-      <td id="T_9e8a4_row5_col0" class="data row5 col0" >False</td>
-      <td id="T_9e8a4_row5_col1" class="data row5 col1" >False</td>
-      <td id="T_9e8a4_row5_col2" class="data row5 col2" >705.573328</td>
-      <td id="T_9e8a4_row5_col3" class="data row5 col3" >54589.239868</td>
+      <th id="T_f1910_level0_row5" class="row_heading level0 row5" >365</th>
+      <td id="T_f1910_row5_col0" class="data row5 col0" >False</td>
+      <td id="T_f1910_row5_col1" class="data row5 col1" >True</td>
+      <td id="T_f1910_row5_col2" class="data row5 col2" >1351.849722</td>
+      <td id="T_f1910_row5_col3" class="data row5 col3" >25890.503988</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row6" class="row_heading level0 row6" >3750</th>
-      <td id="T_9e8a4_row6_col0" class="data row6 col0" >False</td>
-      <td id="T_9e8a4_row6_col1" class="data row6 col1" >False</td>
-      <td id="T_9e8a4_row6_col2" class="data row6 col2" >1106.697012</td>
-      <td id="T_9e8a4_row6_col3" class="data row6 col3" >51879.718480</td>
+      <th id="T_f1910_level0_row6" class="row_heading level0 row6" >5299</th>
+      <td id="T_f1910_row6_col0" class="data row6 col0" >False</td>
+      <td id="T_f1910_row6_col1" class="data row6 col1" >False</td>
+      <td id="T_f1910_row6_col2" class="data row6 col2" >1454.981589</td>
+      <td id="T_f1910_row6_col3" class="data row6 col3" >43821.221347</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row7" class="row_heading level0 row7" >8388</th>
-      <td id="T_9e8a4_row7_col0" class="data row7 col0" >False</td>
-      <td id="T_9e8a4_row7_col1" class="data row7 col1" >False</td>
-      <td id="T_9e8a4_row7_col2" class="data row7 col2" >341.322290</td>
-      <td id="T_9e8a4_row7_col3" class="data row7 col3" >33808.336179</td>
+      <th id="T_f1910_level0_row7" class="row_heading level0 row7" >6966</th>
+      <td id="T_f1910_row7_col0" class="data row7 col0" >False</td>
+      <td id="T_f1910_row7_col1" class="data row7 col1" >False</td>
+      <td id="T_f1910_row7_col2" class="data row7 col2" >649.841985</td>
+      <td id="T_f1910_row7_col3" class="data row7 col3" >54693.151792</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row8" class="row_heading level0 row8" >4439</th>
-      <td id="T_9e8a4_row8_col0" class="data row8 col0" >False</td>
-      <td id="T_9e8a4_row8_col1" class="data row8 col1" >False</td>
-      <td id="T_9e8a4_row8_col2" class="data row8 col2" >1324.492949</td>
-      <td id="T_9e8a4_row8_col3" class="data row8 col3" >28691.836614</td>
+      <th id="T_f1910_level0_row8" class="row_heading level0 row8" >7381</th>
+      <td id="T_f1910_row8_col0" class="data row8 col0" >False</td>
+      <td id="T_f1910_row8_col1" class="data row8 col1" >False</td>
+      <td id="T_f1910_row8_col2" class="data row8 col2" >1125.302093</td>
+      <td id="T_f1910_row8_col3" class="data row8 col3" >33408.660343</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row9" class="row_heading level0 row9" >3142</th>
-      <td id="T_9e8a4_row9_col0" class="data row9 col0" >False</td>
-      <td id="T_9e8a4_row9_col1" class="data row9 col1" >False</td>
-      <td id="T_9e8a4_row9_col2" class="data row9 col2" >0.000000</td>
-      <td id="T_9e8a4_row9_col3" class="data row9 col3" >38663.200514</td>
+      <th id="T_f1910_level0_row9" class="row_heading level0 row9" >9911</th>
+      <td id="T_f1910_row9_col0" class="data row9 col0" >False</td>
+      <td id="T_f1910_row9_col1" class="data row9 col1" >False</td>
+      <td id="T_f1910_row9_col2" class="data row9 col2" >1017.788252</td>
+      <td id="T_f1910_row9_col3" class="data row9 col3" >29828.330338</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row10" class="row_heading level0 row10" >4941</th>
-      <td id="T_9e8a4_row10_col0" class="data row10 col0" >False</td>
-      <td id="T_9e8a4_row10_col1" class="data row10 col1" >False</td>
-      <td id="T_9e8a4_row10_col2" class="data row10 col2" >1076.126584</td>
-      <td id="T_9e8a4_row10_col3" class="data row10 col3" >23632.520301</td>
+      <th id="T_f1910_level0_row10" class="row_heading level0 row10" >6979</th>
+      <td id="T_f1910_row10_col0" class="data row10 col0" >False</td>
+      <td id="T_f1910_row10_col1" class="data row10 col1" >False</td>
+      <td id="T_f1910_row10_col2" class="data row10 col2" >443.900953</td>
+      <td id="T_f1910_row10_col3" class="data row10 col3" >50768.444874</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row11" class="row_heading level0 row11" >7167</th>
-      <td id="T_9e8a4_row11_col0" class="data row11 col0" >False</td>
-      <td id="T_9e8a4_row11_col1" class="data row11 col1" >False</td>
-      <td id="T_9e8a4_row11_col2" class="data row11 col2" >908.572629</td>
-      <td id="T_9e8a4_row11_col3" class="data row11 col3" >48426.927435</td>
+      <th id="T_f1910_level0_row11" class="row_heading level0 row11" >1710</th>
+      <td id="T_f1910_row11_col0" class="data row11 col0" >True</td>
+      <td id="T_f1910_row11_col1" class="data row11 col1" >True</td>
+      <td id="T_f1910_row11_col2" class="data row11 col2" >2009.685744</td>
+      <td id="T_f1910_row11_col3" class="data row11 col3" >25694.496158</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row12" class="row_heading level0 row12" >6281</th>
-      <td id="T_9e8a4_row12_col0" class="data row12 col0" >False</td>
-      <td id="T_9e8a4_row12_col1" class="data row12 col1" >True</td>
-      <td id="T_9e8a4_row12_col2" class="data row12 col2" >435.485531</td>
-      <td id="T_9e8a4_row12_col3" class="data row12 col3" >19899.754567</td>
+      <th id="T_f1910_level0_row12" class="row_heading level0 row12" >8749</th>
+      <td id="T_f1910_row12_col0" class="data row12 col0" >False</td>
+      <td id="T_f1910_row12_col1" class="data row12 col1" >False</td>
+      <td id="T_f1910_row12_col2" class="data row12 col2" >522.153458</td>
+      <td id="T_f1910_row12_col3" class="data row12 col3" >40717.162522</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row13" class="row_heading level0 row13" >5637</th>
-      <td id="T_9e8a4_row13_col0" class="data row13 col0" >False</td>
-      <td id="T_9e8a4_row13_col1" class="data row13 col1" >False</td>
-      <td id="T_9e8a4_row13_col2" class="data row13 col2" >1163.083904</td>
-      <td id="T_9e8a4_row13_col3" class="data row13 col3" >45488.750559</td>
+      <th id="T_f1910_level0_row13" class="row_heading level0 row13" >6540</th>
+      <td id="T_f1910_row13_col0" class="data row13 col0" >False</td>
+      <td id="T_f1910_row13_col1" class="data row13 col1" >False</td>
+      <td id="T_f1910_row13_col2" class="data row13 col2" >741.430159</td>
+      <td id="T_f1910_row13_col3" class="data row13 col3" >32951.179355</td>
     </tr>
     <tr>
-      <th id="T_9e8a4_level0_row14" class="row_heading level0 row14" >3562</th>
-      <td id="T_9e8a4_row14_col0" class="data row14 col0" >False</td>
-      <td id="T_9e8a4_row14_col1" class="data row14 col1" >False</td>
-      <td id="T_9e8a4_row14_col2" class="data row14 col2" >503.513809</td>
-      <td id="T_9e8a4_row14_col3" class="data row14 col3" >62115.105082</td>
+      <th id="T_f1910_level0_row14" class="row_heading level0 row14" >7610</th>
+      <td id="T_f1910_row14_col0" class="data row14 col0" >False</td>
+      <td id="T_f1910_row14_col1" class="data row14 col1" >False</td>
+      <td id="T_f1910_row14_col2" class="data row14 col2" >378.445644</td>
+      <td id="T_f1910_row14_col3" class="data row14 col3" >30562.095517</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<p>There seem to be some imbalance in the number of “default” observations - it seems like most of the individuals in this dataset do not default on their credit card payment.</p>
+<p>We will address this issue later on.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;default&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">()</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:.2%}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Default Rate&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_36b31">
+  <caption>Default Rate</caption>
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_36b31_level0_col0" class="col_heading level0 col0" >proportion</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >default</th>
+      <th class="blank col0" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_36b31_level0_row0" class="row_heading level0 row0" >False</th>
+      <td id="T_36b31_row0_col0" class="data row0 col0" >96.67%</td>
+    </tr>
+    <tr>
+      <th id="T_36b31_level0_row1" class="row_heading level0 row1" >True</th>
+      <td id="T_36b31_row1_col0" class="data row1 col0" >3.33%</td>
     </tr>
   </tbody>
 </table>
 </div></div>
 </div>
 <section id="feature-scaling">
-<h3>Feature Scaling<a class="headerlink" href="#feature-scaling" title="Permalink to this heading">#</a></h3>
+<h3>Feature Scaling<a class="headerlink" href="#feature-scaling" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 
-<span class="n">numeric_features</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="n">numeric_features</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span>
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
 <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">numeric_features</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">numeric_features</span><span class="o">.</span><span class="n">columns</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>---------------------------------------------------------------------------
-AttributeError                            Traceback (most recent call last)
-Cell In[4], line 4
-      1 import numpy as np
-      2 from sklearn.preprocessing import StandardScaler
-----&gt; 4 numeric_features = df.select_dtypes(np.float)
-      5 scaler = StandardScaler()
-      6 df.loc[:, numeric_features.columns] = scaler.fit_transform(df.loc[:, numeric_features.columns])
-
-File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/numpy/__init__.py:324, in __getattr__(attr)
-    319     warnings.warn(
-    320         f&quot;In the future `np.{attr}` will be defined as the &quot;
-    321         &quot;corresponding NumPy scalar.&quot;, FutureWarning, stacklevel=2)
-    323 if attr in __former_attrs__:
---&gt; 324     raise AttributeError(__former_attrs__[attr])
-    326 if attr == &#39;testing&#39;:
-    327     import numpy.testing as testing
-
-AttributeError: module &#39;numpy&#39; has no attribute &#39;float&#39;.
-`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
-The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
-    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
 </pre></div>
 </div>
 </div>
@@ -735,7 +756,7 @@ The aliases was originally deprecated in NumPy 1.20; for more details and guidan
 </section>
 </section>
 <section id="raw-inspection">
-<h2>Raw inspection<a class="headerlink" href="#raw-inspection" title="Permalink to this heading">#</a></h2>
+<h2>Raw inspection<a class="headerlink" href="#raw-inspection" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -744,7 +765,7 @@ The aliases was originally deprecated in NumPy 1.20; for more details and guidan
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Int64Index: 10000 entries, 1 to 10000
+Index: 10000 entries, 1 to 10000
 Data columns (total 4 columns):
  #   Column   Non-Null Count  Dtype  
 ---  ------   --------------  -----  
@@ -834,11 +855,13 @@ memory usage: 253.9 KB
 </div></div></div>
 </div>
 <section id="scatter-plot">
-<h3>Scatter plot<a class="headerlink" href="#scatter-plot" title="Permalink to this heading">#</a></h3>
+<h3>Scatter plot<a class="headerlink" href="#scatter-plot" title="Link to this heading">#</a></h3>
+<p>Visualize some interesting numeric features (balance &amp; income) in relation to our target.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
 
 <span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;balance&quot;</span><span class="p">,</span>
@@ -847,8 +870,8 @@ memory usage: 253.9 KB
                     <span class="n">style</span><span class="o">=</span><span class="s2">&quot;student&quot;</span><span class="p">,</span>
                     <span class="n">size</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
                     <span class="n">sizes</span><span class="o">=</span><span class="p">{</span>
-                        <span class="kc">True</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
-                        <span class="kc">False</span><span class="p">:</span> <span class="mi">40</span>
+                        <span class="kc">True</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+                        <span class="kc">False</span><span class="p">:</span> <span class="mi">50</span>
                     <span class="p">},</span>
                     <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span>
                     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span>
@@ -856,10 +879,14 @@ memory usage: 253.9 KB
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cd4dc8237c2e63b0cd8e35148a5a4cabfea61740fd853e8049e1d85ed6388a6c.png" src="../../_images/cd4dc8237c2e63b0cd8e35148a5a4cabfea61740fd853e8049e1d85ed6388a6c.png" />
+</div>
 </div>
 </section>
 <section id="violin-plot">
-<h3>Violin plot<a class="headerlink" href="#violin-plot" title="Permalink to this heading">#</a></h3>
+<h3>Violin plot<a class="headerlink" href="#violin-plot" title="Link to this heading">#</a></h3>
+<p>And plot the distributions of these features under each level of the categorical features.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new figure with two horizontal subplots </span>
@@ -867,7 +894,6 @@ memory usage: 253.9 KB
 
 <span class="c1"># Plot balance</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;student&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;balance&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_legend</span><span class="p">()</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 
 <span class="c1"># Plot income</span>
@@ -879,11 +905,14 @@ memory usage: 253.9 KB
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/d03d83cc44f5960212870d69d6fbba14930e81bbd261a6bee54b47d7560b7d4e.png" src="../../_images/d03d83cc44f5960212870d69d6fbba14930e81bbd261a6bee54b47d7560b7d4e.png" />
+</div>
 </div>
 </section>
 </section>
 <section id="train-test-split">
-<h2>Train/Test Split<a class="headerlink" href="#train-test-split" title="Permalink to this heading">#</a></h2>
+<h2>Train/Test Split<a class="headerlink" href="#train-test-split" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> 
@@ -903,9 +932,9 @@ memory usage: 253.9 KB
 </div>
 </section>
 <section id="model-creation">
-<h2>Model Creation<a class="headerlink" href="#model-creation" title="Permalink to this heading">#</a></h2>
+<h2>Model Creation<a class="headerlink" href="#model-creation" title="Link to this heading">#</a></h2>
 <section id="sklearn">
-<h3><code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#sklearn" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#sklearn" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
@@ -915,10 +944,60 @@ memory usage: 253.9 KB
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">InvalidParameterError</span><span class="g g-Whitespace">                     </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sk_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;newton-cg&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sk_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/base.py:1344,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1339</span> <span class="n">partial_fit_and_fitted</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1340</span>     <span class="n">fit_method</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;partial_fit&quot;</span> <span class="ow">and</span> <span class="n">_is_fitted</span><span class="p">(</span><span class="n">estimator</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1341</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1343</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">global_skip_validation</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">partial_fit_and_fitted</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1344</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1346</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1347</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1348</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">   </span><span class="mi">1349</span>     <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1350</span> <span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1351</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/base.py:666,</span> in <span class="ni">BaseEstimator._validate_params</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">658</span> <span class="k">def</span> <span class="nf">_validate_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">659</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Validate types and values of constructor parameters</span>
+<span class="g g-Whitespace">    </span><span class="mi">660</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span><span class="sd">     The expected type and values must be defined in the `_parameter_constraints`</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">664</span><span class="sd">     accepted constraints.</span>
+<span class="g g-Whitespace">    </span><span class="mi">665</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">666</span>     <span class="n">validate_parameter_constraints</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">667</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_parameter_constraints</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">668</span>         <span class="bp">self</span><span class="o">.</span><span class="n">get_params</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">669</span>         <span class="n">caller_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">670</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/utils/_param_validation.py:95,</span> in <span class="ni">validate_parameter_constraints</span><span class="nt">(parameter_constraints, params, caller_name)</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>     <span class="n">constraints_str</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">constraints</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span><span class="si">}</span><span class="s2"> or&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span>         <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">constraints</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">93</span>     <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">95</span> <span class="k">raise</span> <span class="n">InvalidParameterError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">param_name</span><span class="si">!r}</span><span class="s2"> parameter of </span><span class="si">{</span><span class="n">caller_name</span><span class="si">}</span><span class="s2"> must be&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">constraints_str</span><span class="si">}</span><span class="s2">. Got </span><span class="si">{</span><span class="n">param_val</span><span class="si">!r}</span><span class="s2"> instead.&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="p">)</span>
+
+<span class="ne">InvalidParameterError</span>: The &#39;penalty&#39; parameter of LogisticRegression must be a str among {&#39;l2&#39;, &#39;l1&#39;, &#39;elasticnet&#39;} or None. Got &#39;none&#39; instead.
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="statsmodels">
-<h3><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#statsmodels" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#statsmodels" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
@@ -936,9 +1015,9 @@ memory usage: 253.9 KB
 </section>
 </section>
 <section id="model-application">
-<h2>Model Application<a class="headerlink" href="#model-application" title="Permalink to this heading">#</a></h2>
+<h2>Model Application<a class="headerlink" href="#model-application" title="Link to this heading">#</a></h2>
 <section id="id1">
-<h3><code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>We can predict the <strong>probability</strong> estimates of each target class (in our case <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>) using the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html"><code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code></a> class’s <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression.predict_proba"><code class="docutils literal notranslate"><span class="pre">predict_proba()</span></code></a> method:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,6 +1026,7 @@ memory usage: 253.9 KB
 </div>
 </div>
 </div>
+<p>Note that when predicting probabilities, we get an array of shape <span class="math notranslate nohighlight">\(n_{samples} \text{ X } n_{classes}\)</span>, representing the probability of each sample to belong to each class of the target variable.</p>
 <p>Or, we could directly return the predictions based on the maximal probabilities:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -960,21 +1040,14 @@ memory usage: 253.9 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">44</span><span class="o">-</span><span class="mi">5</span><span class="n">cba4ca28fdf</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">predictions_manual</span> <span class="o">=</span> <span class="n">default_probability</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">np</span><span class="o">.</span><span class="n">array_equal</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">predictions_manual</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="id2">
-<h3><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm_estimation</span> <span class="o">=</span> <span class="n">sm_model</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -992,9 +1065,9 @@ memory usage: 253.9 KB
 </section>
 </section>
 <section id="model-evaluation">
-<h2>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this heading">#</a></h2>
+<h2>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Link to this heading">#</a></h2>
 <section id="id3">
-<h3><code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Intercept: </span><span class="si">{</span><span class="n">sk_model</span><span class="o">.</span><span class="n">intercept_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1003,16 +1076,16 @@ memory usage: 253.9 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept: [-10.55992039]
-Coefficients: [[ 5.61993716e-03 -1.86000486e-06 -6.21154719e-01]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Intercept: [-5.93187127]
+Coefficients: [[ 2.72019068 -0.02263331 -0.61746372]]
 </pre></div>
 </div>
 </div>
 </div>
 <section id="confusion-matrix">
-<h4>Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Permalink to this heading">#</a></h4>
+<h4>Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Link to this heading">#</a></h4>
 <section id="calculation">
-<h5>Calculation<a class="headerlink" href="#calculation" title="Permalink to this heading">#</a></h5>
+<h5>Calculation<a class="headerlink" href="#calculation" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
@@ -1031,28 +1104,40 @@ Coefficients: [[ 5.61993716e-03 -1.86000486e-06 -6.21154719e-01]]
 </div>
 </section>
 <section id="visualization">
-<h5>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h5>
+<h5>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualizing the confusion matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">ConfusionMatrixDisplay</span>
 
-<span class="n">disp</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">sk_model</span><span class="p">,</span>
-                             <span class="n">X_test</span><span class="p">,</span>
-                             <span class="n">y_test</span><span class="p">,</span>
-                             <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">,</span>
-                             <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span>
+    <span class="n">sk_model</span><span class="p">,</span>
+    <span class="n">X_test</span><span class="p">,</span>
+    <span class="n">y_test</span><span class="p">,</span>
+    <span class="n">display_labels</span><span class="o">=</span><span class="n">sk_model</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">,</span>
+    <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span>
+    <span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Confusion Matrix&quot;</span><span class="p">)</span>
+<span class="c1"># from sklearn.metrics import plot_confusion_matrix</span>
+
+<span class="c1"># disp = plot_confusion_matrix(sk_model,</span>
+<span class="c1">#                              X_test,</span>
+<span class="c1">#                              y_test,</span>
+<span class="c1">#                              cmap=plt.cm.Greens,</span>
+<span class="c1">#                              normalize=&quot;true&quot;)</span>
+<span class="c1"># _ = disp.ax_.set_title(f&quot;Confusion Matrix&quot;)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7813a54ba34cc35a57d9a1f2bcdccf1078208db405e083ad74d395cd7c3e1005.png" src="../../_images/7813a54ba34cc35a57d9a1f2bcdccf1078208db405e083ad74d395cd7c3e1005.png" />
+<img alt="../../_images/3db2803a575c6cb68343b4d01d3b224514bb9b062c48d96486ef8baf79c5cac2.png" src="../../_images/3db2803a575c6cb68343b4d01d3b224514bb9b062c48d96486ef8baf79c5cac2.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="classification-report">
-<h4>Classification Report<a class="headerlink" href="#classification-report" title="Permalink to this heading">#</a></h4>
+<h4>Classification Report<a class="headerlink" href="#classification-report" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
@@ -1065,8 +1150,8 @@ Coefficients: [[ 5.61993716e-03 -1.86000486e-06 -6.21154719e-01]]
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-           0       0.97      1.00      0.99      1926
-           1       0.79      0.31      0.45        74
+       False       0.97      1.00      0.99      1926
+        True       0.79      0.31      0.45        74
 
     accuracy                           0.97      2000
    macro avg       0.88      0.65      0.72      2000
@@ -1075,11 +1160,29 @@ weighted avg       0.97      0.97      0.97      2000
 </div>
 </div>
 </div>
-<p><img alt="precision and recall" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/350px-Precisionrecall.svg.png" />
-<em><a class="reference external" href="https://en.wikipedia.org/wiki/Precision_and_recall">Wikipedia</a></em></p>
-<section id="precision">
-<h5>Precision<a class="headerlink" href="#precision" title="Permalink to this heading">#</a></h5>
-<p><img alt="precision" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/26106935459abe7c266f7b1ebfa2a824b334c807" /></p>
+<figure>
+    <center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/350px-Precisionrecall.svg.png" alt="Precision & Recall" width="400"/></center>
+    <figcaption>
+        <i>
+            Precision and Recall are performance metrics that allow the evaluation of a classification algorithm.
+            <a href="https://en.wikipedia.org/wiki/Precision_and_recall">
+                Wikipedia
+            </a>
+        </i>
+    </figcaption>
+</figure><section id="precision">
+<h5>Precision<a class="headerlink" href="#precision" title="Link to this heading">#</a></h5>
+<figure>
+    <center><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/26106935459abe7c266f7b1ebfa2a824b334c807" alt="Precision" width="400"/></center>
+    <figcaption>
+        <i>
+            What proportion of positive identifications was actually correct?
+            <a href="https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall#precision">
+                Google Developers
+            </a>
+        </i>
+    </figcaption>
+</figure>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">true_positive</span> <span class="o">=</span> <span class="n">confusion_matrix_</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
@@ -1097,9 +1200,18 @@ weighted avg       0.97      0.97      0.97      2000
 </div>
 </section>
 <section id="recall-sensitivity">
-<h5>Recall (Sensitivity)<a class="headerlink" href="#recall-sensitivity" title="Permalink to this heading">#</a></h5>
-<p><img alt="recall" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4c233366865312bc99c832d1475e152c5074891b" /></p>
-<div class="cell docutils container">
+<h5>Recall (Sensitivity)<a class="headerlink" href="#recall-sensitivity" title="Link to this heading">#</a></h5>
+<figure>
+    <center><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4c233366865312bc99c832d1475e152c5074891b" alt="Recall" width="400"/></center>
+    <figcaption>
+        <i>
+            What proportion of actual positives was identified correctly?
+            <a href="https://developers.google.com/machine-learning/crash-course/classification/precision-and-recall#recall">
+                Google Developers
+            </a>
+        </i>
+    </figcaption>
+</figure><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">false_negative</span> <span class="o">=</span> <span class="n">confusion_matrix_</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 
@@ -1115,9 +1227,18 @@ weighted avg       0.97      0.97      0.97      2000
 </div>
 </section>
 <section id="specificity">
-<h5>Specificity<a class="headerlink" href="#specificity" title="Permalink to this heading">#</a></h5>
-<p><img alt="specificity" src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8f2c867f0641e498ec8a59de63697a3a45d66b07" /></p>
-<div class="cell docutils container">
+<h5>Specificity<a class="headerlink" href="#specificity" title="Link to this heading">#</a></h5>
+<figure>
+    <center><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8f2c867f0641e498ec8a59de63697a3a45d66b07" alt="Specificity" width="400"/></center>
+    <figcaption>
+        <i>
+            What proportion of actual negatives was identified correctly?
+            <a href="https://en.wikipedia.org/wiki/Sensitivity_and_specificity">
+                Wikipedia
+            </a>
+        </i>
+    </figcaption>
+</figure><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">true_negative</span> <span class="o">=</span> <span class="n">confusion_matrix_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
 
@@ -1133,8 +1254,18 @@ weighted avg       0.97      0.97      0.97      2000
 </div>
 </section>
 <section id="accuracy-score">
-<h5>Accuracy Score<a class="headerlink" href="#accuracy-score" title="Permalink to this heading">#</a></h5>
-<div class="cell docutils container">
+<h5>Accuracy Score<a class="headerlink" href="#accuracy-score" title="Link to this heading">#</a></h5>
+<figure>
+    <center><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7bfe40cea126a04004b82f729cf7df1ec435fbf6" alt="Accuracy" width="400"/></center>
+    <figcaption>
+        <i>
+            What is the proportion of correct identifications?
+            <a href="https://en.wikipedia.org/wiki/Accuracy_and_precision#In_classification">
+                Wikipedia
+            </a>
+        </i>
+    </figcaption>
+</figure><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 
@@ -1166,9 +1297,9 @@ weighted avg       0.97      0.97      0.97      2000
 </section>
 </section>
 <section id="id4">
-<h3><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <section id="id5">
-<h4>Confusion Matrix<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<h4>Confusion Matrix<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prediction_table</span> <span class="o">=</span> <span class="n">sm_estimation</span><span class="o">.</span><span class="n">pred_table</span><span class="p">()</span>
@@ -1199,7 +1330,9 @@ weighted avg       0.97      0.97      0.97      2000
 </div>
 </section>
 <section id="regression-report">
-<h4>Regression Report<a class="headerlink" href="#regression-report" title="Permalink to this heading">#</a></h4>
+<h4>Regression Report<a class="headerlink" href="#regression-report" title="Link to this heading">#</a></h4>
+<p>The regression report is a summary of the regression model.
+It includes the coefficients, standard errors, t-values, p-values, and confidence intervals for each coefficient.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sm_estimation</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
@@ -1219,10 +1352,10 @@ weighted avg       0.97      0.97      0.97      2000
   <th>Method:</th>                 <td>MLE</td>       <th>  Df Model:          </th>   <td>     3</td>  
 </tr>
 <tr>
-  <th>Date:</th>            <td>Wed, 25 Nov 2020</td> <th>  Pseudo R-squ.:     </th>   <td>0.4619</td>  
+  <th>Date:</th>            <td>Mon, 05 Feb 2024</td> <th>  Pseudo R-squ.:     </th>   <td>0.4619</td>  
 </tr>
 <tr>
-  <th>Time:</th>                <td>09:36:17</td>     <th>  Log-Likelihood:    </th>  <td> -785.77</td> 
+  <th>Time:</th>                <td>10:30:32</td>     <th>  Log-Likelihood:    </th>  <td> -785.77</td> 
 </tr>
 <tr>
   <th>converged:</th>             <td>True</td>       <th>  LL-Null:           </th>  <td> -1460.3</td> 

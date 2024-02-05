@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Exercise VII: Decision Trees and Random Forests &#8212; Machine Learning for Neuroscience</title>
   
@@ -29,39 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter_07/exercise_07';</script>
@@ -162,7 +165,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -445,7 +459,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-vii-decision-trees-and-random-forests">
-<h1>Exercise VII: Decision Trees and Random Forests<a class="headerlink" href="#exercise-vii-decision-trees-and-random-forests" title="Permalink to this heading">#</a></h1>
+<h1>Exercise VII: Decision Trees and Random Forests<a class="headerlink" href="#exercise-vii-decision-trees-and-random-forests" title="Link to this heading">#</a></h1>
 <p>Decision trees are as easy to implement with <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> as any other of the models we’ve studied so far. As a quick example we could try to classify the iris dataset which we’re already familiar with:</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -475,7 +489,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2168/1335027573.py:1: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2153/1335027573.py:1: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -514,7 +528,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/152a9961d68e19e3c9550e569871931693506157d0fcfb0dcebc2f22c18b61bd.png" src="../../_images/152a9961d68e19e3c9550e569871931693506157d0fcfb0dcebc2f22c18b61bd.png" />
+<img alt="../../_images/2f7762918f76a308abf52be93963b715337c5025f00528785771d8f1af187a5a.png" src="../../_images/2f7762918f76a308abf52be93963b715337c5025f00528785771d8f1af187a5a.png" />
 </div>
 </div>
 <p>Finally, we can evaluate the model’s performance using the appropriate metrics, e.g.:</p>
@@ -570,7 +584,7 @@ weighted avg       0.97      0.97      0.97        30
 </div>
 </div>
 <section id="predicting-asd-diagnosis-round-2">
-<h2>Predicting ASD Diagnosis: Round 2<a class="headerlink" href="#predicting-asd-diagnosis-round-2" title="Permalink to this heading">#</a></h2>
+<h2>Predicting ASD Diagnosis: Round 2<a class="headerlink" href="#predicting-asd-diagnosis-round-2" title="Link to this heading">#</a></h2>
 <p>Again, we will try and create a model to classify ASD diagnosis using four FreeSurfer metrics extracted over 360 brain regions. In the previous exercise we used an <span class="math notranslate nohighlight">\(\ell_2\)</span> regularized logistic regression model (estimated using the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegressionCV.html"><code class="docutils literal notranslate"><span class="pre">LogisticRegressionCV</span></code></a> class) to select and fit a model, this time we will use the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"><code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code></a> and <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html"><code class="docutils literal notranslate"><span class="pre">GradientBoostingClassifier</span></code></a> to do the same.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -613,9 +627,9 @@ weighted avg       0.97      0.97      0.97        30
 </details>
 </div>
 <section id="random-forest">
-<h3>Random Forest<a class="headerlink" href="#random-forest" title="Permalink to this heading">#</a></h3>
+<h3>Random Forest<a class="headerlink" href="#random-forest" title="Link to this heading">#</a></h3>
 <section id="model-creation">
-<h4>Model Creation<a class="headerlink" href="#model-creation" title="Permalink to this heading">#</a></h4>
+<h4>Model Creation<a class="headerlink" href="#model-creation" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
@@ -628,7 +642,7 @@ weighted avg       0.97      0.97      0.97        30
 </div>
 </section>
 <section id="model-application">
-<h4>Model Application<a class="headerlink" href="#model-application" title="Permalink to this heading">#</a></h4>
+<h4>Model Application<a class="headerlink" href="#model-application" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_predicted</span> <span class="o">=</span> <span class="n">random_forest</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -638,9 +652,9 @@ weighted avg       0.97      0.97      0.97        30
 </div>
 </section>
 <section id="model-evaluation">
-<h4>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Permalink to this heading">#</a></h4>
+<h4>Model Evaluation<a class="headerlink" href="#model-evaluation" title="Link to this heading">#</a></h4>
 <section id="confusion-matrix">
-<h5>Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Permalink to this heading">#</a></h5>
+<h5>Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">random_forest</span><span class="p">,</span>
@@ -657,7 +671,7 @@ weighted avg       0.97      0.97      0.97        30
 </div>
 </section>
 <section id="classification-report">
-<h5>Classification Report<a class="headerlink" href="#classification-report" title="Permalink to this heading">#</a></h5>
+<h5>Classification Report<a class="headerlink" href="#classification-report" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted</span><span class="p">))</span>
@@ -680,7 +694,7 @@ weighted avg       0.65      0.65      0.65       104
 <p>Not too bad! We’ve improved our accuracy from 0.63 to 0.65.</p>
 </section>
 <section id="feature-importance">
-<h5>Feature Importance<a class="headerlink" href="#feature-importance" title="Permalink to this heading">#</a></h5>
+<h5>Feature Importance<a class="headerlink" href="#feature-importance" title="Link to this heading">#</a></h5>
 <p>One of the greatest things about trees is their interpretability. <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> exposes one measure (“Gini importance”) as a built-in property of the fitted random forest estimator:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -832,9 +846,9 @@ weighted avg       0.65      0.65      0.65       104
 </section>
 </section>
 <section id="gradient-boosting">
-<h3>Gradient Boosting<a class="headerlink" href="#gradient-boosting" title="Permalink to this heading">#</a></h3>
+<h3>Gradient Boosting<a class="headerlink" href="#gradient-boosting" title="Link to this heading">#</a></h3>
 <section id="id1">
-<h4>Model Creation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<h4>Model Creation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingClassifier</span>
@@ -847,7 +861,7 @@ weighted avg       0.65      0.65      0.65       104
 </div>
 </section>
 <section id="id2">
-<h4>Model Application<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4>Model Application<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_predicted_gb</span> <span class="o">=</span> <span class="n">gradient_boosting</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -857,9 +871,9 @@ weighted avg       0.65      0.65      0.65       104
 </div>
 </section>
 <section id="id3">
-<h4>Model Evaluation<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<h4>Model Evaluation<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
 <section id="id4">
-<h5>Confusion Matrix<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h5>
+<h5>Confusion Matrix<a class="headerlink" href="#id4" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">gradient_boosting</span><span class="p">,</span>
@@ -876,7 +890,7 @@ weighted avg       0.65      0.65      0.65       104
 </div>
 </section>
 <section id="id5">
-<h5>Classification Report<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h5>
+<h5>Classification Report<a class="headerlink" href="#id5" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted_gb</span><span class="p">))</span>
@@ -899,7 +913,7 @@ weighted avg       0.67      0.66      0.66       104
 <p>We’ve ended up with an overall slightly better accuracy and precision.</p>
 </section>
 <section id="id6">
-<h5>Feature Importance<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h5>
+<h5>Feature Importance<a class="headerlink" href="#id6" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <span class="n">permutation_importance</span>
@@ -938,9 +952,9 @@ weighted avg       0.67      0.66      0.66       104
 </section>
 </section>
 <section id="hyperparameter-tuning">
-<h3>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Permalink to this heading">#</a></h3>
+<h3>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Link to this heading">#</a></h3>
 <section id="grid-search">
-<h4>Grid Search<a class="headerlink" href="#grid-search" title="Permalink to this heading">#</a></h4>
+<h4>Grid Search<a class="headerlink" href="#grid-search" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
@@ -958,7 +972,7 @@ weighted avg       0.67      0.66      0.66       104
 </div>
 </div>
 <section id="model-selection">
-<h5>Model Selection<a class="headerlink" href="#model-selection" title="Permalink to this heading">#</a></h5>
+<h5>Model Selection<a class="headerlink" href="#model-selection" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">model_searcher</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -968,7 +982,7 @@ weighted avg       0.67      0.66      0.66       104
 </div>
 </section>
 <section id="selected-model-application">
-<h5>Selected Model Application<a class="headerlink" href="#selected-model-application" title="Permalink to this heading">#</a></h5>
+<h5>Selected Model Application<a class="headerlink" href="#selected-model-application" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_predicted_grid</span> <span class="o">=</span> <span class="n">model_searcher</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -978,7 +992,7 @@ weighted avg       0.67      0.66      0.66       104
 </div>
 </section>
 <section id="selected-model-evaluation">
-<h5>Selected Model Evaluation<a class="headerlink" href="#selected-model-evaluation" title="Permalink to this heading">#</a></h5>
+<h5>Selected Model Evaluation<a class="headerlink" href="#selected-model-evaluation" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_searcher</span><span class="o">.</span><span class="n">best_params_</span>
@@ -1004,7 +1018,7 @@ weighted avg       0.67      0.66      0.66       104
 </div>
 </div>
 <section id="id7">
-<h6>Confusion Matrix<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h6>
+<h6>Confusion Matrix<a class="headerlink" href="#id7" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">model_searcher</span><span class="p">,</span>
@@ -1021,7 +1035,7 @@ weighted avg       0.67      0.66      0.66       104
 </div>
 </section>
 <section id="id8">
-<h6>Classification Report<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h6>
+<h6>Classification Report<a class="headerlink" href="#id8" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted_grid</span><span class="p">))</span>
@@ -1043,7 +1057,7 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </section>
 <section id="id9">
-<h6>Model Selection<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h6>
+<h6>Model Selection<a class="headerlink" href="#id9" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">COLORS</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;blue&quot;</span>
@@ -1117,7 +1131,7 @@ weighted avg       0.69      0.69      0.69       104
 </section>
 </section>
 <section id="id10">
-<h5>Model Selection<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h5>
+<h5>Model Selection<a class="headerlink" href="#id10" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">model_searcher_2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -1127,7 +1141,7 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </section>
 <section id="id11">
-<h5>Selected Model Application<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h5>
+<h5>Selected Model Application<a class="headerlink" href="#id11" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_predicted_grid_2</span> <span class="o">=</span> <span class="n">model_searcher_2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -1137,7 +1151,7 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </section>
 <section id="id12">
-<h5>Selected Model Evaluation<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h5>
+<h5>Selected Model Evaluation<a class="headerlink" href="#id12" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_searcher_2</span><span class="o">.</span><span class="n">best_params_</span>
@@ -1163,7 +1177,7 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </div>
 <section id="id13">
-<h6>Confusion Matrix<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h6>
+<h6>Confusion Matrix<a class="headerlink" href="#id13" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">model_searcher_2</span><span class="p">,</span>
@@ -1180,7 +1194,7 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </section>
 <section id="id14">
-<h6>Classification Report<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h6>
+<h6>Classification Report<a class="headerlink" href="#id14" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_predicted_grid_2</span><span class="p">))</span>
@@ -1203,7 +1217,7 @@ weighted avg       0.63      0.62      0.63       104
 </section>
 </section>
 <section id="id15">
-<h5>Feature Importance<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h5>
+<h5>Feature Importance<a class="headerlink" href="#id15" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_importance</span> <span class="o">=</span> <span class="n">permutation_importance</span><span class="p">(</span><span class="n">model_searcher_2</span><span class="p">,</span>

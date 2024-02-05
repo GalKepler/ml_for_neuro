@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Exercise VIII: K-Means Clustering and PCA &#8212; Machine Learning for Neuroscience</title>
   
@@ -29,39 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter_08/exercise_08';</script>
@@ -162,7 +165,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -415,12 +429,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-viii-k-means-clustering-and-pca">
-<h1>Exercise VIII: K-Means Clustering and PCA<a class="headerlink" href="#exercise-viii-k-means-clustering-and-pca" title="Permalink to this heading">#</a></h1>
+<h1>Exercise VIII: K-Means Clustering and PCA<a class="headerlink" href="#exercise-viii-k-means-clustering-and-pca" title="Link to this heading">#</a></h1>
 <section id="iris-dataset">
-<h2>Iris Dataset<a class="headerlink" href="#iris-dataset" title="Permalink to this heading">#</a></h2>
+<h2>Iris Dataset<a class="headerlink" href="#iris-dataset" title="Link to this heading">#</a></h2>
 <p>Let’s start things off with a simple application of our subject material on the Iris dataset to better understand our workflow and the relevant metrics.</p>
 <section id="set-up">
-<h3>Set up<a class="headerlink" href="#set-up" title="Permalink to this heading">#</a></h3>
+<h3>Set up<a class="headerlink" href="#set-up" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -438,7 +452,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2197/592460860.py:1: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2183/592460860.py:1: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -452,7 +466,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </section>
 <section id="dimensionality-reduction-using-principal-component-analysis-pca">
-<h3>Dimensionality Reduction using <a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">Principal Component Analysis (PCA)</a><a class="headerlink" href="#dimensionality-reduction-using-principal-component-analysis-pca" title="Permalink to this heading">#</a></h3>
+<h3>Dimensionality Reduction using <a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis">Principal Component Analysis (PCA)</a><a class="headerlink" href="#dimensionality-reduction-using-principal-component-analysis-pca" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
@@ -832,7 +846,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <p>Ah, we can already guess the <code class="docutils literal notranslate"><span class="pre">setosa</span></code> class to be that discernible cloud on the left of both dimensionality-reduced scatters.</p>
 </section>
 <section id="k-means-clustering">
-<h3><a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">K-means</a> Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this heading">#</a></h3>
+<h3><a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">K-means</a> Clustering<a class="headerlink" href="#k-means-clustering" title="Link to this heading">#</a></h3>
 <p>Next, we could try and identify the underlying classes or Iris genera and comparing our results against the actual labels. Essentially, we are checking how does the reduction of the feature space using PCA impact our ability to detect the different iris genera using K-means clustering.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -883,7 +897,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <section id="clustering-evaluation">
-<h4>Clustering Evaluation<a class="headerlink" href="#clustering-evaluation" title="Permalink to this heading">#</a></h4>
+<h4>Clustering Evaluation<a class="headerlink" href="#clustering-evaluation" title="Link to this heading">#</a></h4>
 <p>How do you think we did relative to the baseline (clustering using all 4 features) as we reduced the dimensionality of the dataset?</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title">plots/accuracy.py</p>
@@ -1098,7 +1112,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </section>
 </section>
 <section id="asd-subtypes-classification">
-<h2>ASD Subtypes Classification<a class="headerlink" href="#asd-subtypes-classification" title="Permalink to this heading">#</a></h2>
+<h2>ASD Subtypes Classification<a class="headerlink" href="#asd-subtypes-classification" title="Link to this heading">#</a></h2>
 <p>So, now we know how to implement both PCA and K-means clustering using <code class="docutils literal notranslate"><span class="pre">sklearn</span></code>. Next, we will try and explore the possibility of identifying ASD subtypes using  and  on the <a class="reference external" href="http://fcon_1000.projects.nitrc.org/indi/abide/abide_II.html">ABIDE II</a> dataset, again, based on <a class="reference external" href="https://talyarkoni.org/">Prof. Tal Yarkoni</a>’s workshop in  the <a class="reference external" href="https://neurohackademy.org/">NeuroHackademy</a> 2020 (available <a class="reference external" href="https://github.com/neurohackademy/nh2020-curriculum/tree/master/tu-machine-learning-yarkoni">here</a>). This procedure is somewhat similar to what we did with the iris dataset (in terms of combining PCA and K-means to identify clusters in a dimensionality-reduced space), however, this time the labels are not known to us, and we will try to evaluate whether the results of our analysis produce convincing results.</p>
 <p>First, as always, we have to load the data and clean it up a little bit:</p>
 <div class="cell docutils container">
@@ -1439,7 +1453,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div></div></div>
 </div>
 <section id="principal-component-analysis-pca">
-<h3>Principal Component Analysis (PCA)<a class="headerlink" href="#principal-component-analysis-pca" title="Permalink to this heading">#</a></h3>
+<h3>Principal Component Analysis (PCA)<a class="headerlink" href="#principal-component-analysis-pca" title="Link to this heading">#</a></h3>
 <p>We will use PCA to try and “capture” as much of the variance of our 1,440 features using a limited number of principal components.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1466,9 +1480,9 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <p>It seems like the added value of using more than 2 or 3 components is relatively negligible, with 3 components explaining a total of <span class="pasted-text">49.43</span>% of the total variance.</p>
 </section>
 <section id="id1">
-<h3>K-Means Clustering<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>K-Means Clustering<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <section id="id2">
-<h4>Clustering Evaluation<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<h4>Clustering Evaluation<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">plots.silhouette</span> <span class="kn">import</span> <span class="n">plot_silhouette_scores_by_k</span>

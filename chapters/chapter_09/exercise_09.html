@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Exercise IX: The Haxby Experiment (2001) &#8212; Machine Learning for Neuroscience</title>
   
@@ -29,39 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter_09/exercise_09';</script>
@@ -162,7 +165,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -405,7 +419,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-ix-the-haxby-experiment-2001">
-<h1>Exercise IX: The Haxby Experiment (2001)<a class="headerlink" href="#exercise-ix-the-haxby-experiment-2001" title="Permalink to this heading">#</a></h1>
+<h1>Exercise IX: The Haxby Experiment (2001)<a class="headerlink" href="#exercise-ix-the-haxby-experiment-2001" title="Link to this heading">#</a></h1>
 <p>Thie exercise is based on <a class="reference external" href="https://nilearn.github.io/auto_examples/plot_decoding_tutorial.html#sphx-glr-auto-examples-plot-decoding-tutorial-py">an example</a> from <a class="reference external" href="https://nilearn.github.io/index.html">nilearn</a>’s documentation.</p>
 <p>The Haxby Experiment (2001) <span id="id1">[<a class="reference internal" href="../../references.html#id4" title="James V Haxby, M Ida Gobbini, Maura L Furey, Alumit Ishai, Jennifer L Schouten, and Pietro Pietrini. Distributed and overlapping representations of faces and objects in ventral temporal cortex. Science, 293(5539):2425–2430, 2001.">1</a>]</span> shows that the representation of objects from different categories is distributed and overlaps over brain regions that were broadly considered to be “specialized” to particular stimuli categories (i.e. the fusiform area for faces and the parahippocampal place area for places).</p>
 <p><img alt="Cats" src="https://nilearn.github.io/_images/sphx_glr_plot_haxby_stimuli_0021.png" />
@@ -425,7 +439,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset created in /home/runner/nilearn_data/haxby2001
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Added README.md to /home/runner/nilearn_data
+
+
+Dataset created in /home/runner/nilearn_data/haxby2001
 
 Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ...
 </pre></div>
@@ -438,10 +455,16 @@ Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ..
 Downloading data from http://data.pymvpa.org/datasets/haxby2001/subj2-2010.01.14.tar.gz ...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded 136175616 of 291168628 bytes (46.8%,    1.1s remaining)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded 70033408 of 291168628 bytes (24.1%,    3.2s remaining)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ...done. (2 seconds, 0 min)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded 160530432 of 291168628 bytes (55.1%,    1.6s remaining)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded 250511360 of 291168628 bytes (86.0%,    0.5s remaining)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ...done. (4 seconds, 0 min)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data from /home/runner/nilearn_data/haxby2001/def37a305edfda829916fa14c9ea08f8/subj2-2010.01.14.tar.gz...
@@ -468,7 +491,7 @@ Downloading data from http://data.pymvpa.org/datasets/haxby2001/subj2-2010.01.14
  &#39;mask_face_little&#39;: [&#39;/home/runner/nilearn_data/haxby2001/subj2/mask8_face_vt.nii.gz&#39;],
  &#39;mask_house_little&#39;: [&#39;/home/runner/nilearn_data/haxby2001/subj2/mask8_house_vt.nii.gz&#39;],
  &#39;mask&#39;: &#39;/home/runner/nilearn_data/haxby2001/mask.nii.gz&#39;,
- &#39;description&#39;: &#39;Haxby 2001 results\n\n\nNotes\n-----\nResults from a classical fMRI study that investigated the differences between\nthe neural correlates of face versus object processing in the ventral visual\nstream. Face and object stimuli showed widely distributed and overlapping\nresponse patterns.\n\nContent\n-------\nThe &quot;simple&quot; dataset includes\n    :\&#39;func\&#39;: Nifti images with bold data\n    :\&#39;session_target\&#39;: Text file containing session data\n    :\&#39;mask\&#39;: Nifti images with employed mask\n    :\&#39;session\&#39;: Text file with condition labels\n\n\nThe full dataset additionally includes\n    :\&#39;anat\&#39;: Nifti images with anatomical image\n    :\&#39;func\&#39;: Nifti images with bold data\n    :\&#39;mask_vt\&#39;: Nifti images with mask for ventral visual/temporal cortex\n    :\&#39;mask_face\&#39;: Nifti images with face-reponsive brain regions\n    :\&#39;mask_house\&#39;: Nifti images with house-reponsive brain regions\n    :\&#39;mask_face_little\&#39;: Spatially more constrained version of the above\n    :\&#39;mask_house_little\&#39;: Spatially more constrained version of the above\n\n\nReferences\n----------\nFor more information see:\nPyMVPA provides a tutorial using this dataset :\nhttp://www.pymvpa.org/tutorial.html\n\nMore information about its structure :\nhttp://dev.pymvpa.org/datadb/haxby2001.html\n\n\n`Haxby, J., Gobbini, M., Furey, M., Ishai, A., Schouten, J.,\nand Pietrini, P. (2001). Distributed and overlapping representations of\nfaces and objects in ventral temporal cortex. Science 293, 2425-2430.`\n\n\nLicence: unknown.\n&#39;}
+ &#39;description&#39;: &#39;Haxby 2001 results\n\n\nNotes\n-----\nResults from a classical fMRI study that investigated the differences between\nthe neural correlates of face versus object processing in the ventral visual\nstream. Face and object stimuli showed widely distributed and overlapping\nresponse patterns.\n\nContent\n-------\nThe &quot;simple&quot; dataset includes\n    :\&#39;func\&#39;: Nifti images with bold data\n    :\&#39;session_target\&#39;: Text file containing run data\n    :\&#39;mask\&#39;: Nifti images with employed mask\n    :\&#39;session\&#39;: Text file with condition labels\n\n\nThe full dataset additionally includes\n    :\&#39;anat\&#39;: Nifti images with anatomical image\n    :\&#39;func\&#39;: Nifti images with bold data\n    :\&#39;mask_vt\&#39;: Nifti images with mask for ventral visual/temporal cortex\n    :\&#39;mask_face\&#39;: Nifti images with face-reponsive brain regions\n    :\&#39;mask_house\&#39;: Nifti images with house-reponsive brain regions\n    :\&#39;mask_face_little\&#39;: Spatially more constrained version of the above\n    :\&#39;mask_house_little\&#39;: Spatially more constrained version of the above\n\n\nReferences\n----------\nFor more information see:\nPyMVPA provides a tutorial using this dataset :\nhttp://www.pymvpa.org/tutorial.html\n\nMore information about its structure :\nhttp://dev.pymvpa.org/datadb/haxby2001.html\n\n\n`Haxby, J., Gobbini, M., Furey, M., Ishai, A., Schouten, J.,\nand Pietrini, P. (2001). Distributed and overlapping representations of\nfaces and objects in ventral temporal cortex. Science 293, 2425-2430.`\n\n\nLicense\n-------\nunknown\n&#39;}
 </pre></div>
 </div>
 </div>
@@ -492,7 +515,7 @@ Downloading data from http://data.pymvpa.org/datasets/haxby2001/subj2-2010.01.14
 </div>
 </div>
 <section id="visualization">
-<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading">#</a></h2>
+<h2>Visualization<a class="headerlink" href="#visualization" title="Link to this heading">#</a></h2>
 <p>fMRI data is generally represented as a 4D matrix of 3D EPI scans over time.</p>
 <p>To read the fMRI volume from a <em>.nii.gz</em> file we’ll use <a class="reference external" href="https://nipy.org/nibabel/">nibabel</a>’s <code class="docutils literal notranslate"><span class="pre">load()</span></code> function:</p>
 <div class="cell docutils container">
@@ -566,7 +589,7 @@ Downloading data from http://data.pymvpa.org/datasets/haxby2001/subj2-2010.01.14
 </div>
 </section>
 <section id="masking">
-<h2>Masking<a class="headerlink" href="#masking" title="Permalink to this heading">#</a></h2>
+<h2>Masking<a class="headerlink" href="#masking" title="Link to this heading">#</a></h2>
 <p>In order to analyze the data, we need to produce a matrix containing the measured signal in the ventral temporal (VT) cortex over time.</p>
 <p>First, let’s have a look at the provided mask:</p>
 <div class="cell docutils container">
@@ -637,10 +660,10 @@ Downloading data from http://data.pymvpa.org/datasets/haxby2001/subj2-2010.01.14
 </div>
 </section>
 <section id="prediction">
-<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this heading">#</a></h2>
+<h2>Prediction<a class="headerlink" href="#prediction" title="Link to this heading">#</a></h2>
 <p>Let’s try and predict which stimulus category the subject was viewing based on the masked fMRI data.</p>
 <section id="reading-the-labels">
-<h3>Reading the labels<a class="headerlink" href="#reading-the-labels" title="Permalink to this heading">#</a></h3>
+<h3>Reading the labels<a class="headerlink" href="#reading-the-labels" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">session_target</span></code> file contains a <code class="docutils literal notranslate"><span class="pre">labels</span></code> column, describing the stimulus category at each presentation block, as well as the session (<code class="docutils literal notranslate"><span class="pre">chunks</span></code>) out of 12 sessions presented to each subjects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -811,7 +834,7 @@ Downloading data from http://data.pymvpa.org/datasets/haxby2001/subj2-2010.01.14
 </div>
 </section>
 <section id="logistic-regression">
-<h3>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this heading">#</a></h3>
+<h3>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Link to this heading">#</a></h3>
 <p>To grid search across <span class="math notranslate nohighlight">\(\ell_1\)</span> and <span class="math notranslate nohighlight">\(\ell_2\)</span> with various <code class="docutils literal notranslate"><span class="pre">C</span></code> values and score based on the ROC AUC:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
