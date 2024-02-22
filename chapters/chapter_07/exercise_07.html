@@ -392,7 +392,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-asd-diagnosis-round-2">Predicting ASD Diagnosis: Round 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-asd-diagnosis">Predicting ASD Diagnosis:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random Forest</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-creation">Model Creation</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-application">Model Application</a></li>
@@ -464,11 +464,13 @@ document.write(`
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span><span class="p">,</span> <span class="n">plot_tree</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -481,7 +483,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2161/1335027573.py:1: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2224/672118493.py:2: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -495,7 +497,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decision_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decision_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">decision_tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -508,7 +510,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">plot_tree</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">,</span>
-              <span class="n">class_names</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;target_names&quot;</span><span class="p">],</span>
+              <span class="n">class_names</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;target_names&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
               <span class="n">feature_names</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;feature_names&quot;</span><span class="p">],</span>
               <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
               <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
@@ -520,36 +522,29 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1c2868198839b7ec44d599b3e462734bccfe8645be0cc8376096b36bae1d827f.png" src="../../_images/1c2868198839b7ec44d599b3e462734bccfe8645be0cc8376096b36bae1d827f.png" />
+<img alt="../../_images/bba115b11c4b9846b254d8cffe28858d746288069c85d6ab9016d47bf526249b.png" src="../../_images/bba115b11c4b9846b254d8cffe28858d746288069c85d6ab9016d47bf526249b.png" />
 </div>
 </div>
 <p>Finally, we can evaluate the model’s performance using the appropriate metrics, e.g.:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">ConfusionMatrixDisplay</span>
 
-<span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">,</span>
-                          <span class="n">X_test</span><span class="p">,</span>
-                          <span class="n">y_test</span><span class="p">,</span>
-                          <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">,</span>
-                          <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">,</span>
+                                             <span class="n">X_test</span><span class="p">,</span>
+                                             <span class="n">y_test</span><span class="p">,</span>
+                                             <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">,</span>
+                                             <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">,</span>
+                                             <span class="n">display_labels</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;target_names&quot;</span><span class="p">])</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">plot_confusion_matrix</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">decision_tree</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                           <span class="n">X_test</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                           <span class="n">y_test</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>                           <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>                           <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
-
-<span class="ne">ImportError</span>: cannot import name &#39;plot_confusion_matrix&#39; from &#39;sklearn.metrics&#39; (/opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/metrics/__init__.py)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Confusion Matrix&#39;)
 </pre></div>
 </div>
+<img alt="../../_images/1cdc96fe1d47b77c4b9bf123e0cd94aae633b0baf67bab146b70711cd81e4373.png" src="../../_images/1cdc96fe1d47b77c4b9bf123e0cd94aae633b0baf67bab146b70711cd81e4373.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -564,19 +559,19 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-      setosa       1.00      1.00      1.00         8
-  versicolor       1.00      0.90      0.95        10
-   virginica       0.92      1.00      0.96        12
+      setosa       1.00      1.00      1.00        11
+  versicolor       1.00      1.00      1.00        11
+   virginica       1.00      1.00      1.00         8
 
-    accuracy                           0.97        30
-   macro avg       0.97      0.97      0.97        30
-weighted avg       0.97      0.97      0.97        30
+    accuracy                           1.00        30
+   macro avg       1.00      1.00      1.00        30
+weighted avg       1.00      1.00      1.00        30
 </pre></div>
 </div>
 </div>
 </div>
-<section id="predicting-asd-diagnosis-round-2">
-<h2>Predicting ASD Diagnosis: Round 2<a class="headerlink" href="#predicting-asd-diagnosis-round-2" title="Link to this heading">#</a></h2>
+<section id="predicting-asd-diagnosis">
+<h2>Predicting ASD Diagnosis:<a class="headerlink" href="#predicting-asd-diagnosis" title="Link to this heading">#</a></h2>
 <p>Again, we will try and create a model to classify ASD diagnosis using four FreeSurfer metrics extracted over 360 brain regions. In the previous exercise we used an <span class="math notranslate nohighlight">\(\ell_2\)</span> regularized logistic regression model (estimated using the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegressionCV.html"><code class="docutils literal notranslate"><span class="pre">LogisticRegressionCV</span></code></a> class) to select and fit a model, this time we will use the <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html"><code class="docutils literal notranslate"><span class="pre">RandomForestClassifier</span></code></a> and <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html"><code class="docutils literal notranslate"><span class="pre">GradientBoostingClassifier</span></code></a> to do the same.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
@@ -649,16 +644,20 @@ weighted avg       0.97      0.97      0.97        30
 <h5>Confusion Matrix<a class="headerlink" href="#confusion-matrix" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">random_forest</span><span class="p">,</span>
-                          <span class="n">X_test</span><span class="p">,</span>
-                          <span class="n">y_test</span><span class="p">,</span>
-                          <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">,</span>
-                          <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span><span class="n">random_forest</span><span class="p">,</span>
+                                             <span class="n">X_test</span><span class="p">,</span>
+                                             <span class="n">y_test</span><span class="p">,</span>
+                                             <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">,</span>
+                                             <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b47ac2b36f9d23eb645d0a4f4c1eb8996a2662301f57d673f9bfc65d3e722808.png" src="../../_images/b47ac2b36f9d23eb645d0a4f4c1eb8996a2662301f57d673f9bfc65d3e722808.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Confusion Matrix&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/91ed57f3f9ff1451e5ad3928394ba8079efac4f5c2e4c939178bb3b927f13a1d.png" src="../../_images/91ed57f3f9ff1451e5ad3928394ba8079efac4f5c2e4c939178bb3b927f13a1d.png" />
 </div>
 </div>
 </section>
@@ -715,6 +714,103 @@ weighted avg       0.65      0.65      0.65       104
                                     <span class="n">y_test</span><span class="p">,</span>
                                     <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                                     <span class="n">n_jobs</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.inspection</span> <span class="kn">import</span> <span class="n">permutation_importance</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">importance</span> <span class="o">=</span> <span class="n">permutation_importance</span><span class="p">(</span><span class="n">random_forest</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                                     <span class="n">X_test</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                                     <span class="n">y_test</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                                     <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>                                     <span class="n">n_jobs</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/utils/_param_validation.py:213,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">209</span>         <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span>             <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
+<span class="g g-Whitespace">    </span><span class="mi">211</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">212</span>     <span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">213</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span> <span class="k">except</span> <span class="n">InvalidParameterError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">215</span>     <span class="c1"># When the function is just a wrapper around an estimator, we allow</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>     <span class="c1"># the function to delegate validation to the estimator, but we replace</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="c1"># the name of the estimator by the name of the function in the error</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="c1"># message to avoid confusion.</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span>     <span class="n">msg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="sa">r</span><span class="s2">&quot;parameter of \w+ must be&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>         <span class="sa">f</span><span class="s2">&quot;parameter of </span><span class="si">{</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span><span class="si">}</span><span class="s2"> must be&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/inspection/_permutation_importance.py:292,</span> in <span class="ni">permutation_importance</span><span class="nt">(estimator, X, y, scoring, n_repeats, n_jobs, random_state, sample_weight, max_samples)</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="n">scorer</span> <span class="o">=</span> <span class="n">_MultimetricScorer</span><span class="p">(</span><span class="n">scorers</span><span class="o">=</span><span class="n">scorers_dict</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="n">baseline_score</span> <span class="o">=</span> <span class="n">_weights_scorer</span><span class="p">(</span><span class="n">scorer</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">292</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_calculate_permutation_scores</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="n">estimator</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>         <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">296</span>         <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span>         <span class="n">sample_weight</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="n">col_idx</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span>         <span class="n">random_seed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>         <span class="n">n_repeats</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="n">scorer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>         <span class="n">max_samples</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="p">)</span>
+<span class="nn">    304     for col_idx</span> in <span class="ni">range</span><span class="nt">(X.shape[1])</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">baseline_score</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="k">return</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">name</span><span class="p">:</span> <span class="n">_create_importances_bunch</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">310</span>             <span class="n">baseline_score</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>         <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseline_score</span>
+<span class="g g-Whitespace">    </span><span class="mi">315</span>     <span class="p">}</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/utils/parallel.py:67,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
+<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">67</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/joblib/parallel.py:1952,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1946</span> <span class="c1"># The first item from the output is blank, but it makes the interpreter</span>
+<span class="g g-Whitespace">   </span><span class="mi">1947</span> <span class="c1"># progress until it enters the Try/Except block of the generator and</span>
+<span class="g g-Whitespace">   </span><span class="mi">1948</span> <span class="c1"># reach the first `yield` statement. This starts the aynchronous</span>
+<span class="g g-Whitespace">   </span><span class="mi">1949</span> <span class="c1"># dispatch of the tasks to the workers.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1950</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1952</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/joblib/parallel.py:1595,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1592</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">1594</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">1595</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1597</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1598</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
+<span class="g g-Whitespace">   </span><span class="mi">1599</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
+<span class="g g-Whitespace">   </span><span class="mi">1600</span>     <span class="c1"># the user if necessary.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1601</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/joblib/parallel.py:1707,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1702</span> <span class="c1"># If the next job is not ready for retrieval yet, we just wait for</span>
+<span class="g g-Whitespace">   </span><span class="mi">1703</span> <span class="c1"># async callbacks to progress.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1704</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">   </span><span class="mi">1705</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1706</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span><span class="p">)):</span>
+<span class="ne">-&gt; </span><span class="mi">1707</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1708</span>     <span class="k">continue</span>
+<span class="g g-Whitespace">   </span><span class="mi">1710</span> <span class="c1"># We need to be careful: the job list can be filling up as</span>
+<span class="g g-Whitespace">   </span><span class="mi">1711</span> <span class="c1"># we empty it and Python list are not thread-safe by</span>
+<span class="g g-Whitespace">   </span><span class="mi">1712</span> <span class="c1"># default hence the use of the lock</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
 </div>
 </div>
@@ -828,10 +924,10 @@ weighted avg       0.65      0.65      0.65       104
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/2a7a16aa42f8aa1e3db5045f35c972ee89f7375f7fe438b71db55805001e25c1.png" src="../../_images/2a7a16aa42f8aa1e3db5045f35c972ee89f7375f7fe438b71db55805001e25c1.png" />
-<img alt="../../_images/6c1a0388653f554d6f921250fe8267969fe2ec23a34b46b175d118e30d3a3456.png" src="../../_images/6c1a0388653f554d6f921250fe8267969fe2ec23a34b46b175d118e30d3a3456.png" />
-<img alt="../../_images/2d81887917891427f732a2e847caa3c38e1540f334ce475b21dd2c35391a763b.png" src="../../_images/2d81887917891427f732a2e847caa3c38e1540f334ce475b21dd2c35391a763b.png" />
-<img alt="../../_images/131b8307e4840037ff33177847e2275f4bbefb790d6e549ee9fc102f1ffcfe63.png" src="../../_images/131b8307e4840037ff33177847e2275f4bbefb790d6e549ee9fc102f1ffcfe63.png" />
+<img alt="../../_images/f6ac99e4b9335e00df410e0ecb60eb6a9c2e88b128eb52dbbb31574c9d483118.png" src="../../_images/f6ac99e4b9335e00df410e0ecb60eb6a9c2e88b128eb52dbbb31574c9d483118.png" />
+<img alt="../../_images/6bfd8d9a97c8b3806bce1b9a296759be32dca78e875f9e19ef2d93b0b3ed89bb.png" src="../../_images/6bfd8d9a97c8b3806bce1b9a296759be32dca78e875f9e19ef2d93b0b3ed89bb.png" />
+<img alt="../../_images/3fc249835e64df316949da8ff4afbfa5d6c7fd440b98f3707904d73f884ecb4a.png" src="../../_images/3fc249835e64df316949da8ff4afbfa5d6c7fd440b98f3707904d73f884ecb4a.png" />
+<img alt="../../_images/bc102d3888351b0ae304f888a28302d738063d425ac2372edc8e26485db35d8a.png" src="../../_images/bc102d3888351b0ae304f888a28302d738063d425ac2372edc8e26485db35d8a.png" />
 </div>
 </div>
 </section>
@@ -868,16 +964,20 @@ weighted avg       0.65      0.65      0.65       104
 <h5>Confusion Matrix<a class="headerlink" href="#id4" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">gradient_boosting</span><span class="p">,</span>
-                          <span class="n">X_test</span><span class="p">,</span>
-                          <span class="n">y_test</span><span class="p">,</span>
-                          <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">,</span>
-                          <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span><span class="n">gradient_boosting</span><span class="p">,</span>
+                                             <span class="n">X_test</span><span class="p">,</span>
+                                             <span class="n">y_test</span><span class="p">,</span>
+                                             <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">,</span>
+                                             <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4882a21ae9518da0bd3a35a43f0d0a0a21be4c7c563ecb69e177feaf2bd1e259.png" src="../../_images/4882a21ae9518da0bd3a35a43f0d0a0a21be4c7c563ecb69e177feaf2bd1e259.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Confusion Matrix&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/de83dd7a6f5ff6765a0825cb75fb9dc4bb233ccdf10581639c4fb26597ee32fc.png" src="../../_images/de83dd7a6f5ff6765a0825cb75fb9dc4bb233ccdf10581639c4fb26597ee32fc.png" />
 </div>
 </div>
 </section>
@@ -934,10 +1034,10 @@ weighted avg       0.67      0.66      0.66       104
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/995694332661371985d7fc886b4d8056ff465399480eca138eebdb005e6f171a.png" src="../../_images/995694332661371985d7fc886b4d8056ff465399480eca138eebdb005e6f171a.png" />
-<img alt="../../_images/db8ed82d4340333210e8b616de7af7a9c0e4d874eac13f3bbefcc4ef1e8f84bc.png" src="../../_images/db8ed82d4340333210e8b616de7af7a9c0e4d874eac13f3bbefcc4ef1e8f84bc.png" />
-<img alt="../../_images/95a36e35a9f7cd5bd43f3f1f4ab541d5e7640cf0c514a67be96a1e88d7657853.png" src="../../_images/95a36e35a9f7cd5bd43f3f1f4ab541d5e7640cf0c514a67be96a1e88d7657853.png" />
-<img alt="../../_images/7a25aa282f58a654af4b70e4da0e09babb097c0713400cb3cfdcaf74a0b8d039.png" src="../../_images/7a25aa282f58a654af4b70e4da0e09babb097c0713400cb3cfdcaf74a0b8d039.png" />
+<img alt="../../_images/e91df70e9344f2656d04ef3143de62a19318b7bb1f7da55fa226e8cbdfbe16b8.png" src="../../_images/e91df70e9344f2656d04ef3143de62a19318b7bb1f7da55fa226e8cbdfbe16b8.png" />
+<img alt="../../_images/42e20b71014bbb0838d9554d673f9c09916e6dcb1a41c08ed6598a26a5b41d82.png" src="../../_images/42e20b71014bbb0838d9554d673f9c09916e6dcb1a41c08ed6598a26a5b41d82.png" />
+<img alt="../../_images/192cee5f1c90ba870b8238500458b23aa4a917b8358058c77ecf64a7f0ba3b8c.png" src="../../_images/192cee5f1c90ba870b8238500458b23aa4a917b8358058c77ecf64a7f0ba3b8c.png" />
+<img alt="../../_images/5967fe827219ce1abde2fdf4bdab42949cb93820aa86ccb06124ac3debddd2e9.png" src="../../_images/5967fe827219ce1abde2fdf4bdab42949cb93820aa86ccb06124ac3debddd2e9.png" />
 </div>
 </div>
 </section>
@@ -1013,16 +1113,20 @@ weighted avg       0.67      0.66      0.66       104
 <h6>Confusion Matrix<a class="headerlink" href="#id7" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">model_searcher</span><span class="p">,</span>
-                          <span class="n">X_test</span><span class="p">,</span>
-                          <span class="n">y_test</span><span class="p">,</span>
-                          <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">,</span>
-                          <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span><span class="n">model_searcher</span><span class="p">,</span>
+                                             <span class="n">X_test</span><span class="p">,</span>
+                                             <span class="n">y_test</span><span class="p">,</span>
+                                             <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">,</span>
+                                             <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1b2921f03e2dc3ff9af3fe3a9f29e8bb15421f8d4424433f888b344f0b04da9b.png" src="../../_images/1b2921f03e2dc3ff9af3fe3a9f29e8bb15421f8d4424433f888b344f0b04da9b.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Confusion Matrix&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/1dc0cf392aaa5f6bc020cb7ff1333fb9235b53048a4698b83c9b81fbc9b4585e.png" src="../../_images/1dc0cf392aaa5f6bc020cb7ff1333fb9235b53048a4698b83c9b81fbc9b4585e.png" />
 </div>
 </div>
 </section>
@@ -1106,7 +1210,7 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/badf0419718cfd0131f6f78087b948e6f6b6c81b16325d567e656f7bdd162676.png" src="../../_images/badf0419718cfd0131f6f78087b948e6f6b6c81b16325d567e656f7bdd162676.png" />
+<img alt="../../_images/e5f4e513e516fc1ad226d521a9ba07ea1d1865f0f1209897293bd9c79087217d.png" src="../../_images/e5f4e513e516fc1ad226d521a9ba07ea1d1865f0f1209897293bd9c79087217d.png" />
 </div>
 </div>
 <p>What would happen if we changed <code class="docutils literal notranslate"><span class="pre">cv</span></code> from it’s default value (5) to 10? Would <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> select the same model?</p>
@@ -1313,7 +1417,7 @@ weighted avg       0.63      0.62      0.63       104
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-asd-diagnosis-round-2">Predicting ASD Diagnosis: Round 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-asd-diagnosis">Predicting ASD Diagnosis:</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">Random Forest</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-creation">Model Creation</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#model-application">Model Application</a></li>
