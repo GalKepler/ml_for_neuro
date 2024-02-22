@@ -483,7 +483,7 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2224/672118493.py:2: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2146/672118493.py:2: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -522,7 +522,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bba115b11c4b9846b254d8cffe28858d746288069c85d6ab9016d47bf526249b.png" src="../../_images/bba115b11c4b9846b254d8cffe28858d746288069c85d6ab9016d47bf526249b.png" />
+<img alt="../../_images/3682aac99d627ccc2b686b0f95b424982699fbbe2a1d3ea2b706f1c82a6406c8.png" src="../../_images/3682aac99d627ccc2b686b0f95b424982699fbbe2a1d3ea2b706f1c82a6406c8.png" />
 </div>
 </div>
 <p>Finally, we can evaluate the model’s performance using the appropriate metrics, e.g.:</p>
@@ -544,7 +544,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Confusion Matrix&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/1cdc96fe1d47b77c4b9bf123e0cd94aae633b0baf67bab146b70711cd81e4373.png" src="../../_images/1cdc96fe1d47b77c4b9bf123e0cd94aae633b0baf67bab146b70711cd81e4373.png" />
+<img alt="../../_images/93472900eaf3eac52657bf0c165994c706431253f84927899539c8f957ffa961.png" src="../../_images/93472900eaf3eac52657bf0c165994c706431253f84927899539c8f957ffa961.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -559,13 +559,13 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-      setosa       1.00      1.00      1.00        11
-  versicolor       1.00      1.00      1.00        11
-   virginica       1.00      1.00      1.00         8
+      setosa       1.00      1.00      1.00        12
+  versicolor       1.00      0.86      0.92        14
+   virginica       0.67      1.00      0.80         4
 
-    accuracy                           1.00        30
-   macro avg       1.00      1.00      1.00        30
-weighted avg       1.00      1.00      1.00        30
+    accuracy                           0.93        30
+   macro avg       0.89      0.95      0.91        30
+weighted avg       0.96      0.93      0.94        30
 </pre></div>
 </div>
 </div>
@@ -1285,7 +1285,18 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5c24a0bfef67e431f04339b20f507ea9ee7db46c8894b0658e725b681e2b3472.png" src="../../_images/5c24a0bfef67e431f04339b20f507ea9ee7db46c8894b0658e725b681e2b3472.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">56</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">model_searcher_2</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                           <span class="n">X_test</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                           <span class="n">y_test</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                           <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                           <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;plot_confusion_matrix&#39; is not defined
+</pre></div>
+</div>
 </div>
 </div>
 </section>
