@@ -477,7 +477,7 @@ document.write(`
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">target</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="n">index</span><span class="p">:</span> <span class="n">name</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;target_names&quot;</span><span class="p">])})</span>
 
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -510,7 +510,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6be9e43b987e00accc9bf56c8bd83ae990f290148f5ab6263b6198dfd2f9b81c.png" src="../../_images/6be9e43b987e00accc9bf56c8bd83ae990f290148f5ab6263b6198dfd2f9b81c.png" />
+<img alt="../../_images/a56189ad2aa945e022f6e1fd9b676333002b3a997c8ea0360ae5338951cede1e.png" src="../../_images/a56189ad2aa945e022f6e1fd9b676333002b3a997c8ea0360ae5338951cede1e.png" />
 </div>
 </div>
 <p>Finally, we can evaluate the model’s performance using the appropriate metrics, e.g.:</p>
@@ -547,9 +547,9 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-      setosa       1.00      1.00      1.00        12
-  versicolor       1.00      1.00      1.00         5
-   virginica       1.00      1.00      1.00        13
+      setosa       1.00      1.00      1.00        10
+  versicolor       1.00      1.00      1.00         9
+   virginica       1.00      1.00      1.00        11
 
     accuracy                           1.00        30
    macro avg       1.00      1.00      1.00        30
@@ -912,10 +912,10 @@ weighted avg       0.65      0.65      0.65       104
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/f6ac99e4b9335e00df410e0ecb60eb6a9c2e88b128eb52dbbb31574c9d483118.png" src="../../_images/f6ac99e4b9335e00df410e0ecb60eb6a9c2e88b128eb52dbbb31574c9d483118.png" />
-<img alt="../../_images/6bfd8d9a97c8b3806bce1b9a296759be32dca78e875f9e19ef2d93b0b3ed89bb.png" src="../../_images/6bfd8d9a97c8b3806bce1b9a296759be32dca78e875f9e19ef2d93b0b3ed89bb.png" />
-<img alt="../../_images/3fc249835e64df316949da8ff4afbfa5d6c7fd440b98f3707904d73f884ecb4a.png" src="../../_images/3fc249835e64df316949da8ff4afbfa5d6c7fd440b98f3707904d73f884ecb4a.png" />
-<img alt="../../_images/bc102d3888351b0ae304f888a28302d738063d425ac2372edc8e26485db35d8a.png" src="../../_images/bc102d3888351b0ae304f888a28302d738063d425ac2372edc8e26485db35d8a.png" />
+<img alt="../../_images/548181c295dacb90d3f06ccd95d45821c6fc16d4d2bc087ce3a889f5917cb6fb.png" src="../../_images/548181c295dacb90d3f06ccd95d45821c6fc16d4d2bc087ce3a889f5917cb6fb.png" />
+<img alt="../../_images/a06ed70ddd749efd7e0c53ae35303e688ca062c295faa04022258236c7242748.png" src="../../_images/a06ed70ddd749efd7e0c53ae35303e688ca062c295faa04022258236c7242748.png" />
+<img alt="../../_images/d200ba298cae3647d925106d66641700cd51b655b9c206a37c10b4a8ecee6b4a.png" src="../../_images/d200ba298cae3647d925106d66641700cd51b655b9c206a37c10b4a8ecee6b4a.png" />
+<img alt="../../_images/00a22146a003e0f3db3613a83ea82599b7881aa36cb2c8b9217f0a8bb3077cb0.png" src="../../_images/00a22146a003e0f3db3613a83ea82599b7881aa36cb2c8b9217f0a8bb3077cb0.png" />
 </div>
 </div>
 </section>
@@ -965,7 +965,7 @@ weighted avg       0.65      0.65      0.65       104
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Confusion Matrix&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/de83dd7a6f5ff6765a0825cb75fb9dc4bb233ccdf10581639c4fb26597ee32fc.png" src="../../_images/de83dd7a6f5ff6765a0825cb75fb9dc4bb233ccdf10581639c4fb26597ee32fc.png" />
+<img alt="../../_images/24cd4609f4a6bbbf0f60d29e0eb63550fedd39b7dd9a6a64d544cb89413b3562.png" src="../../_images/24cd4609f4a6bbbf0f60d29e0eb63550fedd39b7dd9a6a64d544cb89413b3562.png" />
 </div>
 </div>
 </section>
@@ -1022,10 +1022,10 @@ weighted avg       0.67      0.66      0.66       104
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/e91df70e9344f2656d04ef3143de62a19318b7bb1f7da55fa226e8cbdfbe16b8.png" src="../../_images/e91df70e9344f2656d04ef3143de62a19318b7bb1f7da55fa226e8cbdfbe16b8.png" />
-<img alt="../../_images/42e20b71014bbb0838d9554d673f9c09916e6dcb1a41c08ed6598a26a5b41d82.png" src="../../_images/42e20b71014bbb0838d9554d673f9c09916e6dcb1a41c08ed6598a26a5b41d82.png" />
-<img alt="../../_images/192cee5f1c90ba870b8238500458b23aa4a917b8358058c77ecf64a7f0ba3b8c.png" src="../../_images/192cee5f1c90ba870b8238500458b23aa4a917b8358058c77ecf64a7f0ba3b8c.png" />
-<img alt="../../_images/5967fe827219ce1abde2fdf4bdab42949cb93820aa86ccb06124ac3debddd2e9.png" src="../../_images/5967fe827219ce1abde2fdf4bdab42949cb93820aa86ccb06124ac3debddd2e9.png" />
+<img alt="../../_images/83485c391521639a1dfa82c66da87f4b12631efc5fbfc301c30fd517d8317030.png" src="../../_images/83485c391521639a1dfa82c66da87f4b12631efc5fbfc301c30fd517d8317030.png" />
+<img alt="../../_images/23552aefcc736f45d1a3ddca883db79f12c77efd2635c57540ee7d5e2ee89b16.png" src="../../_images/23552aefcc736f45d1a3ddca883db79f12c77efd2635c57540ee7d5e2ee89b16.png" />
+<img alt="../../_images/2bbb695190b1ce6e78e876c250729a30a8b19a669a8d17a9ce1d4038bb406eb8.png" src="../../_images/2bbb695190b1ce6e78e876c250729a30a8b19a669a8d17a9ce1d4038bb406eb8.png" />
+<img alt="../../_images/b71a93a70e0b4f3f59fce9f69f4ae33b65fd74fe1ed1ea3879511b70ae25b2a5.png" src="../../_images/b71a93a70e0b4f3f59fce9f69f4ae33b65fd74fe1ed1ea3879511b70ae25b2a5.png" />
 </div>
 </div>
 </section>
@@ -1092,7 +1092,7 @@ weighted avg       0.67      0.66      0.66       104
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6322222222222222
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6399999999999999
 </pre></div>
 </div>
 </div>
@@ -1114,7 +1114,7 @@ weighted avg       0.67      0.66      0.66       104
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Confusion Matrix&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/1dc0cf392aaa5f6bc020cb7ff1333fb9235b53048a4698b83c9b81fbc9b4585e.png" src="../../_images/1dc0cf392aaa5f6bc020cb7ff1333fb9235b53048a4698b83c9b81fbc9b4585e.png" />
+<img alt="../../_images/0e44caae186faafecb1f3e56f6b81bebde7b06f1f86d8fffbbddf2d3b3fc18ec.png" src="../../_images/0e44caae186faafecb1f3e56f6b81bebde7b06f1f86d8fffbbddf2d3b3fc18ec.png" />
 </div>
 </div>
 </section>
@@ -1129,12 +1129,12 @@ weighted avg       0.67      0.66      0.66       104
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
 
-       False       0.73      0.71      0.72        58
-        True       0.65      0.67      0.66        46
+       False       0.74      0.72      0.73        58
+        True       0.66      0.67      0.67        46
 
-    accuracy                           0.69       104
-   macro avg       0.69      0.69      0.69       104
-weighted avg       0.69      0.69      0.69       104
+    accuracy                           0.70       104
+   macro avg       0.70      0.70      0.70       104
+weighted avg       0.70      0.70      0.70       104
 </pre></div>
 </div>
 </div>
@@ -1198,7 +1198,7 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e5f4e513e516fc1ad226d521a9ba07ea1d1865f0f1209897293bd9c79087217d.png" src="../../_images/e5f4e513e516fc1ad226d521a9ba07ea1d1865f0f1209897293bd9c79087217d.png" />
+<img alt="../../_images/d27488498343ecdca3d7f6900a11903f494b9d4f3469eb77aa9bcc84033dd233.png" src="../../_images/d27488498343ecdca3d7f6900a11903f494b9d4f3469eb77aa9bcc84033dd233.png" />
 </div>
 </div>
 <p>What would happen if we changed <code class="docutils literal notranslate"><span class="pre">cv</span></code> from it’s default value (5) to 10? Would <code class="docutils literal notranslate"><span class="pre">GridSearchCV</span></code> select the same model?</p>
@@ -1232,6 +1232,15 @@ weighted avg       0.69      0.69      0.69       104
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">cells</span> <span class="k">with</span> <span class="s1">&#39;c:\Users\galke\AppData\Local\Microsoft\WindowsApps\python3.10.exe&#39;</span> <span class="n">requires</span> <span class="n">the</span> <span class="n">ipykernel</span> <span class="n">package</span><span class="o">.</span>
+
+<span class="n">Run</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span> <span class="n">to</span> <span class="n">install</span> <span class="s1">&#39;ipykernel&#39;</span> <span class="n">into</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">environment</span><span class="o">.</span> 
+
+<span class="ne">Command</span>: &#39;c:/Users/galke/AppData/Local/Microsoft/WindowsApps/python3.10.exe -m pip install ipykernel -U --user --force-reinstall&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="id12">
@@ -1243,7 +1252,11 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;max_depth&#39;: 3, &#39;n_estimators&#39;: 120}
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">cells</span> <span class="k">with</span> <span class="s1">&#39;c:\Users\galke\AppData\Local\Microsoft\WindowsApps\python3.10.exe&#39;</span> <span class="n">requires</span> <span class="n">the</span> <span class="n">ipykernel</span> <span class="n">package</span><span class="o">.</span>
+
+<span class="n">Run</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span> <span class="n">to</span> <span class="n">install</span> <span class="s1">&#39;ipykernel&#39;</span> <span class="n">into</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">environment</span><span class="o">.</span> 
+
+<span class="ne">Command</span>: &#39;c:/Users/galke/AppData/Local/Microsoft/WindowsApps/python3.10.exe -m pip install ipykernel -U --user --force-reinstall&#39;
 </pre></div>
 </div>
 </div>
@@ -1255,7 +1268,11 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6199999999999999
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">cells</span> <span class="k">with</span> <span class="s1">&#39;c:\Users\galke\AppData\Local\Microsoft\WindowsApps\python3.10.exe&#39;</span> <span class="n">requires</span> <span class="n">the</span> <span class="n">ipykernel</span> <span class="n">package</span><span class="o">.</span>
+
+<span class="n">Run</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span> <span class="n">to</span> <span class="n">install</span> <span class="s1">&#39;ipykernel&#39;</span> <span class="n">into</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">environment</span><span class="o">.</span> 
+
+<span class="ne">Command</span>: &#39;c:/Users/galke/AppData/Local/Microsoft/WindowsApps/python3.10.exe -m pip install ipykernel -U --user --force-reinstall&#39;
 </pre></div>
 </div>
 </div>
@@ -1264,25 +1281,21 @@ weighted avg       0.69      0.69      0.69       104
 <h6>Confusion Matrix<a class="headerlink" href="#id13" title="Link to this heading">#</a></h6>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">model_searcher_2</span><span class="p">,</span>
-                          <span class="n">X_test</span><span class="p">,</span>
-                          <span class="n">y_test</span><span class="p">,</span>
-                          <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">,</span>
-                          <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span><span class="n">model_searcher_2</span><span class="p">,</span>
+                                             <span class="n">X_test</span><span class="p">,</span>
+                                             <span class="n">y_test</span><span class="p">,</span>
+                                             <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Blues</span><span class="p">,</span>
+                                             <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="n">disp</span><span class="o">.</span><span class="n">ax_</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Confusion Matrix&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">56</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">_</span> <span class="o">=</span> <span class="n">plot_confusion_matrix</span><span class="p">(</span><span class="n">model_searcher_2</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>                           <span class="n">X_test</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>                           <span class="n">y_test</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>                           <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Greens</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>                           <span class="n">normalize</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">cells</span> <span class="k">with</span> <span class="s1">&#39;c:\Users\galke\AppData\Local\Microsoft\WindowsApps\python3.10.exe&#39;</span> <span class="n">requires</span> <span class="n">the</span> <span class="n">ipykernel</span> <span class="n">package</span><span class="o">.</span>
 
-<span class="ne">NameError</span>: name &#39;plot_confusion_matrix&#39; is not defined
+<span class="n">Run</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span> <span class="n">to</span> <span class="n">install</span> <span class="s1">&#39;ipykernel&#39;</span> <span class="n">into</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">environment</span><span class="o">.</span> 
+
+<span class="ne">Command</span>: &#39;c:/Users/galke/AppData/Local/Microsoft/WindowsApps/python3.10.exe -m pip install ipykernel -U --user --force-reinstall&#39;
 </pre></div>
 </div>
 </div>
@@ -1297,14 +1310,11 @@ weighted avg       0.69      0.69      0.69       104
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              precision    recall  f1-score   support
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">cells</span> <span class="k">with</span> <span class="s1">&#39;c:\Users\galke\AppData\Local\Microsoft\WindowsApps\python3.10.exe&#39;</span> <span class="n">requires</span> <span class="n">the</span> <span class="n">ipykernel</span> <span class="n">package</span><span class="o">.</span>
 
-       False       0.67      0.66      0.66        58
-        True       0.57      0.59      0.58        46
+<span class="n">Run</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span> <span class="n">to</span> <span class="n">install</span> <span class="s1">&#39;ipykernel&#39;</span> <span class="n">into</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">environment</span><span class="o">.</span> 
 
-    accuracy                           0.62       104
-   macro avg       0.62      0.62      0.62       104
-weighted avg       0.63      0.62      0.63       104
+<span class="ne">Command</span>: &#39;c:/Users/galke/AppData/Local/Microsoft/WindowsApps/python3.10.exe -m pip install ipykernel -U --user --force-reinstall&#39;
 </pre></div>
 </div>
 </div>
@@ -1320,6 +1330,20 @@ weighted avg       0.63      0.62      0.63       104
                                          <span class="n">y_test</span><span class="p">,</span>
                                          <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
                                          <span class="n">n_jobs</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">c</span>:\Users\galke\OneDrive\Projects\ml_for_neuro\ml_for_neuro\chapters\chapter_07\exercise_07.ipynb Cell 80 line 1
+<span class="o">----&gt;</span> <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/galke/OneDrive/Projects/ml_for_neuro/ml_for_neuro/chapters/chapter_07/exercise_07.ipynb#Y141sZmlsZQ%3D%3D?line=0&#39;</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span> <span class="n">grid_importance</span> <span class="o">=</span> <span class="n">permutation_importance</span><span class="p">(</span><span class="n">model_searcher_2</span><span class="p">,</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/galke/OneDrive/Projects/ml_for_neuro/ml_for_neuro/chapters/chapter_07/exercise_07.ipynb#Y141sZmlsZQ%3D%3D?line=1&#39;</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>                                          <span class="n">X_test</span><span class="p">,</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/galke/OneDrive/Projects/ml_for_neuro/ml_for_neuro/chapters/chapter_07/exercise_07.ipynb#Y141sZmlsZQ%3D%3D?line=2&#39;</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>                                          <span class="n">y_test</span><span class="p">,</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/galke/OneDrive/Projects/ml_for_neuro/ml_for_neuro/chapters/chapter_07/exercise_07.ipynb#Y141sZmlsZQ%3D%3D?line=3&#39;</span><span class="o">&gt;</span><span class="mi">4</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>                                          <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+      <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;vscode-notebook-cell:/c%3A/Users/galke/OneDrive/Projects/ml_for_neuro/ml_for_neuro/chapters/chapter_07/exercise_07.ipynb#Y141sZmlsZQ%3D%3D?line=4&#39;</span><span class="o">&gt;</span><span class="mi">5</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>                                          <span class="n">n_jobs</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;model_searcher_2&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1340,10 +1364,13 @@ weighted avg       0.63      0.62      0.63       104
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/e34ac66c2848da374bd0508af35e420d3cc79e4d02bbc7259eb7500621ba2407.png" src="../../_images/e34ac66c2848da374bd0508af35e420d3cc79e4d02bbc7259eb7500621ba2407.png" />
-<img alt="../../_images/d810f78dd48dd216ecbe85c587422a0ed53306dffadcb7487cb540634cfb6605.png" src="../../_images/d810f78dd48dd216ecbe85c587422a0ed53306dffadcb7487cb540634cfb6605.png" />
-<img alt="../../_images/c5ca82c3eef3e93847f96033f030b314e67e47817c5978aab7a0d979904d71b4.png" src="../../_images/c5ca82c3eef3e93847f96033f030b314e67e47817c5978aab7a0d979904d71b4.png" />
-<img alt="../../_images/12ea869ce747638defabce29f37e2280a9e865d8772494485bbbf72ea1af8e51.png" src="../../_images/12ea869ce747638defabce29f37e2280a9e865d8772494485bbbf72ea1af8e51.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Running</span> <span class="n">cells</span> <span class="k">with</span> <span class="s1">&#39;c:\Users\galke\AppData\Local\Microsoft\WindowsApps\python3.10.exe&#39;</span> <span class="n">requires</span> <span class="n">the</span> <span class="n">ipykernel</span> <span class="n">package</span><span class="o">.</span>
+
+<span class="n">Run</span> <span class="n">the</span> <span class="n">following</span> <span class="n">command</span> <span class="n">to</span> <span class="n">install</span> <span class="s1">&#39;ipykernel&#39;</span> <span class="n">into</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">environment</span><span class="o">.</span> 
+
+<span class="ne">Command</span>: &#39;c:/Users/galke/AppData/Local/Microsoft/WindowsApps/python3.10.exe -m pip install ipykernel -U --user --force-reinstall&#39;
+</pre></div>
+</div>
 </div>
 </div>
 </section>
