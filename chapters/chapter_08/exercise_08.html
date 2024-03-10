@@ -822,6 +822,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9c51b7355eade57cc47ea2b72680a23154a85e41d698f565f2d816feb2b45f85.png" src="../../_images/9c51b7355eade57cc47ea2b72680a23154a85e41d698f565f2d816feb2b45f85.png" />
+</div>
 </div>
 <p>Ah, we can already guess the <code class="docutils literal notranslate"><span class="pre">setosa</span></code> class to be that discernible cloud on the left of both dimensionality-reduced scatters.</p>
 </section>
@@ -853,6 +856,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Again, we’ll plot the observations in their reduced spaces, only this time we will include the <span style="color:red">cluster index</span> (represented with the <span style="color:red">color</span> of each observation), as well as the classification’s success relative to the <strong>true labels</strong> (represented with <strong>circles for correct versus “X” for incorrect</strong> classifications).</p>
 <div class="cell docutils container">
@@ -862,8 +877,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8796e566805a254cd8b85c67384919d85cf13e5510f2d4cf0f072ea6dd197a82.png" src="../../_images/8796e566805a254cd8b85c67384919d85cf13e5510f2d4cf0f072ea6dd197a82.png" />
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "ed3b59801e944e62af0d537ace27d07d", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "c66e7325e034482b9821b61840de5830", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -873,7 +887,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dc62c9c91f65b2c51787957e4ea698e9b6375bb11f00b39795cd794edf402e9a.png" src="../../_images/dc62c9c91f65b2c51787957e4ea698e9b6375bb11f00b39795cd794edf402e9a.png" />
+<img alt="../../_images/f0069ae1d29428081f1f7e50d36718eb95a7717253088b82196a678f9103d70c.png" src="../../_images/f0069ae1d29428081f1f7e50d36718eb95a7717253088b82196a678f9103d70c.png" />
 </div>
 </div>
 <section id="clustering-evaluation">
@@ -958,6 +972,9 @@ document.write(`
 <span class="n">_</span> <span class="o">=</span> <span class="n">plot_accuracy_by_pc</span><span class="p">(</span><span class="n">classification_labels</span><span class="p">,</span> <span class="n">y_iris_labels</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/78e8a4807968d262f93926051c8566e1c208315bb271305b86f5d2e6d947af03.png" src="../../_images/78e8a4807968d262f93926051c8566e1c208315bb271305b86f5d2e6d947af03.png" />
 </div>
 </div>
 <p>Surprisingly, reducing the dimensionality of the iris dataset to  1 has improved the performance of K-means classification significantly when compared to the true labels.</p>
@@ -1085,6 +1102,9 @@ document.write(`
 <span class="n">_</span> <span class="o">=</span> <span class="n">plot_silhouette_scores_by_pc</span><span class="p">(</span><span class="n">X_iris_reduced</span><span class="p">,</span> <span class="n">classification_labels</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ab4b8e92dd4656a2afc60cc6f50e12e3c1a79e7461a78a4a347c729d5424fd23.png" src="../../_images/ab4b8e92dd4656a2afc60cc6f50e12e3c1a79e7461a78a4a347c729d5424fd23.png" />
 </div>
 </div>
 <p>It seems that using only a single principal component yielded not only the best results when compared to the true labels, but also the greatest degree of separation between the clusters (as estimated using <code class="docutils literal notranslate"><span class="pre">silhouette_score</span></code>).</p>
@@ -1454,6 +1474,9 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7d6b49241b3dba0e2f89e48ef13784c3c57c865530f7149282d9c7207de63d6b.png" src="../../_images/7d6b49241b3dba0e2f89e48ef13784c3c57c865530f7149282d9c7207de63d6b.png" />
+</div>
 </div>
 <div class="cell tag_remove-input docutils container">
 </div>
@@ -1473,6 +1496,29 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+</pre></div>
+</div>
+<img alt="../../_images/d471d4c5cdebb977ec2bcf88a0ed088883eea0ca49ddc83327f67f1cab78d608.png" src="../../_images/d471d4c5cdebb977ec2bcf88a0ed088883eea0ca49ddc83327f67f1cab78d608.png" />
+</div>
 </div>
 <p>The best degree of separation was obtained for <span class="math notranslate nohighlight">\(k=2\)</span>. Let’s visualize the two clusters and obtain some qualitative understanding of how well (or badly) our model did:</p>
 <div class="cell docutils container">
@@ -1483,15 +1529,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f4d321c4acec1e3e510e7196ac4ffd450aa35c1268c565f28bad1db8042efc09.png" src="../../_images/f4d321c4acec1e3e510e7196ac4ffd450aa35c1268c565f28bad1db8042efc09.png" />
-<img alt="../../_images/466b5c3919a6581abd8457c87a5e70a603160104f5f7b46ebb5508acb83a15f6.png" src="../../_images/466b5c3919a6581abd8457c87a5e70a603160104f5f7b46ebb5508acb83a15f6.png" />
-<img alt="../../_images/04bd85f8bd2cee465ec879b0bf43ef421486585cdca1105486ef47fed24742f0.png" src="../../_images/04bd85f8bd2cee465ec879b0bf43ef421486585cdca1105486ef47fed24742f0.png" />
-<img alt="../../_images/88e8a8ce429acd2cc225cc116f937fe274655d90ada75c54b41431fc9e49e6e8.png" src="../../_images/88e8a8ce429acd2cc225cc116f937fe274655d90ada75c54b41431fc9e49e6e8.png" />
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "55e0ac7166ec41cf8eb93b6da0e0dcc6", "version_major": 2, "version_minor": 0}</script></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/groot/Projects/courses/ml_for_neuro/venv/lib/python3.10/site-packages/sklearn/cluster/_kmeans.py:1412: FutureWarning: The default value of `n_init` will change from 10 to &#39;auto&#39; in 1.4. Set the value of `n_init` explicitly to suppress the warning
+  super()._check_params_vs_input(X, default_n_init=10)
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "aa71fc31097348e48e335cdfeb6d4d2e", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <p>Indeed, it seems our model’s ability to cluster ASD subtypes using three principal components is rather poor.</p>
-<p><img alt="Back to the Drawing Board" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5cac04eb-d473-4265-86ab-c8c146757448/d8ngxde-b1711ad7-d0bf-4357-8984-25473d92df19.png/v1/fill/w_763,h_707,q_80,strp/well__back_to_the_old_drawing_board_by_comicadreams_d8ngxde-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD03MDciLCJwYXRoIjoiXC9mXC81Y2FjMDRlYi1kNDczLTQyNjUtODZhYi1jOGMxNDY3NTc0NDhcL2Q4bmd4ZGUtYjE3MTFhZDctZDBiZi00MzU3LTg5ODQtMjU0NzNkOTJkZjE5LnBuZyIsIndpZHRoIjoiPD03NjMifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.mEuPF3SgwRYbZFdA5Bga04bN936SQ4EzLA7FyWUz1XY" /></p>
-</section>
+<figure>
+    <center><img src="https://i.pinimg.com/736x/69/50/00/695000a9292f168cb9d8844b348e48f5.jpg" alt="Back to the Drawing Board" width="600"/></center>
+</figure></section>
 </section>
 </section>
 </section>
