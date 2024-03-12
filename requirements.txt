@@ -13,3 +13,4 @@ sphinxcontrib-bibtex
 statsmodels
 xlrd
 Jinja2
+ipywidgets
