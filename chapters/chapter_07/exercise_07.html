@@ -14,45 +14,48 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-
-  
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
@@ -66,6 +69,7 @@
     <link rel="prev" title="Exercise VI: Revisiting Linear and Logistic Regression" href="../chapter_06/exercise_06.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -73,31 +77,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../../search.html"
       method="get">
@@ -105,7 +94,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -113,10 +101,15 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -125,7 +118,8 @@
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -140,6 +134,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../intro.html">
   
@@ -153,21 +149,17 @@
     
     
     <img src="../../_static/logo.png" class="logo__image only-light" alt="Machine Learning for Neuroscience - Home"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Machine Learning for Neuroscience - Home"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Machine Learning for Neuroscience - Home"/>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -180,7 +172,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../syllabus.html">Syllabus</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../content.html">Contents</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../content.html">Contents</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../chapter_01/exercise_01.html">Exercise I: Exploratory Data Analysis (EDA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_02/exercise_02.html">Exercise II: k-Nearest Neighbors (k-NN)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_03/exercise_03.html">Exercise III: Linear Regression</a></li>
@@ -194,7 +186,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter_08/exercise_08.html">Exercise VIII: K-Means Clustering and PCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_09/exercise_09.html">Exercise IX: The Haxby Experiment (2001)</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
 </ul>
@@ -212,7 +204,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -221,14 +213,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -351,27 +343,19 @@
 
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
 
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -510,7 +494,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a56189ad2aa945e022f6e1fd9b676333002b3a997c8ea0360ae5338951cede1e.png" src="../../_images/a56189ad2aa945e022f6e1fd9b676333002b3a997c8ea0360ae5338951cede1e.png" />
+<img alt="../../_images/6fd173aa70f30accc1a24baedde14acb5016ed7d1904f08f45df333fe3a85113.png" src="../../_images/6fd173aa70f30accc1a24baedde14acb5016ed7d1904f08f45df333fe3a85113.png" />
 </div>
 </div>
 <p>Finally, we can evaluate the model’s performance using the appropriate metrics, e.g.:</p>
@@ -532,7 +516,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Confusion Matrix&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/1cdc96fe1d47b77c4b9bf123e0cd94aae633b0baf67bab146b70711cd81e4373.png" src="../../_images/1cdc96fe1d47b77c4b9bf123e0cd94aae633b0baf67bab146b70711cd81e4373.png" />
+<img alt="../../_images/2f8d2a83acd7ae91e80b6b94a1073059a7699a3af4688c72f07b0db05879c289.png" src="../../_images/2f8d2a83acd7ae91e80b6b94a1073059a7699a3af4688c72f07b0db05879c289.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -645,7 +629,7 @@ weighted avg       1.00      1.00      1.00        30
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Confusion Matrix&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/91ed57f3f9ff1451e5ad3928394ba8079efac4f5c2e4c939178bb3b927f13a1d.png" src="../../_images/91ed57f3f9ff1451e5ad3928394ba8079efac4f5c2e4c939178bb3b927f13a1d.png" />
+<img alt="../../_images/a8ac9bb9a81de0f13692977f87f1ff0f28896cda23d5c150dc916c61c0ee5a06.png" src="../../_images/a8ac9bb9a81de0f13692977f87f1ff0f28896cda23d5c150dc916c61c0ee5a06.png" />
 </div>
 </div>
 </section>
@@ -716,7 +700,7 @@ weighted avg       0.65      0.65      0.65       104
 <span class="g g-Whitespace">      </span><span class="mi">6</span>                                     <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span>                                     <span class="n">n_jobs</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/utils/_param_validation.py:213,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/sklearn/utils/_param_validation.py:213,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">207</span> <span class="k">try</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">208</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">209</span>         <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
@@ -735,68 +719,68 @@ weighted avg       0.65      0.65      0.65       104
 <span class="g g-Whitespace">    </span><span class="mi">222</span>         <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
 <span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/inspection/_permutation_importance.py:292,</span> in <span class="ni">permutation_importance</span><span class="nt">(estimator, X, y, scoring, n_repeats, n_jobs, random_state, sample_weight, max_samples)</span>
-<span class="g g-Whitespace">    </span><span class="mi">288</span>     <span class="n">scorer</span> <span class="o">=</span> <span class="n">_MultimetricScorer</span><span class="p">(</span><span class="n">scorers</span><span class="o">=</span><span class="n">scorers_dict</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">290</span> <span class="n">baseline_score</span> <span class="o">=</span> <span class="n">_weights_scorer</span><span class="p">(</span><span class="n">scorer</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">292</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">293</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_calculate_permutation_scores</span><span class="p">)(</span>
-<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="n">estimator</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">295</span>         <span class="n">X</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">296</span>         <span class="n">y</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>         <span class="n">sample_weight</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span>         <span class="n">col_idx</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">299</span>         <span class="n">random_seed</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">300</span>         <span class="n">n_repeats</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="n">scorer</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">302</span>         <span class="n">max_samples</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">303</span>     <span class="p">)</span>
-<span class="nn">    304     for col_idx</span> in <span class="ni">range</span><span class="nt">(X.shape[1])</span>
-<span class="g g-Whitespace">    </span><span class="mi">305</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">307</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">baseline_score</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">308</span>     <span class="k">return</span> <span class="p">{</span>
-<span class="g g-Whitespace">    </span><span class="mi">309</span>         <span class="n">name</span><span class="p">:</span> <span class="n">_create_importances_bunch</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">310</span>             <span class="n">baseline_score</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/sklearn/inspection/_permutation_importance.py:284,</span> in <span class="ni">permutation_importance</span><span class="nt">(estimator, X, y, scoring, n_repeats, n_jobs, random_state, sample_weight, max_samples)</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span> <span class="n">scorer</span> <span class="o">=</span> <span class="n">check_scoring</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span> <span class="n">baseline_score</span> <span class="o">=</span> <span class="n">_weights_scorer</span><span class="p">(</span><span class="n">scorer</span><span class="p">,</span> <span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">284</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">Parallel</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=</span><span class="n">n_jobs</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="n">delayed</span><span class="p">(</span><span class="n">_calculate_permutation_scores</span><span class="p">)(</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span>         <span class="n">estimator</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span>         <span class="n">X</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">288</span>         <span class="n">y</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">289</span>         <span class="n">sample_weight</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">290</span>         <span class="n">col_idx</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">291</span>         <span class="n">random_seed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>         <span class="n">n_repeats</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>         <span class="n">scorer</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">294</span>         <span class="n">max_samples</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span>     <span class="p">)</span>
+<span class="nn">    296     for col_idx</span> in <span class="ni">range</span><span class="nt">(X.shape[1])</span>
+<span class="g g-Whitespace">    </span><span class="mi">297</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">299</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">baseline_score</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span>     <span class="k">return</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span>         <span class="n">name</span><span class="p">:</span> <span class="n">_create_importances_bunch</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>             <span class="n">baseline_score</span><span class="p">[</span><span class="n">name</span><span class="p">],</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">314</span>         <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseline_score</span>
-<span class="g g-Whitespace">    </span><span class="mi">315</span>     <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">baseline_score</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span>     <span class="p">}</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/sklearn/utils/parallel.py:67,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">64</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span> <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">67</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/sklearn/utils/parallel.py:74,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span> <span class="n">config</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span> <span class="n">iterable_with_config</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="p">(</span><span class="n">_with_config</span><span class="p">(</span><span class="n">delayed_func</span><span class="p">,</span> <span class="n">config</span><span class="p">),</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">for</span> <span class="n">delayed_func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="ow">in</span> <span class="n">iterable</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span> <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">74</span> <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__call__</span><span class="p">(</span><span class="n">iterable_with_config</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/joblib/parallel.py:1952,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1946</span> <span class="c1"># The first item from the output is blank, but it makes the interpreter</span>
-<span class="g g-Whitespace">   </span><span class="mi">1947</span> <span class="c1"># progress until it enters the Try/Except block of the generator and</span>
-<span class="g g-Whitespace">   </span><span class="mi">1948</span> <span class="c1"># reach the first `yield` statement. This starts the aynchronous</span>
-<span class="g g-Whitespace">   </span><span class="mi">1949</span> <span class="c1"># dispatch of the tasks to the workers.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1950</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1952</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/joblib/parallel.py:2007,</span> in <span class="ni">Parallel.__call__</span><span class="nt">(self, iterable)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2001</span> <span class="c1"># The first item from the output is blank, but it makes the interpreter</span>
+<span class="g g-Whitespace">   </span><span class="mi">2002</span> <span class="c1"># progress until it enters the Try/Except block of the generator and</span>
+<span class="g g-Whitespace">   </span><span class="mi">2003</span> <span class="c1"># reaches the first `yield` statement. This starts the asynchronous</span>
+<span class="g g-Whitespace">   </span><span class="mi">2004</span> <span class="c1"># dispatch of the tasks to the workers.</span>
+<span class="g g-Whitespace">   </span><span class="mi">2005</span> <span class="nb">next</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2007</span> <span class="k">return</span> <span class="n">output</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">return_generator</span> <span class="k">else</span> <span class="nb">list</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/joblib/parallel.py:1595,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1592</span>     <span class="k">yield</span>
-<span class="g g-Whitespace">   </span><span class="mi">1594</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
-<span class="ne">-&gt; </span><span class="mi">1595</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">1597</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1598</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
-<span class="g g-Whitespace">   </span><span class="mi">1599</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
-<span class="g g-Whitespace">   </span><span class="mi">1600</span>     <span class="c1"># the user if necessary.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1601</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/joblib/parallel.py:1650,</span> in <span class="ni">Parallel._get_outputs</span><span class="nt">(self, iterator, pre_dispatch)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1647</span>     <span class="k">yield</span>
+<span class="g g-Whitespace">   </span><span class="mi">1649</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_backend</span><span class="o">.</span><span class="n">retrieval_context</span><span class="p">():</span>
+<span class="ne">-&gt; </span><span class="mi">1650</span>         <span class="k">yield from</span> <span class="bp">self</span><span class="o">.</span><span class="n">_retrieve</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1652</span> <span class="k">except</span> <span class="ne">GeneratorExit</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1653</span>     <span class="c1"># The generator has been garbage collected before being fully</span>
+<span class="g g-Whitespace">   </span><span class="mi">1654</span>     <span class="c1"># consumed. This aborts the remaining tasks if possible and warn</span>
+<span class="g g-Whitespace">   </span><span class="mi">1655</span>     <span class="c1"># the user if necessary.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1656</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_exception</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.10.13/x64/lib/python3.10/site-packages/joblib/parallel.py:1707,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1702</span> <span class="c1"># If the next job is not ready for retrieval yet, we just wait for</span>
-<span class="g g-Whitespace">   </span><span class="mi">1703</span> <span class="c1"># async callbacks to progress.</span>
-<span class="g g-Whitespace">   </span><span class="mi">1704</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
-<span class="g g-Whitespace">   </span><span class="mi">1705</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1706</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span><span class="p">)):</span>
-<span class="ne">-&gt; </span><span class="mi">1707</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1708</span>     <span class="k">continue</span>
-<span class="g g-Whitespace">   </span><span class="mi">1710</span> <span class="c1"># We need to be careful: the job list can be filling up as</span>
-<span class="g g-Whitespace">   </span><span class="mi">1711</span> <span class="c1"># we empty it and Python list are not thread-safe by</span>
-<span class="g g-Whitespace">   </span><span class="mi">1712</span> <span class="c1"># default hence the use of the lock</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.10/x64/lib/python3.11/site-packages/joblib/parallel.py:1762,</span> in <span class="ni">Parallel._retrieve</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1757</span> <span class="c1"># If the next job is not ready for retrieval yet, we just wait for</span>
+<span class="g g-Whitespace">   </span><span class="mi">1758</span> <span class="c1"># async callbacks to progress.</span>
+<span class="g g-Whitespace">   </span><span class="mi">1759</span> <span class="k">if</span> <span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span>
+<span class="g g-Whitespace">   </span><span class="mi">1760</span>     <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_jobs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_status</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1761</span>         <span class="n">timeout</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timeout</span><span class="p">)</span> <span class="o">==</span> <span class="n">TASK_PENDING</span><span class="p">)):</span>
+<span class="ne">-&gt; </span><span class="mi">1762</span>     <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1763</span>     <span class="k">continue</span>
+<span class="g g-Whitespace">   </span><span class="mi">1765</span> <span class="c1"># We need to be careful: the job list can be filling up as</span>
+<span class="g g-Whitespace">   </span><span class="mi">1766</span> <span class="c1"># we empty it and Python list are not thread-safe by</span>
+<span class="g g-Whitespace">   </span><span class="mi">1767</span> <span class="c1"># default hence the use of the lock</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1388,7 +1372,7 @@ weighted avg       0.63      0.62      0.63       104
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1416,7 +1400,8 @@ weighted avg       0.63      0.62      0.63       104
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1520,8 +1505,8 @@ By Dr. Shlomi Lifshits, Gal Kepler, Zvi Baratz
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
 
   <footer class="bd-footer">
   </footer>
