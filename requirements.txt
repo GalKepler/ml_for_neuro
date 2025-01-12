@@ -14,3 +14,4 @@ statsmodels
 xlrd
 Jinja2
 ipywidgets
+imbalanced-learn
