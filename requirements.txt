@@ -15,3 +15,4 @@ xlrd
 Jinja2
 ipywidgets
 imbalanced-learn
+myst_nb
