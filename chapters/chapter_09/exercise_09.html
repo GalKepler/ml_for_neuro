@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,10 +27,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -197,9 +197,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -408,49 +413,67 @@
 <p>Let’s start things off by using <code class="docutils literal notranslate"><span class="pre">nilearn</span></code>’s <a class="reference external" href="https://nilearn.github.io/modules/reference.html"><code class="docutils literal notranslate"><span class="pre">datasets</span></code></a> module to download a single subjects dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
 
 <span class="n">haxby_data</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">fetch_haxby</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Added README.md to /home/runner/nilearn_data
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_add_readme_to_default_data_locations] Added README.md to /home/runner/nilearn_data
+[get_dataset_dir] Dataset created in /home/runner/nilearn_data/haxby2001
+[fetch_single_file] Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_single_file]  ...done. (1 seconds, 0 min)
 
+[fetch_single_file] Downloading data from http://data.pymvpa.org/datasets/haxby2001/MD5SUMS ...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_single_file]  ...done. (0 seconds, 0 min)
 
-Dataset created in /home/runner/nilearn_data/haxby2001
-
-Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ...
+[fetch_single_file] Downloading data from http://data.pymvpa.org/datasets/haxby2001/subj2-2010.01.14.tar.gz ...
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ...done. (0 seconds, 0 min)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_chunk_report_] 
+Downloaded 16744448 of 291168628 bytes (5.8%%,   16.6s remaining)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data from http://data.pymvpa.org/datasets/haxby2001/MD5SUMS ...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_chunk_report_] 
+Downloaded 46800896 of 291168628 bytes (16.1%%,   10.7s remaining)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ...done. (0 seconds, 0 min)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_chunk_report_] 
+Downloaded 78069760 of 291168628 bytes (26.8%%,    8.3s remaining)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading data from http://data.pymvpa.org/datasets/haxby2001/subj2-2010.01.14.tar.gz ...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_chunk_report_] 
+Downloaded 109592576 of 291168628 bytes (37.6%%,    6.7s remaining)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded 70893568 of 291168628 bytes (24.3%,    3.1s remaining)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_chunk_report_] 
+Downloaded 148783104 of 291168628 bytes (51.1%%,    4.8s remaining)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded 165429248 of 291168628 bytes (56.8%,    1.5s remaining)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_chunk_report_] 
+Downloaded 185483264 of 291168628 bytes (63.7%%,    3.5s remaining)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloaded 258875392 of 291168628 bytes (88.9%,    0.4s remaining)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_chunk_report_] 
+Downloaded 224206848 of 291168628 bytes (77.0%%,    2.1s remaining)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ...done. (4 seconds, 0 min)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[_chunk_report_] 
+Downloaded 262938624 of 291168628 bytes (90.3%%,    0.9s remaining)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Extracting data from /home/runner/nilearn_data/haxby2001/def37a305edfda829916fa14c9ea08f8/subj2-2010.01.14.tar.gz...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_single_file]  ...done. (9 seconds, 0 min)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.. done.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[uncompress_file] Extracting data from /home/runner/nilearn_data/haxby2001/9cabe068089e791ef0c5fe930fc20e30/subj2-2010.01.14.tar.gz...
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[uncompress_file] .. done.
 </pre></div>
 </div>
 </div>
@@ -500,8 +523,8 @@ Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ..
 <p>To read the fMRI volume from a <em>.nii.gz</em> file we’ll use <a class="reference external" href="https://nipy.org/nibabel/">nibabel</a>’s <code class="docutils literal notranslate"><span class="pre">load()</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn</span> <span class="kn">import</span> <span class="n">plotting</span>
-<span class="kn">import</span> <span class="nn">nibabel</span> <span class="k">as</span> <span class="nn">nib</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nib</span>
 
 <span class="n">fmri_path</span> <span class="o">=</span> <span class="n">haxby_data</span><span class="o">.</span><span class="n">func</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">fmri_data</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fmri_path</span><span class="p">)</span>
@@ -518,7 +541,7 @@ Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ..
 <p>To plot a 3D image representing the mean fMRI signal over time for the single subject in the dataset:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.image</span> <span class="kn">import</span> <span class="n">mean_img</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.image</span><span class="w"> </span><span class="kn">import</span> <span class="n">mean_img</span>
 
 <span class="n">fmri_mean_epi</span> <span class="o">=</span> <span class="n">mean_img</span><span class="p">(</span><span class="n">fmri_data</span><span class="p">)</span>
 <span class="n">plotting</span><span class="o">.</span><span class="n">view_img</span><span class="p">(</span><span class="n">fmri_mean_epi</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
@@ -574,7 +597,7 @@ Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ..
 <p>First, let’s have a look at the provided mask:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
 <span class="n">mask</span> <span class="o">=</span> <span class="n">haxby_data</span><span class="o">.</span><span class="n">mask_vt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">anatomical</span> <span class="o">=</span> <span class="n">haxby_data</span><span class="o">.</span><span class="n">anat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -596,7 +619,7 @@ Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ..
 <p><img alt="Masking illustration" src="https://nilearn.github.io/_images/masking.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nilearn.input_data</span> <span class="kn">import</span> <span class="n">NiftiMasker</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nilearn.input_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">NiftiMasker</span>
 
 <span class="n">masker</span> <span class="o">=</span> <span class="n">NiftiMasker</span><span class="p">(</span><span class="n">mask_img</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">standardize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">masked_data</span> <span class="o">=</span> <span class="n">masker</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">fmri_data</span><span class="p">)</span>
@@ -647,7 +670,7 @@ Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ..
 <p>The <code class="docutils literal notranslate"><span class="pre">session_target</span></code> file contains a <code class="docutils literal notranslate"><span class="pre">labels</span></code> column, describing the stimulus category at each presentation block, as well as the session (<code class="docutils literal notranslate"><span class="pre">chunks</span></code>) out of 12 sessions presented to each subjects.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">LABEL_COLUMNS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;labels&#39;</span><span class="p">:</span> <span class="s1">&#39;Label&#39;</span><span class="p">,</span> <span class="s1">&#39;chunks&#39;</span><span class="p">:</span> <span class="s1">&#39;Session&#39;</span><span class="p">}</span>
 
@@ -749,7 +772,7 @@ Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ..
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">LABEL_COLORS</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;rest&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span>
@@ -764,7 +787,7 @@ Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ..
 <span class="p">}</span>
 
 
-<span class="k">def</span> <span class="nf">legend_without_duplicate_labels</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">legend_without_duplicate_labels</span><span class="p">(</span><span class="n">ax</span><span class="p">):</span>
     <span class="n">handles</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
     <span class="n">unique</span> <span class="o">=</span> <span class="p">[(</span><span class="n">h</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">handles</span><span class="p">,</span> <span class="n">labels</span><span class="p">))</span>
               <span class="k">if</span> <span class="n">l</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">labels</span><span class="p">[:</span><span class="n">i</span><span class="p">]]</span>
@@ -818,8 +841,8 @@ Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ..
 <p>To grid search across <span class="math notranslate nohighlight">\(\ell_1\)</span> and <span class="math notranslate nohighlight">\(\ell_2\)</span> with various <code class="docutils literal notranslate"><span class="pre">C</span></code> values and score based on the ROC AUC:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span><span class="p">,</span> <span class="n">LeaveOneGroupOut</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSearchCV</span><span class="p">,</span> <span class="n">LeaveOneGroupOut</span>
 
 <span class="n">SOLVER</span> <span class="o">=</span> <span class="s2">&quot;liblinear&quot;</span>  <span class="c1"># See note 1</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="n">SOLVER</span><span class="p">)</span>
@@ -1073,8 +1096,8 @@ By Dr. Shlomi Lifshits, Gal Kepler, Zvi Baratz
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

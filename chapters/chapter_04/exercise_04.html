@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,10 +27,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -39,10 +39,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
@@ -197,9 +197,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -446,7 +451,7 @@
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -455,7 +460,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">URL</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/JWarmenhoven/ISLR-python/raw/master/Notebooks/Data/Default.xlsx&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">URL</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">true_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Yes&quot;</span><span class="p">],</span> <span class="n">false_values</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;No&quot;</span><span class="p">])</span>
@@ -465,7 +470,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">color_booleans</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">color_booleans</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;green&quot;</span> <span class="k">if</span> <span class="n">value</span> <span class="k">else</span> <span class="s2">&quot;red&quot;</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;color: </span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s2">&quot;</span>
 
@@ -477,209 +482,212 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_177ae_row0_col0, #T_177ae_row0_col1, #T_177ae_row1_col0, #T_177ae_row2_col0, #T_177ae_row2_col1, #T_177ae_row3_col0, #T_177ae_row3_col1, #T_177ae_row4_col0, #T_177ae_row5_col0, #T_177ae_row5_col1, #T_177ae_row6_col0, #T_177ae_row7_col0, #T_177ae_row7_col1, #T_177ae_row8_col0, #T_177ae_row8_col1, #T_177ae_row9_col0, #T_177ae_row9_col1, #T_177ae_row10_col0, #T_177ae_row10_col1, #T_177ae_row11_col0, #T_177ae_row12_col0, #T_177ae_row12_col1, #T_177ae_row13_col0, #T_177ae_row13_col1, #T_177ae_row14_col0, #T_177ae_row14_col1 {
+#T_be0a8_row0_col0, #T_be0a8_row0_col1, #T_be0a8_row1_col0, #T_be0a8_row2_col0, #T_be0a8_row2_col1, #T_be0a8_row3_col0, #T_be0a8_row4_col0, #T_be0a8_row4_col1, #T_be0a8_row5_col0, #T_be0a8_row5_col1, #T_be0a8_row6_col0, #T_be0a8_row6_col1, #T_be0a8_row7_col0, #T_be0a8_row7_col1, #T_be0a8_row8_col0, #T_be0a8_row8_col1, #T_be0a8_row9_col0, #T_be0a8_row9_col1, #T_be0a8_row10_col0, #T_be0a8_row10_col1, #T_be0a8_row11_col0, #T_be0a8_row11_col1, #T_be0a8_row12_col0, #T_be0a8_row12_col1, #T_be0a8_row13_col0, #T_be0a8_row13_col1, #T_be0a8_row14_col0, #T_be0a8_row14_col1 {
   color: red;
 }
-#T_177ae_row0_col2 {
-  color: #3888c1;
+#T_be0a8_row0_col2 {
+  color: #083e81;
 }
-#T_177ae_row0_col3 {
-  color: #72b2d8;
-}
-#T_177ae_row1_col1, #T_177ae_row4_col1, #T_177ae_row6_col1, #T_177ae_row11_col1 {
-  color: green;
-}
-#T_177ae_row1_col2 {
-  color: #bfd8ed;
-}
-#T_177ae_row1_col3, #T_177ae_row11_col3 {
-  color: #e7f0fa;
-}
-#T_177ae_row2_col2 {
-  color: #3686c0;
-}
-#T_177ae_row2_col3 {
-  color: #084285;
-}
-#T_177ae_row3_col2 {
-  color: #d9e7f5;
-}
-#T_177ae_row3_col3 {
+#T_be0a8_row0_col3 {
   color: #a1cbe2;
 }
-#T_177ae_row4_col2 {
-  color: #77b5d9;
+#T_be0a8_row1_col1, #T_be0a8_row3_col1 {
+  color: green;
 }
-#T_177ae_row4_col3 {
-  color: #eaf2fb;
-}
-#T_177ae_row5_col2, #T_177ae_row6_col3 {
-  color: #f7fbff;
-}
-#T_177ae_row5_col3 {
-  color: #1a68ae;
-}
-#T_177ae_row6_col2 {
-  color: #1865ac;
-}
-#T_177ae_row7_col2 {
+#T_be0a8_row1_col2 {
   color: #2373b6;
 }
-#T_177ae_row7_col3, #T_177ae_row13_col2 {
-  color: #08306b;
+#T_be0a8_row1_col3 {
+  color: #f3f8fe;
 }
-#T_177ae_row8_col2 {
-  color: #d2e3f3;
+#T_be0a8_row2_col2 {
+  color: #bfd8ed;
 }
-#T_177ae_row8_col3 {
-  color: #4090c5;
+#T_be0a8_row2_col3 {
+  color: #8fc2de;
 }
-#T_177ae_row9_col2 {
-  color: #add0e6;
+#T_be0a8_row3_col2 {
+  color: #083776;
 }
-#T_177ae_row9_col3 {
-  color: #083573;
+#T_be0a8_row3_col3, #T_be0a8_row8_col2 {
+  color: #f7fbff;
 }
-#T_177ae_row10_col2 {
-  color: #9ac8e0;
+#T_be0a8_row4_col2 {
+  color: #c8dcf0;
 }
-#T_177ae_row10_col3 {
-  color: #aacfe5;
+#T_be0a8_row4_col3 {
+  color: #eef5fc;
 }
-#T_177ae_row11_col2 {
-  color: #3f8fc5;
+#T_be0a8_row5_col2 {
+  color: #3585bf;
 }
-#T_177ae_row12_col2 {
-  color: #4896c8;
+#T_be0a8_row5_col3 {
+  color: #dbe9f6;
 }
-#T_177ae_row12_col3 {
-  color: #1f6eb3;
-}
-#T_177ae_row13_col3 {
+#T_be0a8_row6_col2 {
   color: #6aaed6;
 }
-#T_177ae_row14_col2 {
-  color: #a8cee4;
+#T_be0a8_row6_col3 {
+  color: #529dcc;
 }
-#T_177ae_row14_col3 {
-  color: #5ba3d0;
+#T_be0a8_row7_col2 {
+  color: #c2d9ee;
+}
+#T_be0a8_row7_col3 {
+  color: #dce9f6;
+}
+#T_be0a8_row8_col3 {
+  color: #5aa2cf;
+}
+#T_be0a8_row9_col2 {
+  color: #75b4d8;
+}
+#T_be0a8_row9_col3 {
+  color: #f2f7fd;
+}
+#T_be0a8_row10_col2, #T_be0a8_row13_col3 {
+  color: #08306b;
+}
+#T_be0a8_row10_col3 {
+  color: #3080bd;
+}
+#T_be0a8_row11_col2 {
+  color: #8dc1dd;
+}
+#T_be0a8_row11_col3 {
+  color: #1967ad;
+}
+#T_be0a8_row12_col2 {
+  color: #2d7dbb;
+}
+#T_be0a8_row12_col3 {
+  color: #aacfe5;
+}
+#T_be0a8_row13_col2 {
+  color: #6caed6;
+}
+#T_be0a8_row14_col2 {
+  color: #9cc9e1;
+}
+#T_be0a8_row14_col3 {
+  color: #68acd5;
 }
 </style>
-<table id="T_177ae">
+<table id="T_be0a8">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_177ae_level0_col0" class="col_heading level0 col0" >default</th>
-      <th id="T_177ae_level0_col1" class="col_heading level0 col1" >student</th>
-      <th id="T_177ae_level0_col2" class="col_heading level0 col2" >balance</th>
-      <th id="T_177ae_level0_col3" class="col_heading level0 col3" >income</th>
+      <th id="T_be0a8_level0_col0" class="col_heading level0 col0" >default</th>
+      <th id="T_be0a8_level0_col1" class="col_heading level0 col1" >student</th>
+      <th id="T_be0a8_level0_col2" class="col_heading level0 col2" >balance</th>
+      <th id="T_be0a8_level0_col3" class="col_heading level0 col3" >income</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_177ae_level0_row0" class="row_heading level0 row0" >9191</th>
-      <td id="T_177ae_row0_col0" class="data row0 col0" >False</td>
-      <td id="T_177ae_row0_col1" class="data row0 col1" >False</td>
-      <td id="T_177ae_row0_col2" class="data row0 col2" >1167.889158</td>
-      <td id="T_177ae_row0_col3" class="data row0 col3" >35969.023556</td>
+      <th id="T_be0a8_level0_row0" class="row_heading level0 row0" >5243</th>
+      <td id="T_be0a8_row0_col0" class="data row0 col0" >False</td>
+      <td id="T_be0a8_row0_col1" class="data row0 col1" >False</td>
+      <td id="T_be0a8_row0_col2" class="data row0 col2" >1470.635273</td>
+      <td id="T_be0a8_row0_col3" class="data row0 col3" >40080.214747</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row1" class="row_heading level0 row1" >9582</th>
-      <td id="T_177ae_row1_col0" class="data row1 col0" >False</td>
-      <td id="T_177ae_row1_col1" class="data row1 col1" >True</td>
-      <td id="T_177ae_row1_col2" class="data row1 col2" >475.853205</td>
-      <td id="T_177ae_row1_col3" class="data row1 col3" >19993.755937</td>
+      <th id="T_be0a8_level0_row1" class="row_heading level0 row1" >3597</th>
+      <td id="T_be0a8_row1_col0" class="data row1 col0" >False</td>
+      <td id="T_be0a8_row1_col1" class="data row1 col1" >True</td>
+      <td id="T_be0a8_row1_col2" class="data row1 col2" >1155.504667</td>
+      <td id="T_be0a8_row1_col3" class="data row1 col3" >24840.761747</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row2" class="row_heading level0 row2" >1887</th>
-      <td id="T_177ae_row2_col0" class="data row2 col0" >False</td>
-      <td id="T_177ae_row2_col1" class="data row2 col1" >False</td>
-      <td id="T_177ae_row2_col2" class="data row2 col2" >1184.899625</td>
-      <td id="T_177ae_row2_col3" class="data row2 col3" >53896.902248</td>
+      <th id="T_be0a8_level0_row2" class="row_heading level0 row2" >8139</th>
+      <td id="T_be0a8_row2_col0" class="data row2 col0" >False</td>
+      <td id="T_be0a8_row2_col1" class="data row2 col1" >False</td>
+      <td id="T_be0a8_row2_col2" class="data row2 col2" >425.779791</td>
+      <td id="T_be0a8_row2_col3" class="data row2 col3" >42131.535956</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row3" class="row_heading level0 row3" >5951</th>
-      <td id="T_177ae_row3_col0" class="data row3 col0" >False</td>
-      <td id="T_177ae_row3_col1" class="data row3 col1" >False</td>
-      <td id="T_177ae_row3_col2" class="data row3 col2" >274.424221</td>
-      <td id="T_177ae_row3_col3" class="data row3 col3" >31292.627453</td>
+      <th id="T_be0a8_level0_row3" class="row_heading level0 row3" >3518</th>
+      <td id="T_be0a8_row3_col0" class="data row3 col0" >False</td>
+      <td id="T_be0a8_row3_col1" class="data row3 col1" >True</td>
+      <td id="T_be0a8_row3_col2" class="data row3 col2" >1518.715646</td>
+      <td id="T_be0a8_row3_col3" class="data row3 col3" >23877.819850</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row4" class="row_heading level0 row4" >586</th>
-      <td id="T_177ae_row4_col0" class="data row4 col0" >False</td>
-      <td id="T_177ae_row4_col1" class="data row4 col1" >True</td>
-      <td id="T_177ae_row4_col2" class="data row4 col2" >830.171511</td>
-      <td id="T_177ae_row4_col3" class="data row4 col3" >19476.587579</td>
+      <th id="T_be0a8_level0_row4" class="row_heading level0 row4" >6892</th>
+      <td id="T_be0a8_row4_col0" class="data row4 col0" >False</td>
+      <td id="T_be0a8_row4_col1" class="data row4 col1" >False</td>
+      <td id="T_be0a8_row4_col2" class="data row4 col2" >376.241161</td>
+      <td id="T_be0a8_row4_col3" class="data row4 col3" >25821.161061</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row5" class="row_heading level0 row5" >8435</th>
-      <td id="T_177ae_row5_col0" class="data row5 col0" >False</td>
-      <td id="T_177ae_row5_col1" class="data row5 col1" >False</td>
-      <td id="T_177ae_row5_col2" class="data row5 col2" >0.000000</td>
-      <td id="T_177ae_row5_col3" class="data row5 col3" >48025.616855</td>
+      <th id="T_be0a8_level0_row5" class="row_heading level0 row5" >827</th>
+      <td id="T_be0a8_row5_col0" class="data row5 col0" >False</td>
+      <td id="T_be0a8_row5_col1" class="data row5 col1" >False</td>
+      <td id="T_be0a8_row5_col2" class="data row5 col2" >1049.747643</td>
+      <td id="T_be0a8_row5_col3" class="data row5 col3" >30159.209894</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row6" class="row_heading level0 row6" >8170</th>
-      <td id="T_177ae_row6_col0" class="data row6 col0" >False</td>
-      <td id="T_177ae_row6_col1" class="data row6 col1" >True</td>
-      <td id="T_177ae_row6_col2" class="data row6 col2" >1401.282703</td>
-      <td id="T_177ae_row6_col3" class="data row6 col3" >16683.053002</td>
+      <th id="T_be0a8_level0_row6" class="row_heading level0 row6" >8894</th>
+      <td id="T_be0a8_row6_col0" class="data row6 col0" >False</td>
+      <td id="T_be0a8_row6_col1" class="data row6 col1" >False</td>
+      <td id="T_be0a8_row6_col2" class="data row6 col2" >781.667786</td>
+      <td id="T_be0a8_row6_col3" class="data row6 col3" >49427.517721</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row7" class="row_heading level0 row7" >809</th>
-      <td id="T_177ae_row7_col0" class="data row7 col0" >False</td>
-      <td id="T_177ae_row7_col1" class="data row7 col1" >False</td>
-      <td id="T_177ae_row7_col2" class="data row7 col2" >1306.770573</td>
-      <td id="T_177ae_row7_col3" class="data row7 col3" >56640.634034</td>
+      <th id="T_be0a8_level0_row7" class="row_heading level0 row7" >7726</th>
+      <td id="T_be0a8_row7_col0" class="data row7 col0" >False</td>
+      <td id="T_be0a8_row7_col1" class="data row7 col1" >False</td>
+      <td id="T_be0a8_row7_col2" class="data row7 col2" >411.537627</td>
+      <td id="T_be0a8_row7_col3" class="data row7 col3" >30065.444347</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row8" class="row_heading level0 row8" >6959</th>
-      <td id="T_177ae_row8_col0" class="data row8 col0" >False</td>
-      <td id="T_177ae_row8_col1" class="data row8 col1" >False</td>
-      <td id="T_177ae_row8_col2" class="data row8 col2" >335.340083</td>
-      <td id="T_177ae_row8_col3" class="data row8 col3" >41942.752511</td>
+      <th id="T_be0a8_level0_row8" class="row_heading level0 row8" >5789</th>
+      <td id="T_be0a8_row8_col0" class="data row8 col0" >False</td>
+      <td id="T_be0a8_row8_col1" class="data row8 col1" >False</td>
+      <td id="T_be0a8_row8_col2" class="data row8 col2" >0.000000</td>
+      <td id="T_be0a8_row8_col3" class="data row8 col3" >48411.076896</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row9" class="row_heading level0 row9" >8917</th>
-      <td id="T_177ae_row9_col0" class="data row9 col0" >False</td>
-      <td id="T_177ae_row9_col1" class="data row9 col1" >False</td>
-      <td id="T_177ae_row9_col2" class="data row9 col2" >580.379056</td>
-      <td id="T_177ae_row9_col3" class="data row9 col3" >55724.271226</td>
+      <th id="T_be0a8_level0_row9" class="row_heading level0 row9" >5364</th>
+      <td id="T_be0a8_row9_col0" class="data row9 col0" >False</td>
+      <td id="T_be0a8_row9_col1" class="data row9 col1" >False</td>
+      <td id="T_be0a8_row9_col2" class="data row9 col2" >743.032969</td>
+      <td id="T_be0a8_row9_col3" class="data row9 col3" >25186.425905</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row10" class="row_heading level0 row10" >4457</th>
-      <td id="T_177ae_row10_col0" class="data row10 col0" >False</td>
-      <td id="T_177ae_row10_col1" class="data row10 col1" >False</td>
-      <td id="T_177ae_row10_col2" class="data row10 col2" >678.485146</td>
-      <td id="T_177ae_row10_col3" class="data row10 col3" >30196.045690</td>
+      <th id="T_be0a8_level0_row10" class="row_heading level0 row10" >6171</th>
+      <td id="T_be0a8_row10_col0" class="data row10 col0" >False</td>
+      <td id="T_be0a8_row10_col1" class="data row10 col1" >False</td>
+      <td id="T_be0a8_row10_col2" class="data row10 col2" >1561.533530</td>
+      <td id="T_be0a8_row10_col3" class="data row10 col3" >54594.846708</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row11" class="row_heading level0 row11" >3979</th>
-      <td id="T_177ae_row11_col0" class="data row11 col0" >False</td>
-      <td id="T_177ae_row11_col1" class="data row11 col1" >True</td>
-      <td id="T_177ae_row11_col2" class="data row11 col2" >1119.386610</td>
-      <td id="T_177ae_row11_col3" class="data row11 col3" >20011.468870</td>
+      <th id="T_be0a8_level0_row11" class="row_heading level0 row11" >3138</th>
+      <td id="T_be0a8_row11_col0" class="data row11 col0" >False</td>
+      <td id="T_be0a8_row11_col1" class="data row11 col1" >False</td>
+      <td id="T_be0a8_row11_col2" class="data row11 col2" >652.528179</td>
+      <td id="T_be0a8_row11_col3" class="data row11 col3" >58750.495995</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row12" class="row_heading level0 row12" >7770</th>
-      <td id="T_177ae_row12_col0" class="data row12 col0" >False</td>
-      <td id="T_177ae_row12_col1" class="data row12 col1" >False</td>
-      <td id="T_177ae_row12_col2" class="data row12 col2" >1072.033770</td>
-      <td id="T_177ae_row12_col3" class="data row12 col3" >47029.260368</td>
+      <th id="T_be0a8_level0_row12" class="row_heading level0 row12" >4262</th>
+      <td id="T_be0a8_row12_col0" class="data row12 col0" >False</td>
+      <td id="T_be0a8_row12_col1" class="data row12 col1" >False</td>
+      <td id="T_be0a8_row12_col2" class="data row12 col2" >1102.302032</td>
+      <td id="T_be0a8_row12_col3" class="data row12 col3" >38872.129923</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row13" class="row_heading level0 row13" >9587</th>
-      <td id="T_177ae_row13_col0" class="data row13 col0" >False</td>
-      <td id="T_177ae_row13_col1" class="data row13 col1" >False</td>
-      <td id="T_177ae_row13_col2" class="data row13 col2" >1763.845640</td>
-      <td id="T_177ae_row13_col3" class="data row13 col3" >36686.348370</td>
+      <th id="T_be0a8_level0_row13" class="row_heading level0 row13" >1861</th>
+      <td id="T_be0a8_row13_col0" class="data row13 col0" >False</td>
+      <td id="T_be0a8_row13_col1" class="data row13 col1" >False</td>
+      <td id="T_be0a8_row13_col2" class="data row13 col2" >775.981835</td>
+      <td id="T_be0a8_row13_col3" class="data row13 col3" >68179.761203</td>
     </tr>
     <tr>
-      <th id="T_177ae_level0_row14" class="row_heading level0 row14" >7866</th>
-      <td id="T_177ae_row14_col0" class="data row14 col0" >False</td>
-      <td id="T_177ae_row14_col1" class="data row14 col1" >False</td>
-      <td id="T_177ae_row14_col2" class="data row14 col2" >612.657277</td>
-      <td id="T_177ae_row14_col3" class="data row14 col3" >38635.364437</td>
+      <th id="T_be0a8_level0_row14" class="row_heading level0 row14" >7231</th>
+      <td id="T_be0a8_row14_col0" class="data row14 col0" >False</td>
+      <td id="T_be0a8_row14_col1" class="data row14 col1" >False</td>
+      <td id="T_be0a8_row14_col2" class="data row14 col2" >593.160786</td>
+      <td id="T_be0a8_row14_col3" class="data row14 col3" >46475.031322</td>
     </tr>
   </tbody>
 </table>
@@ -696,12 +704,12 @@
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_ccd33">
+<table id="T_a5d42">
   <caption>Default Rate</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ccd33_level0_col0" class="col_heading level0 col0" >proportion</th>
+      <th id="T_a5d42_level0_col0" class="col_heading level0 col0" >proportion</th>
     </tr>
     <tr>
       <th class="index_name level0" >default</th>
@@ -710,12 +718,12 @@
   </thead>
   <tbody>
     <tr>
-      <th id="T_ccd33_level0_row0" class="row_heading level0 row0" >False</th>
-      <td id="T_ccd33_row0_col0" class="data row0 col0" >96.67%</td>
+      <th id="T_a5d42_level0_row0" class="row_heading level0 row0" >False</th>
+      <td id="T_a5d42_row0_col0" class="data row0 col0" >96.67%</td>
     </tr>
     <tr>
-      <th id="T_ccd33_level0_row1" class="row_heading level0 row1" >True</th>
-      <td id="T_ccd33_row1_col0" class="data row1 col0" >3.33%</td>
+      <th id="T_a5d42_level0_row1" class="row_heading level0 row1" >True</th>
+      <td id="T_a5d42_row1_col0" class="data row1 col0" >3.33%</td>
     </tr>
   </tbody>
 </table>
@@ -725,8 +733,8 @@
 <h3>Feature Scaling<a class="headerlink" href="#feature-scaling" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
 
 <span class="n">numeric_features</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span>
 <span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
@@ -841,8 +849,8 @@ memory usage: 253.9 KB
 <p>Visualize some interesting numeric features (balance &amp; income) in relation to our target.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s2">&quot;whitegrid&quot;</span><span class="p">)</span>
 
 <span class="n">fix</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
@@ -862,7 +870,7 @@ memory usage: 253.9 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/732a3758c4cd126d0d6b9526ed79fc3111c324bbb5c9b943ce004a5e74490368.png" src="../../_images/732a3758c4cd126d0d6b9526ed79fc3111c324bbb5c9b943ce004a5e74490368.png" />
+<img alt="../../_images/0e56d331a7b2176a0e2bc3a465c15bdd123c9581951c7d7339c711c54c26513c.png" src="../../_images/0e56d331a7b2176a0e2bc3a465c15bdd123c9581951c7d7339c711c54c26513c.png" />
 </div>
 </div>
 </section>
@@ -888,7 +896,7 @@ memory usage: 253.9 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/68feacb1818a1049c7b6772d0d7b83a4b1a720504dcf6233f8adb1e7fa8d6334.png" src="../../_images/68feacb1818a1049c7b6772d0d7b83a4b1a720504dcf6233f8adb1e7fa8d6334.png" />
+<img alt="../../_images/f314567bd483663717ca247442b35ca2c42b8f7bbcb94123c82bdd2add56ba18.png" src="../../_images/f314567bd483663717ca247442b35ca2c42b8f7bbcb94123c82bdd2add56ba18.png" />
 </div>
 </div>
 </section>
@@ -897,7 +905,7 @@ memory usage: 253.9 KB
 <h2>Train/Test Split<a class="headerlink" href="#train-test-split" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span> 
 
 <span class="n">FEATURE_NAMES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;balance&quot;</span><span class="p">,</span> <span class="s2">&quot;income&quot;</span><span class="p">,</span> <span class="s2">&quot;student&quot;</span><span class="p">]</span>
 <span class="n">TARGET_NAME</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
@@ -919,7 +927,7 @@ memory usage: 253.9 KB
 <h3><code class="docutils literal notranslate"><span class="pre">sklearn</span></code><a class="headerlink" href="#sklearn" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
 
 <span class="n">sk_model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;newton-cg&quot;</span><span class="p">)</span>
 <span class="n">_</span> <span class="o">=</span> <span class="n">sk_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -932,7 +940,7 @@ memory usage: 253.9 KB
 <h3><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code><a class="headerlink" href="#statsmodels" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">statsmodels.api</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sm</span>
 
 <span class="c1"># statsmodels requires booelean values to be converted to integers.</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;student&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;student&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
@@ -1020,7 +1028,7 @@ Coefficients: [[ 2.71890021 -0.02275812 -0.61743409]]
 <h5>Calculation<a class="headerlink" href="#calculation" title="Link to this heading">#</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">confusion_matrix</span>
 
 <span class="n">confusion_matrix_</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">confusion_matrix_</span><span class="p">)</span>
@@ -1040,7 +1048,7 @@ Coefficients: [[ 2.71890021 -0.02275812 -0.61743409]]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualizing the confusion matrix</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">ConfusionMatrixDisplay</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfusionMatrixDisplay</span>
 
 <span class="n">disp</span> <span class="o">=</span> <span class="n">ConfusionMatrixDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span>
     <span class="n">sk_model</span><span class="p">,</span>
@@ -1063,7 +1071,7 @@ Coefficients: [[ 2.71890021 -0.02275812 -0.61743409]]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c342486919d544a71bec588f0e5ecde57bc101a7b611950533e79fbec5232a00.png" src="../../_images/c342486919d544a71bec588f0e5ecde57bc101a7b611950533e79fbec5232a00.png" />
+<img alt="../../_images/7b22d1e89f9326c448b4b039741b97be9dcb35e9816416d183e2f21c644c1345.png" src="../../_images/7b22d1e89f9326c448b4b039741b97be9dcb35e9816416d183e2f21c644c1345.png" />
 </div>
 </div>
 </section>
@@ -1072,7 +1080,7 @@ Coefficients: [[ 2.71890021 -0.02275812 -0.61743409]]
 <h4>Classification Report<a class="headerlink" href="#classification-report" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">classification_report</span>
 
 <span class="n">report</span> <span class="o">=</span> <span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">report</span><span class="p">)</span>
@@ -1199,7 +1207,7 @@ weighted avg       0.97      0.97      0.97      2000
     </figcaption>
 </figure><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
 
 <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
 </pre></div>
@@ -1284,10 +1292,10 @@ It includes the coefficients, standard errors, t-values, p-values, and confidenc
   <th>Method:</th>                 <td>MLE</td>       <th>  Df Model:          </th>   <td>     3</td>  
 </tr>
 <tr>
-  <th>Date:</th>            <td>Sun, 10 Nov 2024</td> <th>  Pseudo R-squ.:     </th>   <td>0.4619</td>  
+  <th>Date:</th>            <td>Sun, 12 Jan 2025</td> <th>  Pseudo R-squ.:     </th>   <td>0.4619</td>  
 </tr>
 <tr>
-  <th>Time:</th>                <td>07:29:13</td>     <th>  Log-Likelihood:    </th>  <td> -785.77</td> 
+  <th>Time:</th>                <td>09:38:07</td>     <th>  Log-Likelihood:    </th>  <td> -785.77</td> 
 </tr>
 <tr>
   <th>converged:</th>             <td>True</td>       <th>  LL-Null:           </th>  <td> -1460.3</td> 
@@ -1475,8 +1483,8 @@ By Dr. Shlomi Lifshits, Gal Kepler, Zvi Baratz
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
