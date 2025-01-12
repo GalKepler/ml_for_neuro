@@ -63,6 +63,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter_10/exercise_10';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Resources" href="../../resources.html" />
+    <link rel="prev" title="Exercise IX: The Haxby Experiment (2001)" href="../chapter_09/exercise_09.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -113,8 +115,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -168,9 +168,9 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../syllabus.html">Syllabus</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../content.html">Contents</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../content.html">Contents</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../chapter_01/exercise_01.html">Exercise I: Exploratory Data Analysis (EDA)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_02/exercise_02.html">Exercise II: k-Nearest Neighbors (k-NN)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_03/exercise_03.html">Exercise III: Linear Regression</a></li>
@@ -183,6 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter_07/exercise_07.html">Exercise VII: Decision Trees and Random Forests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_08/exercise_08.html">Exercise VIII: K-Means Clustering and PCA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_09/exercise_09.html">Exercise IX: The Haxby Experiment (2001)</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise X: Common Mistakes and Domain-Relevant Insights</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources</a></li>
@@ -597,34 +598,49 @@
 <span class="g g-Whitespace">     </span><span class="mi">32</span>     <span class="sa">f</span><span class="s2">&quot;Average error rate with the right number of predictors: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">right_estimates</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> ± </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">right_estimates</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span>
 <span class="g g-Whitespace">     </span><span class="mi">33</span> <span class="p">)</span>
 
-<span class="nn">Cell In[4], line 18,</span> in <span class="ni">simulate_right</span><span class="nt">(X, y, num_predictors, K)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="c1"># Train the classifier</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">knn_correct</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">knn_correct</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_selected</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="c1"># Predict on the test set</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_correct</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_selected</span><span class="p">)</span>
+<span class="nn">Cell In[4], line 12,</span> in <span class="ni">simulate_right</span><span class="nt">(X, y, num_predictors, K)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1"># Feature selection on the training data only</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">selector_correct</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">score_func</span><span class="o">=</span><span class="n">f_classif</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">num_predictors</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="n">selector_correct</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">X_train_selected</span> <span class="o">=</span> <span class="n">selector_correct</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">X_test_selected</span> <span class="o">=</span> <span class="n">selector_correct</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/sklearn/base.py:1384,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1381</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">global_skip_validation</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">partial_fit_and_fitted</span><span class="p">:</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/sklearn/base.py:1389,</span> in <span class="ni">_fit_context.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(estimator, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1382</span>     <span class="n">estimator</span><span class="o">.</span><span class="n">_validate_params</span><span class="p">()</span>
-<span class="ne">-&gt; </span><span class="mi">1384</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1384</span> <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">1385</span>     <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
 <span class="g g-Whitespace">   </span><span class="mi">1386</span>         <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
 <span class="g g-Whitespace">   </span><span class="mi">1387</span>     <span class="p">)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1388</span> <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">1389</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1389</span>     <span class="k">return</span> <span class="n">fit_method</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/contextlib.py:144,</span> in <span class="ni">_GeneratorContextManager.__exit__</span><span class="nt">(self, typ, value, traceback)</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="k">if</span> <span class="n">typ</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">143</span>     <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">144</span>         <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">145</span>     <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">146</span>         <span class="k">return</span> <span class="kc">False</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/sklearn/feature_selection/_univariate_selection.py:569,</span> in <span class="ni">_BaseFilter.fit</span><span class="nt">(self, X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span>     <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">validate_data</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span>         <span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="s2">&quot;csc&quot;</span><span class="p">],</span> <span class="n">multi_output</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">566</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">568</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_params</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">569</span> <span class="n">score_func_ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">score_func</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">570</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">score_func_ret</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">571</span>     <span class="bp">self</span><span class="o">.</span><span class="n">scores_</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pvalues_</span> <span class="o">=</span> <span class="n">score_func_ret</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/sklearn/_config.py:376,</span> in <span class="ni">config_context</span><span class="nt">(assume_finite, working_memory, print_changed_only, display, pairwise_dist_chunk_size, enable_cython_pairwise_dist, array_api_dispatch, transform_output, enable_metadata_routing, skip_parameter_validation)</span>
-<span class="g g-Whitespace">    </span><span class="mi">374</span>     <span class="k">yield</span>
-<span class="g g-Whitespace">    </span><span class="mi">375</span> <span class="k">finally</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">376</span>     <span class="n">set_config</span><span class="p">(</span><span class="o">**</span><span class="n">old_config</span><span class="p">)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/sklearn/utils/_param_validation.py:189,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">187</span> <span class="n">global_skip_validation</span> <span class="o">=</span> <span class="n">get_config</span><span class="p">()[</span><span class="s2">&quot;skip_parameter_validation&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">188</span> <span class="k">if</span> <span class="n">global_skip_validation</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">189</span>     <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">191</span> <span class="n">func_sig</span> <span class="o">=</span> <span class="n">signature</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">193</span> <span class="c1"># Map *args/**kwargs to the function signature</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/sklearn/feature_selection/_univariate_selection.py:172,</span> in <span class="ni">f_classif</span><span class="nt">(X, y)</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">check_X_y</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">accept_sparse</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;csr&quot;</span><span class="p">,</span> <span class="s2">&quot;csc&quot;</span><span class="p">,</span> <span class="s2">&quot;coo&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span> <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="n">safe_mask</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">==</span> <span class="n">k</span><span class="p">)]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">)]</span>
+<span class="ne">--&gt; </span><span class="mi">172</span> <span class="k">return</span> <span class="n">f_oneway</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.11.11/x64/lib/python3.11/site-packages/sklearn/feature_selection/_univariate_selection.py:107,</span> in <span class="ni">f_oneway</span><span class="nt">(*args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span> <span class="n">dfbn</span> <span class="o">=</span> <span class="n">n_classes</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="n">dfwn</span> <span class="o">=</span> <span class="n">n_samples</span> <span class="o">-</span> <span class="n">n_classes</span>
+<span class="ne">--&gt; </span><span class="mi">107</span> <span class="n">msb</span> <span class="o">=</span> <span class="n">ssbn</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">dfbn</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span> <span class="n">msw</span> <span class="o">=</span> <span class="n">sswn</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">dfwn</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span> <span class="n">constant_features_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">msw</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1118,6 +1134,24 @@ Balances precision and recall, making it suitable for cases where the cost of fa
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../chapter_09/exercise_09.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise IX: The Haxby Experiment (2001)</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../resources.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Resources</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1186,7 +1220,7 @@ Balances precision and recall, making it suitable for cases where the cost of fa
   <div class="footer-item">
     
 <p class="component-author">
-By Dr. Shlomi Lifshits, Gal Kepler, Zvi Baratz
+By Dr. Shlomi Lifshits, Gal Kepler, Dr. Zvi Baratz
 </p>
 
   </div>
@@ -1196,7 +1230,7 @@ By Dr. Shlomi Lifshits, Gal Kepler, Zvi Baratz
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
