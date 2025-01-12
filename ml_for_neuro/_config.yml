@@ -6,8 +6,8 @@
 #######################################################################################
 # Book settings
 title: Machine Learning for Neuroscience # The title of the book. Will be placed in the left navbar.
-author: Dr. Shlomi Lifshits, Gal Kepler, Zvi Baratz # The author of the book
-copyright: "2023" # Copyright year to be placed in the footer
+author: Dr. Shlomi Lifshits, Gal Kepler, Dr. Zvi Baratz # The author of the book
+copyright: "2025" # Copyright year to be placed in the footer
 logo: logo.png # A path to the book logo
 
 # Force re-execution of notebooks on each build.

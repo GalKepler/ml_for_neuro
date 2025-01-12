@@ -1,6 +1,6 @@
 # Machine Learning for Neuroscience
 
-This Jupyter Book is written and maintained for the "Machine Learning for Neuroscience" course in Tel-Aviv University.
+This Jupyter Book is written and maintained for the ["Machine Learning for Neuroscientists"](https://galkepler.github.io/ml_for_neuro/intro.html) course in Tel-Aviv University.
 
 ## Usage
 
