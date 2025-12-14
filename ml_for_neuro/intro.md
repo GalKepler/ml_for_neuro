@@ -8,7 +8,7 @@ This [jupyter book](https://jupyterbook.org/intro.html) is written and maintaine
 If you find any mistakes, have any questions/suggestions, come across useful learning resources not listed in the [Resources](https://galkepler.github.io/ml_for_neuro/resources.html) section, etc., please do not hesitate to contact us:
 
 * Dr. Shlomi Lifshits - [shlomi.lifshits@gmail.com](mailto:shlomi.lifshits@gmail.com)
-* Gal Kepler - [hershkovitz1@mail.tau.ac.il](mailto:hershkovitz1@mail.tau.ac.il)
+* Gal Kepler - [galkepler@gmail.com](mailto:galkepler@gmail.com)
 
 
 <p align="center">
