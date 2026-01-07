@@ -197,6 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../chapter_08/exercise_08.html">Exercise VIII: K-Means Clustering and PCA</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Exercise IX: The Haxby Experiment (2001)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../chapter_10/exercise_10.html">Exercise X: Common Mistakes and Domain-Relevant Insights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../chapter_11/exercise_11.html">Exercise XI: Embeddings</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../resources.html">Resources</a></li>
@@ -440,33 +441,45 @@ document.write(`
 [fetch_haxby] Downloading data from https://www.nitrc.org/frs/download.php/7868/mask.nii.gz ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby]  ...done. (1 seconds, 0 min)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby]  ...done. (0 seconds, 0 min)
 
 [fetch_haxby] Downloading data from http://data.pymvpa.org/datasets/haxby2001/MD5SUMS ...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby]  ...done. (0 seconds, 0 min)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby]  ...done. (1 seconds, 0 min)
 
 [fetch_haxby] Downloading data from http://data.pymvpa.org/datasets/haxby2001/subj2-2010.01.14.tar.gz ...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby] 
-Downloaded 44507136 of 291168628 bytes (15.3%%,    5.6s remaining)
+Downloaded 21741568 of 291168628 bytes (7.5%%,   12.4s remaining)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby] 
-Downloaded 118898688 of 291168628 bytes (40.8%%,    2.9s remaining)
+Downloaded 62578688 of 291168628 bytes (21.5%%,    7.3s remaining)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby] 
-Downloaded 192290816 of 291168628 bytes (66.0%%,    1.6s remaining)
+Downloaded 106463232 of 291168628 bytes (36.6%%,    5.3s remaining)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby] 
-Downloaded 265527296 of 291168628 bytes (91.2%%,    0.4s remaining)
+Downloaded 148471808 of 291168628 bytes (51.0%%,    3.9s remaining)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby]  ...done. (5 seconds, 0 min)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby] 
+Downloaded 191700992 of 291168628 bytes (65.8%%,    2.6s remaining)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby] 
+Downloaded 235462656 of 291168628 bytes (80.9%%,    1.4s remaining)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby] 
+Downloaded 278110208 of 291168628 bytes (95.5%%,    0.3s remaining)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby]  ...done. (8 seconds, 0 min)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[fetch_haxby] Extracting data from /home/runner/nilearn_data/haxby2001/9cabe068089e791ef0c5fe930fc20e30/subj2-2010.01.14.tar.gz...
@@ -493,7 +506,8 @@ Downloaded 265527296 of 291168628 bytes (91.2%%,    0.4s remaining)
  &#39;mask_face_little&#39;: [&#39;/home/runner/nilearn_data/haxby2001/subj2/mask8_face_vt.nii.gz&#39;],
  &#39;mask_house_little&#39;: [&#39;/home/runner/nilearn_data/haxby2001/subj2/mask8_house_vt.nii.gz&#39;],
  &#39;mask&#39;: &#39;/home/runner/nilearn_data/haxby2001/mask.nii.gz&#39;,
- &#39;description&#39;: &#39;.. _haxby_dataset:\n\nHaxby dataset\n=============\n\nAccess\n------\nSee :func:`nilearn.datasets.fetch_haxby`.\n\nNotes\n-----\nResults from a classical :term:`fMRI` study that investigated the differences between\nthe neural correlates of face versus object processing in the ventral visual\nstream. Face and object stimuli showed widely distributed and overlapping\nresponse patterns.\n\nSee :footcite:t:`Haxby2001`.\n\nContent\n-------\nThe &quot;simple&quot; dataset includes:\n    :\&#39;func\&#39;: Nifti images with bold data\n    :\&#39;session_target\&#39;: Text file containing run data\n    :\&#39;mask\&#39;: Nifti images with employed mask\n    :\&#39;session\&#39;: Text file with condition labels\n\nThe full dataset additionally includes\n    :\&#39;anat\&#39;: Nifti images with anatomical image\n    :\&#39;func\&#39;: Nifti images with bold data\n    :\&#39;mask_vt\&#39;: Nifti images with mask for ventral visual/temporal cortex\n    :\&#39;mask_face\&#39;: Nifti images with face-reponsive brain regions\n    :\&#39;mask_house\&#39;: Nifti images with house-reponsive brain regions\n    :\&#39;mask_face_little\&#39;: Spatially more constrained version of the above\n    :\&#39;mask_house_little\&#39;: Spatially more constrained version of the above\n\nReferences\n----------\n\n.. footbibliography::\n\nFor more information see:\nPyMVPA provides a tutorial using this dataset :\nhttp://www.pymvpa.org/tutorial.html\n\nMore information about its structure :\nhttp://dev.pymvpa.org/datadb/haxby2001.html\n\n\nLicense\n-------\nunknown\n&#39;}
+ &#39;description&#39;: &#39;.. _haxby_dataset:\n\nHaxby dataset\n=============\n\nAccess\n------\nSee :func:`nilearn.datasets.fetch_haxby`.\n\nNotes\n-----\nResults from a classical :term:`fMRI` study that investigated the differences between\nthe neural correlates of face versus object processing in the ventral visual\nstream. Face and object stimuli showed widely distributed and overlapping\nresponse patterns.\n\nSee :footcite:t:`Haxby2001`.\n\nContent\n-------\nThe &quot;simple&quot; dataset includes:\n    :\&#39;func\&#39;: Nifti images with bold data\n    :\&#39;session_target\&#39;: Text file containing run data\n    :\&#39;mask\&#39;: Nifti images with employed mask\n    :\&#39;session\&#39;: Text file with condition labels\n\nThe full dataset additionally includes\n    :\&#39;anat\&#39;: Nifti images with anatomical image\n    :\&#39;func\&#39;: Nifti images with bold data\n    :\&#39;mask_vt\&#39;: Nifti images with mask for ventral visual/temporal cortex\n    :\&#39;mask_face\&#39;: Nifti images with face-reponsive brain regions\n    :\&#39;mask_house\&#39;: Nifti images with house-reponsive brain regions\n    :\&#39;mask_face_little\&#39;: Spatially more constrained version of the above\n    :\&#39;mask_house_little\&#39;: Spatially more constrained version of the above\n\nReferences\n----------\n\n.. footbibliography::\n\nFor more information see:\nPyMVPA provides a tutorial using this dataset :\nhttp://www.pymvpa.org/tutorial.html\n\nMore information about its structure :\nhttp://dev.pymvpa.org/datadb/haxby2001.html\n\n\nLicense\n-------\nunknown\n&#39;,
+ &#39;t_r&#39;: 2.5}
 </pre></div>
 </div>
 </div>
