@@ -25,6 +25,6 @@ chapters:
       - file: chapters/chapter_08/exercise_08
       - file: chapters/chapter_09/exercise_09
       - file: chapters/chapter_10/exercise_10
-      - file: chapters/chapter_11/exercise_11
+      - file: chapters/embeddings/embeddings
   - file: resources
   - file: references
